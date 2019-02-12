@@ -47,13 +47,12 @@ Miki wrote [Forging Python](http://forging-python.com), is an author in
 an organizer of [Go Israel Meetup](https://www.meetup.com/Go-Israel/) and
 [GopherCon Israel](https://www.gophercon.org.il/)
 
-<script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" data-search-pseudo-elements></script>
 
-- <i class="fab fa-twitter"></i> [@tebeka](https://twitter.com/tebeka)
-- <i class="fab fa-github"></i> [@tebeka](https://github.com/tebeka)
-- <i class="fab fa-linkedin-in"></i> [mikitebeka](https://www.linkedin.com/in/mikitebeka/)
-- <i class="fab fa-blogger-b"></i> [pythonwise blog](http://pythonwise.blogspot.com/)
-- <i class="far fa-envelope"></i> [miki@353solutions.com](mailto:miki@353solutions.com)
+- [twitter](https://twitter.com/tebeka)
+- [github](https://github.com/tebeka)
+- [LinkedIn](https://www.linkedin.com/in/mikitebeka/)
+- [pythonwise blog](http://pythonwise.blogspot.com/)
+- [miki@353solutions.com](mailto:miki@353solutions.com)
 
 
 ## License
