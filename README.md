@@ -25,7 +25,7 @@ There will be a lot of quotes, bad jokes and lines of code.
 
 ## Image
 
-![Miki Tebeka](https://www.353solutions.com/static/images/team/miki.jpg)
+![Miki Tebeka](miki-cartoon.jpg)
 
 
 ## Bio
