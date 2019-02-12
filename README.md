@@ -47,7 +47,7 @@ Miki wrote [Forging Python](http://forging-python.com), is an author in
 an organizer of [Go Israel Meetup](https://www.meetup.com/Go-Israel/) and
 [GopherCon Israel](https://www.gophercon.org.il/)
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" data-search-pseudo-elements></script>
 
 - <i class="fab fa-twitter"></i> [@tebeka](https://twitter.com/tebeka)
 - <i class="fab fa-github"></i> [@tebeka](https://github.com/tebeka)
