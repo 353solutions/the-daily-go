@@ -44,8 +44,9 @@ many young developers on their way to success.
 
 Miki wrote [Forging Python](http://forging-python.com), is an author in
 [LinkedIn Learning](https://www.linkedin.com/learning/instructors/miki-tebeka),
-an organizer of [Go Israel Meetup](https://www.meetup.com/Go-Israel/) and
-[GopherCon Israel](https://www.gophercon.org.il/)
+an organizer of [Go Israel Meetup](https://www.meetup.com/Go-Israel/),
+[GopherCon Israel](https://www.gophercon.org.il/) & [PyCon
+Israel](https://il.pycon.org/)
 
 
 - [twitter](https://twitter.com/tebeka)
