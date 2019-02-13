@@ -2,6 +2,10 @@
 
 Workshop given at [GopherCon EU 2019](https://www.gophercon.es/)
 
+*Audience Level*: Intermediate
+*Prerequisits*: Working knowledge of Go & the command line, familiarity with git.
+
+
 ## Description
 
 Writing code is hard, maintaining it is even harder. In this workshop we'll
@@ -22,6 +26,7 @@ We will write together an example project and cover the following subjects:
 - Development workflow & code reviews
 
 There will be a lot of quotes, bad jokes and lines of code.
+
 
 ## Image
 
