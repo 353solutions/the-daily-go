@@ -1,0 +1,4 @@
+- Move to 353solutions group
+- Possible projects: 
+    - Uber/Gett like service for finding closest taxi
+    - Todo app
