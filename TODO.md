@@ -2,3 +2,5 @@
 - Possible projects: 
     - Uber/Gett like service for finding closest taxi
     - Todo app
+    - text generator (markov)
+    - summary
