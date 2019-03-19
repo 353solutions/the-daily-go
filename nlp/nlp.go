@@ -48,11 +48,11 @@ type sentence struct {
 	score  int
 }
 
-type sentences []*sentence
+type byScore []*sentence
 
-func (s sentences) Len() int               { return len(s) }
-func (s sentences) Less(i int, j int) bool { return s[i].score < s[j].score }
-func (s sentences) Swap(i int, j int)      { s[i], s[j] = s[j], s[i] }
+func (s byScore) Len() int               { return len(s) }
+func (s byScore) Less(i int, j int) bool { return s[i].score < s[j].score }
+func (s byScore) Swap(i int, j int)      { s[i], s[j] = s[j], s[i] }
 
 func score(tokens [][]byte, freqs map[string]int) int {
 	score := 0
@@ -86,7 +86,7 @@ func summarize(text []byte, count int) [][]byte {
 		fmt.Println(s.score)
 	}
 
-	sort.Sort(sort.Reverse(sentences(sents)))
+	sort.Sort(sort.Reverse(byScore(sents)))
 	count = min(count, len(sents))
 	var summary [][]byte
 	for _, sent := range sents[:count] {
