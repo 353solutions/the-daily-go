@@ -10,6 +10,7 @@ import (
 
 var (
 	// Punctuation followed by whitespace
+	// Two or more newlines
 	sentenceEndRe = regexp.MustCompile("([\\.!?][[:space:]])|(\n\n+)")
 	wordRe        = regexp.MustCompile("[[:alpha:]]+")
 )
