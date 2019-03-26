@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"expvar"
 	"flag"
 	"fmt"
 	"io/ioutil"
@@ -24,6 +25,9 @@ var (
 Environment variables:
 NLPD_ADDR - address to listen on (default :8080)
 `
+
+	tokCounter  = expvar.NewInt("num_tokenize")
+	sentCounter = expvar.NewInt("num_sentencize")
 )
 
 type nlpFunc func(string) []string
@@ -51,8 +55,9 @@ func nlpHandler(w http.ResponseWriter, r *http.Request, fn nlpFunc) {
 	w.Write(out)
 }
 
-func makeHandler(fn nlpFunc) func(http.ResponseWriter, *http.Request) {
+func makeHandler(fn nlpFunc, counter *expvar.Int) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
+		counter.Add(1)
 		nlpHandler(w, r, fn)
 	}
 }
@@ -82,8 +87,9 @@ func main() {
 
 	r := mux.NewRouter()
 	r.HandleFunc("/_/check", checkHandler).Methods("GET")
-	r.HandleFunc("/tokenize", makeHandler(nlp.Tokenize)).Methods("POST")
-	r.HandleFunc("/sentencize", makeHandler(nlp.Sentencize)).Methods("POST")
+	r.HandleFunc("/tokenize", makeHandler(nlp.Tokenize, tokCounter)).Methods("POST")
+	r.HandleFunc("/sentencize", makeHandler(nlp.Sentencize, sentCounter)).Methods("POST")
+	r.Handle("/_/vars", expvar.Handler())
 
 	log.Printf("serving NLP on %s\n", addr)
 	if err := http.ListenAndServe(addr, r); err != nil {

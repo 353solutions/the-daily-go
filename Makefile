@@ -19,10 +19,10 @@ goout=$(subst code/,html/,$(gohtml))
 modfiles=$(shell find code -type f -name '*.mod')
 modhtml=$(subst .mod,.html,$(modfiles))
 modout=$(subst code/,html/,$(modhtml))
-other=
-other_out=\
-      html/nlp/cmd/nlpd/Dockerfile.html \
-      html/nlp/Makefile.html
+other=tdg.log
+#other_out=\
+#      html/nlp/cmd/nlpd/Dockerfile.html \
+#      html/nlp/Makefile.html
 class=tdg
 bucket=gs://353solutions/c
 

@@ -1,4 +1,3 @@
-// Package nlp provides some NLP functions
 package nlp
 
 import (
