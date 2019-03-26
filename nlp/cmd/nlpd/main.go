@@ -16,6 +16,8 @@ import (
 )
 
 var (
+	// Version is the software version
+	Version    = "unknown"
 	okResponse = []byte("OK\n")
 	usage      = `usage: %s
 
@@ -56,11 +58,18 @@ func makeHandler(fn nlpFunc) func(http.ResponseWriter, *http.Request) {
 }
 
 func main() {
+	var showVersion bool
+	flag.BoolVar(&showVersion, "version", false, "show version & exit")
 	flag.Usage = func() {
 		name := path.Base(os.Args[0])
 		fmt.Fprintf(os.Stderr, usage, name)
 	}
 	flag.Parse()
+
+	if showVersion {
+		fmt.Printf("nlp version %s\n", Version)
+		os.Exit(0)
+	}
 
 	if flag.NArg() > 0 {
 		fmt.Fprintf(os.Stderr, "error: wrong number of arguments\n")
