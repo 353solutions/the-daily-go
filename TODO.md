@@ -3,4 +3,7 @@
     - Uber/Gett like service for finding closest taxi
     - Todo app
     - text generator (markov)
-    - summary
+    - nlp
+
+- `var _ Interface = &impl{}`
+- go generate

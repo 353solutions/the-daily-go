@@ -1,11 +1,16 @@
-package main
+// Package nlp providwes some NLP functions
+package nlp
+
+//go:generate sh -c "go run gen_stop.go < stop_words.txt > stop_words.go"
+//go:generate gofmt -w stop_words.go
 
 import (
-	"bytes"
 	"fmt"
-	"io/ioutil"
 	"regexp"
 	"sort"
+	"strings"
+
+	"nlp/stemmer"
 )
 
 var (
@@ -15,11 +20,12 @@ var (
 	wordRe        = regexp.MustCompile("[[:alpha:]]+")
 )
 
-func sentencize(text []byte) [][]byte {
-	var sentences [][]byte
+// Sentencize will split text to list of sentences
+func Sentencize(text string) []string {
+	var sentences []string
 	start := 0
 	for start < len(text) {
-		loc := sentenceEndRe.FindIndex(text[start:])
+		loc := sentenceEndRe.FindStringIndex(text[start:])
 		if loc == nil {
 			if start < len(text) {
 				sentences = append(sentences, text[start:])
@@ -33,18 +39,24 @@ func sentencize(text []byte) [][]byte {
 	return sentences
 }
 
-func tokenize(text []byte) [][]byte {
-	words := wordRe.FindAll(text, -1)
-	tokens := make([][]byte, len(words)) // MT: 0 and profile?
-	for i, w := range words {
-		tokens[i] = bytes.ToLower(w)
+// Tokenize will split text to list of tokens
+func Tokenize(text string) []string {
+	words := wordRe.FindAllString(text, -1)
+	var tokens []string
+	for _, w := range words {
+		token := strings.ToLower(w)
+		token = stemmer.Stem(token)
+		if StopWords[token] {
+			continue
+		}
+		tokens = append(tokens, token)
 	}
 	return tokens
 }
 
 type sentence struct {
-	text   []byte
-	tokens [][]byte
+	text   string
+	tokens []string
 	score  int
 }
 
@@ -54,10 +66,10 @@ func (s byScore) Len() int               { return len(s) }
 func (s byScore) Less(i int, j int) bool { return s[i].score < s[j].score }
 func (s byScore) Swap(i int, j int)      { s[i], s[j] = s[j], s[i] }
 
-func score(tokens [][]byte, freqs map[string]int) int {
+func score(tokens []string, freqs map[string]int) int {
 	score := 0
 	for _, tok := range tokens {
-		score += freqs[string(tok)]
+		score += freqs[tok]
 	}
 	return score
 }
@@ -69,12 +81,13 @@ func min(a, b int) int {
 	return b
 }
 
-func summarize(text []byte, count int) [][]byte {
+// Summarize will extract "count" most significat stentences from text
+func Summarize(text string, count int) []string {
 	freqs := make(map[string]int)
 	var sents []*sentence // MT: Make in length?
 
-	for _, s := range sentencize(text) {
-		tokens := tokenize(s)
+	for _, s := range Sentencize(text) {
+		tokens := Tokenize(s)
 		for _, token := range tokens {
 			freqs[string(token)]++
 		}
@@ -88,25 +101,10 @@ func summarize(text []byte, count int) [][]byte {
 
 	sort.Sort(sort.Reverse(byScore(sents)))
 	count = min(count, len(sents))
-	var summary [][]byte
+	var summary []string
 	for _, sent := range sents[:count] {
 		summary = append(summary, sent.text)
 	}
 
 	return summary
-
-}
-
-func main() {
-	// https://en.wikinews.org/wiki/Turkey_recalls_ambassador_to_Sweden_over_%22genocide%22_vote
-	text, err := ioutil.ReadFile("testdata/1.txt")
-	if err != nil {
-		panic(err)
-	}
-
-	summary := summarize(text, 3)
-	for _, s := range summary {
-		fmt.Println(string(s))
-		fmt.Println("==========================")
-	}
 }
