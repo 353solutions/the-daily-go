@@ -105,4 +105,4 @@ TBD
 
 # Data & Other
 * [nlp.go](data/nlp.go)
-* [Console log](day-1.log)
+* [Console log](tdg.log)
