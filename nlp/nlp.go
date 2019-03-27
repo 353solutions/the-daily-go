@@ -24,15 +24,22 @@ var (
 func Sentencize(text string) []string {
 	var sentences []string
 	start := 0
+	add := func(s string) {
+		s = strings.TrimSpace(s)
+		if len(s) > 0 {
+			sentences = append(sentences, s)
+		}
+	}
+
 	for start < len(text) {
 		loc := sentenceEndRe.FindStringIndex(text[start:])
 		if loc == nil {
 			if start < len(text) {
-				sentences = append(sentences, text[start:])
+				add(text[start:])
 			}
 			break
 		}
-		sentences = append(sentences, text[start:start+loc[1]])
+		add(text[start : start+loc[1]])
 		start += loc[1]
 	}
 

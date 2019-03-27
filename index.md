@@ -28,6 +28,7 @@ TBD
 - [Go Proverbs](https://go-proverbs.github.io/) - Think about them ☺
 
 {::comment}
+- [Testable Examples](https://blog.golang.org/examples)
 - Internal module repository/registry
     - https://godoc.org/rsc.io/go-import-redirector
     - `replace` in `go.mod`
