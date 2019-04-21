@@ -23,7 +23,7 @@ other=tdg.log
 #other_out=\
 #      html/nlp/cmd/nlpd/Dockerfile.html \
 #      html/nlp/Makefile.html
-class=tdg
+class=tdg-b1
 bucket=gs://353solutions/c
 
 
