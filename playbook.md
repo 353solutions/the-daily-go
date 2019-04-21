@@ -65,6 +65,7 @@
 - add stemmer
     - go generate
 - cmd/nlpd
+    - grpc?
     - gorilla
     - `_check`
     - handler

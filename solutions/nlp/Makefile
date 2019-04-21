@@ -12,3 +12,8 @@ nlpd: cmd/nlpd
 
 stop_words:
 	go generate
+
+
+grpc:
+	mkdir -p pb
+	protoc nlp.proto --go_out=plugins=grpc:pb
