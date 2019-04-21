@@ -63,6 +63,7 @@
     - mention gdb
     - mention logs
 - add stemmer
+    - go generate
 - cmd/nlpd
     - gorilla
     - `_check`
