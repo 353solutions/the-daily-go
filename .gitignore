@@ -1,2 +1,5 @@
 code/nlp/vendor
 ./nlpd
+*.html
+!slides.html
+prof.out

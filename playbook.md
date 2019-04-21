@@ -18,22 +18,63 @@
     - ןלוכמ רתוי ידימלתמו יתוברמ רתוי ירבחמו יתוברמ יתדמל הברה 
 
 # Workshop
-- Download nlp.go
+- mkdir nlp
+- download nlp.go
+- go mod init
+    - go.mod
+- go mod tidy
 - Go over the code
-- nlp project
-- Testing
-- testify
-- go.mod
+    - Tokenize
+    - Must in init/var
+- testing
+    - `go build` ignores files ending with `_test.go`
+    - nlp_test.go
+    - fail vs fatal
+    - table
+    - [] vs nil
+    - testify (assert vs require)
+    - go get github.com/stretchr/testify
+	- modules.md, our software dependency problem
+	- vendor
+    - quick
+    - example_test.go
+- Performance tuning
+    - BenchmarkToeknizer
+    - go test -bench . -run '^$' .
+	- GOMAXPROCS
+    - go test -bench . -run '^$' . -cpuprofile=prof.out
+	- nlp.test
+    - go tool pprof
+	- top 20
+	- lots of memory
+    - change to `make([]string, 0, 20)`
+    - Much of the doubling of speed for core Python that has occurred over the
+      last ten decade has occurred one little step at a time, none of the them
+      being individually dramatic.
+	- Raymond Hettinger
+    - optimize.md
 - debugging
+    - The most effective debugging tool is still careful thought, coupled with
+      judiciously placed print statements. - Brian Kernighan
+    - sleep (hammock driven development)
+    - Feynman algorithm?
     - IDE
-    - dlv
-    - gdb
-    - logs
+    - dlv test .
+    - mention gdb
+    - mention logs
+- add stemmer
 - cmd/nlpd
+    - gorilla
+    - `_check`
+    - handler
 - logging & metrics
     - expvar
-- Performance tuning
-    - ???
+- Dockerfile
+    - Version
+- Development workflow & code reviews
+    - GitHub account
+    - feature branches
+    - PR
 - Continuous integration
     - Circle CI?
     - Jenkins
@@ -41,5 +82,3 @@
     - green/blue
     - canary
     - HAProxy?
-- Development workflow & code reviews
-    - GitHub

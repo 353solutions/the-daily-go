@@ -1,11 +1,11 @@
 %.html: %.md
 	kramdown --template template.erb $< > $@
 
-html/%.html: code/%.go
+html/%.html: nlp/%.go
 	mkdir -p $(shell dirname $@)
 	pygmentize -Ofull,linenos=1,style=vs,lineanchors=l -l go -f html -o $@ $<
 
-html/%.html: code/%.mod
+html/%.html: nlp/%.mod
 	mkdir -p $(shell dirname $@)
 	pygmentize -Ofull,linenos=1,style=vs,lineanchors=l -l go -f html -o $@ $<
 
@@ -13,12 +13,12 @@ html/%.html: code/%.mod
 mdignore=playbook.md TODO.md index.md
 mdfiles=$(filter-out $(mdignore),$(wildcard *.md))
 mdout=$(subst .md,.html,$(mdfiles))
-gofiles=$(shell find code -type f -name '*.go' -not -path '*vendor*')
+gofiles=$(shell find nlp -type f -name '*.go' -not -path '*vendor*')
 gohtml=$(subst .go,.html,$(gofiles))
-goout=$(subst code/,html/,$(gohtml))
-modfiles=$(shell find code -type f -name '*.mod')
+goout=$(subst nlp/,html/,$(gohtml))
+modfiles=$(shell find nlp -type f -name '*.mod')
 modhtml=$(subst .mod,.html,$(modfiles))
-modout=$(subst code/,html/,$(modhtml))
+modout=$(subst nlp/,html/,$(modhtml))
 other=tdg.log
 #other_out=\
 #      html/nlp/cmd/nlpd/Dockerfile.html \
@@ -42,14 +42,14 @@ sync: all
 	    --exclude .vscode \
 	    --exclude Makefile \
 	    --exclude solutions \
-	    --exclude code/nlp/vendor \
+	    --exclude nlp/nlp/vendor \
 	    -av . /tmp/$(class)
 	@gsutil -m rsync -r /tmp/$(class) $(bucket)/$(class)
 	@gsutil -q -m acl -r ch -u AllUsers:R $(bucket)/$(class)
 
 
 zip: all
-	zip -r9 $(class).zip code html data $(other) README.html \
+	zip -r9 $(class).zip nlp html data $(other) README.html \
 	    -x '*.cache*' \
 	    -x '*.git/*' \
 	    -x '*.gitkeep' \
@@ -61,7 +61,7 @@ upload-zip:
 	@gsutil cp $(class).zip $(bucket)/$(class)/$(class).zip
 	@gsutil -m -q acl -r ch -u AllUsers:R $(bucket)/$(class)/$(class.zip)
 
-#html/nlp/Makefile.html: code/nlp/Makefile
+#html/Makefile.html: nlp/Makefile
 #        mkdir -p $(shell dirname $@)
 #        pygmentize -Ofull,linenos=1,style=vs,lineanchors=l -l make -f html -o $@ $<
 

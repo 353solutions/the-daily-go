@@ -9,8 +9,8 @@ import (
 	"regexp"
 	"sort"
 	"strings"
-
-	"nlp/stemmer"
+	// MT
+	//	"nlp/stemmer"
 )
 
 var (
@@ -50,12 +50,16 @@ func Sentencize(text string) []string {
 func Tokenize(text string) []string {
 	words := wordRe.FindAllString(text, -1)
 	var tokens []string
+	// MT: Optimize (~5%)
+	// tokens := make([]string, 0, 20)
 	for _, w := range words {
 		token := strings.ToLower(w)
+		/* MT
 		token = stemmer.Stem(token)
 		if StopWords[token] {
 			continue
 		}
+		*/
 		tokens = append(tokens, token)
 	}
 	return tokens

@@ -106,4 +106,5 @@ TBD
 
 # Data & Other
 * [nlp.go](data/nlp.go)
+* [stemmer.go](data/stemmer.go)
 * [Console log](tdg.log)
