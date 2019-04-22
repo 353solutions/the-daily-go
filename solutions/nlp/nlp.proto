@@ -1,0 +1,19 @@
+syntax = "proto3";
+package pb;
+
+message TokenizeRequest {
+    string text = 1;
+}
+
+message TokenizeResponse {
+    repeated string tokens = 1;
+}
+
+message PingRequest{}
+message PingResponse{}
+
+
+service NLP {
+    rpc Tokenize(TokenizeRequest) returns (TokenizeResponse) {}
+    rpc Ping(PingRequest) returns (PingResponse) {}
+}

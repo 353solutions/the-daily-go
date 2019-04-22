@@ -62,6 +62,18 @@ func makeHandler(fn nlpFunc, counter *expvar.Int) http.HandlerFunc {
 	}
 }
 
+func startGRPC() {
+	addr := os.Getenv("NLP_GRPC_ADDR")
+	if len(addr) == 0 {
+		addr = ":9090"
+	}
+
+	log.Printf("serving NLP gRPC on %s\n", addr)
+	if err := gRPCListenAndServe(addr); err != nil {
+		log.Printf("can't run gRPC server - %s", err)
+	}
+}
+
 func main() {
 	var showVersion bool
 	flag.BoolVar(&showVersion, "version", false, "show version & exit")
@@ -80,6 +92,8 @@ func main() {
 		fmt.Fprintf(os.Stderr, "error: wrong number of arguments\n")
 		os.Exit(1)
 	}
+
+	// MT: envconfig, viper
 	addr := os.Getenv("NLPD_ADDR")
 	if len(addr) == 0 {
 		addr = ":8080"
@@ -92,6 +106,7 @@ func main() {
 	r.Handle("/_/vars", expvar.Handler())
 
 	log.Printf("serving NLP on %s\n", addr)
+	startGRPC()
 	if err := http.ListenAndServe(addr, r); err != nil {
 		fmt.Fprintf(os.Stderr, "error: %s\n", err)
 		os.Exit(1)

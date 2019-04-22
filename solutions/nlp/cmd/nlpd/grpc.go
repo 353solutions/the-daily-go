@@ -23,6 +23,11 @@ func (s NLPServer) Tokenize(ctx context.Context, req *pb.TokenizeRequest) (*pb.T
 	return &resp, nil
 }
 
+// Ping is gRPC Ping
+func (s NLPServer) Ping(ctx context.Context, req *pb.PingRequest) (*pb.PingResponse, error) {
+	return &pb.PingResponse{}, nil
+}
+
 func gRPCListenAndServe(addr string) error {
 	srv := grpc.NewServer()
 	pb.RegisterNLPServer(srv, NLPServer{})
