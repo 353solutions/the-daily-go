@@ -64,6 +64,9 @@
     - mention logs
 - add stemmer
     - go generate
+- add stop words
+    - build tags
+    - go generate
 - cmd/nlpd
     - grpc?
     - gorilla
@@ -73,10 +76,15 @@
     - expvar
 - Dockerfile
     - Version
-- Development workflow & code reviews
+- Publishing/workflow & code reviews
     - GitHub account
     - feature branches
     - PR
+    - tag version (semver)
+    - go get in testing
+    - license
+    - solutions/nlp/doc.go
+    - README.md
 - Continuous integration
     - Circle CI?
     - Jenkins
