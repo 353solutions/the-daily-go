@@ -17,3 +17,6 @@ stop_words:
 grpc:
 	mkdir -p pb
 	protoc nlp.proto --go_out=plugins=grpc:pb
+
+circleci:
+	docker build -f Dockerfile.test .

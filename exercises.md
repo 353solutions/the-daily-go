@@ -26,3 +26,5 @@ Use the following algorithm to add a `Summarize(text string, count int)
     - Make sure metrics still work in `gRPC` only mode
 - Head over to [godoc](https://godoc.org/) and check how your package
   documentation looks. See it in the eyes of a new user and fix it
+- Use [http/httptest](https://golang.org/pkg/net/http/httptest/) to test your
+  HTTP handlers
