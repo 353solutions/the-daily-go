@@ -76,6 +76,8 @@
     - expvar
 - Dockerfile
     - Version
+    - `CGO_ENABLED=0`
+    - runtime.Version, runtime.GOOS ...
 - Publishing/workflow & code reviews
     - GitHub account
     - feature branches
@@ -85,8 +87,10 @@
     - license
     - solutions/nlp/doc.go
     - README.md
+    - GOOS=windows go build
 - Continuous integration
     - Circle CI?
+    - solutions/nlp/.circleci/, solutions/nlp/Dockerfile.test
     - Jenkins
 - Deployment strategies
     - green/blue
