@@ -9,7 +9,6 @@ var (
 	wordRe = regexp.MustCompile("[[:alpha:]]+")
 )
 
-// Tokenize will split text to list of tokens
 func Tokenize(text string) []string {
 	words := wordRe.FindAllString(text, -1)
 	var tokens []string

@@ -28,3 +28,11 @@ Use the following algorithm to add a `Summarize(text string, count int)
   documentation looks. See it in the eyes of a new user and fix it
 - Use [http/httptest](https://golang.org/pkg/net/http/httptest/) to test your
   HTTP handlers
+
+
+## Publish
+- Build `nlpd` executable for Linux, Windows & OSX
+- Create a CI for your project. You can use [CircleCI](https://circleci.com) or
+  [travis](http://travis-ci.org/)
+- Add a CI badge to your project `README.md`
+- Have the CI job embed build `nlpd` with version from git tag

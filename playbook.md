@@ -24,7 +24,7 @@
     - go.mod
 - go mod tidy
 - Go over the code
-    - Tokenize
+    - Tokenize (document)
     - Must in init/var
 - testing
     - `go build` ignores files ending with `_test.go`
