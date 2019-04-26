@@ -92,6 +92,7 @@
     - Circle CI?
     - solutions/nlp/.circleci/, solutions/nlp/Dockerfile.test
     - Jenkins
+    - chatops
 - Deployment strategies
     - green/blue
     - canary
