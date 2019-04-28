@@ -18,8 +18,9 @@
     - ןלוכמ רתוי ידימלתמו יתוברמ רתוי ירבחמו יתוברמ יתדמל הברה 
 
 # Workshop
-- mkdir nlp
-- download nlp.go
+- create project on github
+- git clone project
+- cd project, git add ...
 - go mod init
     - go.mod
 - go mod tidy
@@ -38,6 +39,7 @@
 	- vendor
     - quick
     - example_test.go
+	- show on godoc.org
 - Performance tuning
     - BenchmarkToeknizer
     - go test -bench . -run '^$' .
@@ -63,8 +65,9 @@
     - mention gdb
     - mention logs
 - add stemmer
-    - go generate
+    - Conway's law
 - add stop words
+    - go generate
     - build tags
     - go generate
 - cmd/nlpd

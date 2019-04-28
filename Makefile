@@ -10,6 +10,7 @@ html/%.html: nlp/%.mod
 	pygmentize -Ofull,linenos=1,style=vs,lineanchors=l -l go -f html -o $@ $<
 
 
+
 mdignore=playbook.md TODO.md index.md
 mdfiles=$(filter-out $(mdignore),$(wildcard *.md))
 mdout=$(subst .md,.html,$(mdfiles))
@@ -20,9 +21,11 @@ modfiles=$(shell find nlp -type f -name '*.mod')
 modhtml=$(subst .mod,.html,$(modfiles))
 modout=$(subst nlp/,html/,$(modhtml))
 other=tdg.log
-#other_out=\
-#      html/nlp/cmd/nlpd/Dockerfile.html \
-#      html/nlp/Makefile.html
+other_out=\
+      html/cmd/nlpd/Dockerfile.html \
+      html/Makefile.html \
+      html/README.html
+
 class=tdg-b1
 bucket=gs://353solutions/c
 
@@ -61,10 +64,15 @@ upload-zip:
 	@gsutil cp $(class).zip $(bucket)/$(class)/$(class).zip
 	@gsutil -m -q acl -r ch -u AllUsers:R $(bucket)/$(class)/$(class.zip)
 
-#html/Makefile.html: nlp/Makefile
-#        mkdir -p $(shell dirname $@)
-#        pygmentize -Ofull,linenos=1,style=vs,lineanchors=l -l make -f html -o $@ $<
+html/Makefile.html: nlp/Makefile
+	    mkdir -p $(shell dirname $@)
+	    pygmentize -Ofull,linenos=1,style=vs,lineanchors=l -l make -f html -o $@ $<
 
-#html/nlp/cmd/nlpd/Dockerfile.html: code/nlp/cmd/nlpd/Dockerfile
-#        mkdir -p $(shell dirname $@)
-#        pygmentize -Ofull,linenos=1,style=vs,lineanchors=l -l docker -f html -o $@ $<
+html/cmd/nlpd/Dockerfile.html: nlp/cmd/nlpd/Dockerfile
+	    mkdir -p $(shell dirname $@)
+	    pygmentize -Ofull,linenos=1,style=vs,lineanchors=l -l docker -f html -o $@ $<
+
+
+html/README.html: nlp/REAMDE.md
+	    mkdir -p $(shell dirname $@)
+	    pygmentize -Ofull,linenos=1,style=vs,lineanchors=l -l md -f html -o $@ $<
