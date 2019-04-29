@@ -77,10 +77,12 @@
     - handler
 - logging & metrics
     - expvar
+    - https://medium.com/netflix-techblog/sps-the-pulse-of-netflix-streaming-ae4db0e05f8a
 - Dockerfile
     - Version
     - `CGO_ENABLED=0`
     - runtime.Version, runtime.GOOS ...
+- https://memegenerator.net/img/instances/22605665/worked-fine-in-dev-ops-problem-now.jpg
 - Publishing/workflow & code reviews
     - GitHub account
     - feature branches

@@ -107,10 +107,11 @@ Miki Tebeka <br />
     - [fasthttp](https://godoc.org/github.com/valyala/fasthttp) - Faster HTTP server, use *only* if you really need it
     - [Making & Using HTTP Middleware](https://www.alexedwards.net/blog/making-and-using-middleware)
 - [build tags](https://dave.cheney.net/2013/10/12/how-to-use-conditional-compilation-with-the-go-build-tool)
-- Command line parsing
+- Configuration
+    - [envconfig](https://github.com/kelseyhightower/envconfig) - Configure using environment
     - Built in [flag](https://golang.org/pkg/flag/)
-    - [Cobra](https://github.com/spf13/cobra)
-	- Works well with [Viper](https://github.com/spf13/viper)
+    - [Cobra](https://github.com/spf13/cobra) & [Viper](https://github.com/spf13/viper)
+- [Conway's Law](https://en.wikipedia.org/wiki/Conway%27s_law)
 - [Robustness Principle](https://en.wikipedia.org/wiki/Robustness_principle)
 - [Rules of Optimization](http://wiki.c2.com/?RulesOfOptimization)
 - Options & configuration
