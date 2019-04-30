@@ -77,7 +77,32 @@ Miki Tebeka <br />
 - [Go Proverbs](https://go-proverbs.github.io/) - Think about them ☺
 - [Miki's .vimrc](vimrc)
 
+
 {::comment}
+
+| Format                       | Type    | Schema | Package |
+|------------------------------+---------+--------+---------|
+| [JSON](http://www.json.org/) | Textual | No     | [encoding/json](https://golang.org/pkg/encoding/json) |
+|------------------------------+---------+--------+---------|
+|[XML](http://www.w3schools.com/xml/) | Textual | External | [encoding/xml](https://golang.org/pkg/encoding/xml) |
+|------------------------------+---------+--------+---------|
+| CSV                          | Textual | No     | [encoding/csv](https://golang.org/pkg/encoding/csv) |
+|------------------------------+---------+--------+---------|
+| [YAML](http://yaml.org/)     | Textual | No     | [gopkg.in/yaml.v2](https://gopkg.in/yaml.v2) |
+|------------------------------+---------+--------+---------|
+| [TOML](https://github.com/toml-lang/toml) | Textual | No | [BurntSushi/toml](https://github.com/BurntSushi/toml) |
+|------------------------------+---------+--------+---------|
+| [msgpack](http://msgpack.org/index.html) | Binary | No | [vmihailenco/msgpack](https://github.com/vmihailenco/msgpack) |
+|------------------------------+---------+--------+---------|
+| [bson](http://bsonspec.org/) | Binary  | No     | [mgo/bson](https://godoc.org/labix.org/v2/mgo/bson) |
+|------------------------------+---------+--------+---------|
+| [Protocol Buffers](https://developers.google.com/protocol-buffers/?hl=en) | Binary | Yes | [golang/protobuf](https://github.com/golang/protobuf/) |
+|------------------------------+---------+--------+---------|
+| [Cap'n Proto](https://capnproto.org/)  | Binary | Yes | [capnproto/go-capnproto2](https://github.com/capnproto/go-capnproto2) |
+|------------------------------+---------+--------+---------|
+| [flatbuffers](https://google.github.io/flatbuffers/) | Binary | Yes | [flatbuffers/go](github.com/google/flatbuffers/go) |
+|------------------------------+---------+--------+---------|
+
 - [Testable Examples](https://blog.golang.org/examples)
 - Internal module repository/registry
     - https://godoc.org/rsc.io/go-import-redirector
@@ -93,17 +118,10 @@ Miki Tebeka <br />
 		replace github.com/att/calc => /path/to/calc
 	~~~
     - [jFrog](https://www.jfrog.com/confluence/display/RTF/Go+Registry)
+
+
 - Serialization formats
-    - [JSON](http://www.json.org/) - Textual, no schema ([encoding/json](https://golang.org/pkg/encoding/json))
-    - [XML](http://www.w3schools.com/xml/) - Textual, optional external schema ([encoding/xml](https://golang.org/pkg/encoding/xml))
-    - CSV - Textual, no schema ([encoding/csv](https://golang.org/pkg/encoding/csv))
-    - [YAML](http://yaml.org/) - Textual, no schema ([gopkg.in/yaml.v2](https://gopkg.in/yaml.v2))
-    - [TOML](https://github.com/toml-lang/toml) - Textual, no schema ([BurntSushi/toml](https://github.com/BurntSushi/toml))
-    - [msgpack](http://msgpack.org/index.html) - Binary, no schema ([vmihailenco/msgpack](https://github.com/vmihailenco/msgpack))
-    - [bson](http://bsonspec.org/) - Binary, no schema ([mgo/bson](https://godoc.org/labix.org/v2/mgo/bson))
-    - [Protocol Buffers](https://developers.google.com/protocol-buffers/?hl=en) - Binary, schema ([golang/protobuf](https://github.com/golang/protobuf/))
-    - [Cap'n Proto](https://capnproto.org/) - Binary, schema ([capnproto/go-capnproto2](https://github.com/capnproto/go-capnproto2))
-    - [flatbuffers](https://google.github.io/flatbuffers/) - Binary, schema ([flatbuffers/go](github.com/google/flatbuffers/go))
+    -[JSON](http://www.json.org/) - Textual, no schema ([encoding/json](https://golang.org/pkg/encoding/json))
 - JSON
     - [encoding/json](https://golang.org/pkg/encoding/json/) in the standard library
     - [mapstructure](https://godoc.org/github.com/mitchellh/mapstructure#example-Decode) to fill struct from `map[string]interface{}`
