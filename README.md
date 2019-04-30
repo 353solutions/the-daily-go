@@ -21,14 +21,21 @@ Miki Tebeka <br />
 
 # Code
 
-- [README.md](html/README.html)
-- [go.mod](html/go.html)
-- [nlp.go](html/nlp.html)
-- [nlp_test.go](html/nlp_test.html)
-    - [stemmer/stemmer.go](html/stemmer/stemmer.html)
-    - [stemmer/stemmer_test.go](html/stemmer/stemmer_test.html)
-    - [cmd/nlpd/nlpd.go](html/cmd/nlpd/nlpd.html)
-    - [cmd/nlpd/Dockerfile](html/cmd/nlpd/Dockerfile.html)
+<pre>
+├── <a href="html/README.html">REAMDE.md</a> - Landing page
+├── <a href="html/go.html">go.mod</a> - Dependencies
+├── <a href="html/Makefile.html">Makefile</a> - Task automation
+├── <a href="html/nlp.html">nlp.go</a> - Main package code
+├── <a href="html/nlp_test.html">nlp_test.go</a> - Test
+├── <a href="html/example_test.html">example_test.go</a> - Testable example
+├── stemmer - Sub package
+│   ├── <a href="html/stemmer/stemmer.html">stemmer.go</a>
+│   └── <a href="html/stemmer/stemmer_test.html">stemmer_test.go</a>
+└── cmd - Front ends
+    └── nlpd
+        ├── <a href="html/cmd/nlpd/Dockerfile.html">Dockerfile</a> - Build in docker
+        └── <a href="html/cmd/nlpd/nlpd.html">nlpd.go</a> - HTTP (REST) front end
+</pre>
 
 
 # Links
