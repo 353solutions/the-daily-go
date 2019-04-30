@@ -44,11 +44,9 @@
     - BenchmarkToeknizer
     - go test -bench . -run '^$' .
 	- GOMAXPROCS
-    - go test -bench . -run '^$' . -cpuprofile=prof.out
+    - go test -bench . -run '^$' . -cpuprofile=cpu.pprof
 	- nlp.test
-    - go tool pprof
-	- top 20
-	- lots of memory
+    - go tool pprof -http :8080 cpu.pprof
     - change to `make([]string, 0, 20)`
     - Much of the doubling of speed for core Python that has occurred over the
       last ten decade has occurred one little step at a time, none of the them

@@ -8,6 +8,7 @@ FROM golang:1.12.1-stretch as build
 WORKDIR /nlp
 COPY . .
 ARG NLP_VERSION=unknown
+ENV CGO_ENABLED=0
 RUN go build -ldflags="-X main.Version=${NLP_VERSION}" ./cmd/nlpd
 RUN cp nlpd /usr/local/bin
 
