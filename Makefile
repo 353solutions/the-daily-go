@@ -21,12 +21,13 @@ modfiles=$(shell find nlp -type f -name '*.mod')
 modhtml=$(subst .mod,.html,$(modfiles))
 modout=$(subst nlp/,html/,$(modhtml))
 other=tdg.log
-other_out=\
-      html/cmd/nlpd/Dockerfile.html \
-      html/Makefile.html \
-      html/README.html
 
-class=tdg-b1
+other_out=\
+      html/README.html
+#      html/cmd/nlpd/Dockerfile.html \
+#      html/Makefile.html \
+
+class=tdg
 bucket=gs://353solutions/c
 
 
@@ -73,6 +74,6 @@ html/cmd/nlpd/Dockerfile.html: nlp/cmd/nlpd/Dockerfile
 	    pygmentize -Ofull,linenos=1,style=vs,lineanchors=l -l docker -f html -o $@ $<
 
 
-html/README.html: nlp/REAMDE.md
+html/README.html: nlp/README.md
 	    mkdir -p $(shell dirname $@)
 	    pygmentize -Ofull,linenos=1,style=vs,lineanchors=l -l md -f html -o $@ $<

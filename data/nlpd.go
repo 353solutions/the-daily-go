@@ -11,12 +11,8 @@ import (
 )
 
 func main() {
-	http.HandleFunc("/healthz", okHandler)
+	http.HandleFunc("/healthz", healthHandler)
 	http.HandleFunc("/tokenize", tokenizeHandler)
-	// routing
-	// /x/y - will match only /x/y
-	// /x/y/ - will match /x/y/, /x/y/z ....
-
 	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
 		log.Fatal(err)
@@ -43,7 +39,7 @@ func tokenizeHandler(w http.ResponseWriter, r *http.Request) {
 	w.Write(out)
 }
 
-func okHandler(w http.ResponseWriter, r *http.Request) {
+func healthHandler(w http.ResponseWriter, r *http.Request) {
 	// TODO: Sanity checks
 	fmt.Fprintf(w, "OK\n")
 }

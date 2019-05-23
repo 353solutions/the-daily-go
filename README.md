@@ -1,10 +1,10 @@
 # The Daily Go
-GopherCon Tenerife ∴  2019 (β1)<br />
-URL: [353solutions.com/c/tdg-b1/](http://353solutions.com/c/tdg-b1/)
-([Download Zip](https://storage.googleapis.com/353solutions/c/tdg-b1/tdg-b1.zip) - Unzip and open `README.html`)
+GopherCon Tenerife ∴  2019<br />
+URL: [353solutions.com/c/tdg/](http://353solutions.com/c/tdg/)
 {: .url}
 
 {::comment}
+([Download Zip](https://storage.googleapis.com/353solutions/c/tdg/tdg.zip) - Unzip and open `README.html`)
 {:/comment}
 
 Miki Tebeka <br />
@@ -23,9 +23,12 @@ Miki Tebeka <br />
 
 <pre>
 ├── <a href="html/README.html">REAMDE.md</a> - Landing page
+├── <a href="html/nlp.html">nlp.go</a> - Main package code
+</pre>
+
+{::comment}
 ├── <a href="html/go.html">go.mod</a> - Dependencies
 ├── <a href="html/Makefile.html">Makefile</a> - Task automation
-├── <a href="html/nlp.html">nlp.go</a> - Main package code
 ├── <a href="html/nlp_test.html">nlp_test.go</a> - Test
 ├── <a href="html/example_test.html">example_test.go</a> - Testable example
 ├── stemmer - Sub package
@@ -35,10 +38,13 @@ Miki Tebeka <br />
     └── nlpd
         ├── <a href="html/cmd/nlpd/Dockerfile.html">Dockerfile</a> - Build in docker
         └── <a href="html/cmd/nlpd/nlpd.html">nlpd.go</a> - HTTP (REST) front end
-</pre>
+{:/comment}
 
 
 # Links
+- [Effective Go](https://golang.org/doc/effective_go.html) - Read this!
+
+{::comment}
 - Debugging
     - [dlv](https://github.com/go-delve/delve)
     - [Debug a Go Application running on Kubernetes cluster](https://www.youtube.com/watch?v=YXu2box7z9k)
@@ -73,12 +79,10 @@ Miki Tebeka <br />
     - [Go Modules for Package Mainainers](https://www.youtube.com/watch?v=ms5l0zxC-uM)
     - Also [this summary](modules.html)
 - [How to Write Go Code](https://golang.org/doc/code.html)
-- [Effective Go](https://golang.org/doc/effective_go.html) - Read this!
 - [Go Proverbs](https://go-proverbs.github.io/) - Think about them ☺
 - [Miki's .vimrc](vimrc)
 
 
-{::comment}
 
 | Format                       | Type    | Schema | Package |
 |------------------------------+---------+--------+---------|

@@ -19,6 +19,7 @@
 
 # Workshop
 - create project on github
+    - https://github.com/353solutions/nlp
 - git clone project
 - cd project, git add ...
 - go mod init

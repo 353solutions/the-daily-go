@@ -3,3 +3,4 @@ code/nlp/vendor
 *.html
 !slides.html
 prof.out
+nlp
