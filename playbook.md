@@ -1,20 +1,21 @@
 # About
-* Professional work with Go for about 8 years, 20 years in general
-* Worked
+- Professional work with Go for about 8 years, 20 years in general
+- Worked
     - Big companies: Intel, Qualcomm, Applied Materials
     - Small: EWT/FATTOC, SauceLabs, ...
-* Things I wrote in Go
-    * HTTP Proxy
-    * In memory database
-    * go2xunit
-    * selenium
-    * Serverless (nuclio), close to 500K RPS
-    * Data streaming
-* Contributed to many open source projects
-    * Including Go
-* Still code every day
-    * Mostly Go, Python, bash, Clojure, C, ...
-* Still learn every day
+- Things I wrote in Go
+    - HTTP Proxy
+    - In memory database
+    - go2xunit
+    - selenium
+    - Serverless (nuclio), close to 500K RPS
+    - Data streaming
+    - Cyber Security
+- Contributed to many open source projects
+    - Including Go
+- Still code every day
+    - Mostly Go, Python, bash, Clojure, C, ...
+- Still learn every day
     - ןלוכמ רתוי ידימלתמו יתוברמ רתוי ירבחמו יתוברמ יתדמל הברה 
 
 # Workshop
@@ -22,18 +23,18 @@
     - https://github.com/353solutions/nlp
 - git clone project
 - cd project, git add ...
-- go mod init
-    - go.mod
-- go mod tidy
 - Go over the code
     - Tokenize (document)
     - Must in init/var
 - testing
     - `go build` ignores files ending with `_test.go`
-    - nlp_test.go
+    - solutions/nlp/nlp_test.go
     - fail vs fatal
     - table
     - [] vs nil
+- go mod init
+    - go.mod
+    - go mod tidy
     - testify (assert vs require)
     - go get github.com/stretchr/testify
 	- modules.md, our software dependency problem
@@ -41,6 +42,7 @@
     - quick
     - example_test.go
 	- show on godoc.org
+    - CI & skip
 - Performance tuning
     - BenchmarkToeknizer
     - go test -bench . -run '^$' .
@@ -57,7 +59,7 @@
 - debugging
     - The most effective debugging tool is still careful thought, coupled with
       judiciously placed print statements. - Brian Kernighan
-    - sleep (hammock driven development)
+	- And a good night sleep sleep (hammock driven development)
     - Feynman algorithm?
     - IDE
     - dlv test .
@@ -69,13 +71,17 @@
     - go generate
     - build tags
     - go generate
-- cmd/nlpd
+- solutions/nlp/cmd/nlpd/nlpd.go
     - grpc?
     - gorilla
-    - `_check`
+    - `_healthz`
     - handler
+    - flag just for --help
+	- joke on nukedb
+    - github.com/kelseyhightower/envconfig
 - logging & metrics
     - expvar
+	- start with _ import
     - https://medium.com/netflix-techblog/sps-the-pulse-of-netflix-streaming-ae4db0e05f8a
 - Dockerfile
     - Version
@@ -88,7 +94,7 @@
     - PR
     - tag version (semver)
     - go get in testing
-    - license
+    - license (IANAL)
     - solutions/nlp/doc.go
     - README.md
     - GOOS=windows go build

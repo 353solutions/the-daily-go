@@ -26,6 +26,8 @@ Miki Tebeka <br />
 ├── <a href="html/nlp.html">nlp.go</a> - Main package code
 </pre>
 
+Also at [https://github.com/353solutions/nlp](https://github.com/353solutions/nlp).
+
 {::comment}
 ├── <a href="html/go.html">go.mod</a> - Dependencies
 ├── <a href="html/Makefile.html">Makefile</a> - Task automation
@@ -166,7 +168,8 @@ Miki Tebeka <br />
 
 
 # Data & Other
-* [nlp.go](data/nlp.go)
-* [stemmer.go](data/stemmer.go)
+- [Console log](console.log)
+- [nlp.go](data/nlp.go)
 - [nlpd.go](data/nlpd.go)
-* [Console log](console.log)
+- [stemmer.go](data/stemmer.go)
+- [stop_words.txt](data/stop_words.txt)

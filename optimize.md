@@ -20,6 +20,7 @@ use a profiler and see.
 See more [here](https://users.ece.utexas.edu/~adnan/pike.html) and
 [here](http://wiki.c2.com/?RulesOfOptimization).
 
+{::comment}
 ## Performance Mantras
 
 By [Craig Hanson and Pat
@@ -50,6 +51,22 @@ only a subset of the data?
 : Can we use a map here instead of a slice? Research available algorithms and
 data structures and know their complexity. Test them on *your* data
 
+{:/comment}
+
+## General
+
+1. Know thy Hardware
+: CPU affinity, CPU cache, memory, [latency numbers
+...](https://twitter.com/piecalculus/status/459485747842523136?lang=en).
+For example: [Cache-oblivious
+algorithms](https://en.wikipedia.org/wiki/Cache-oblivious_algorithm)
+
+2. Algorithms & Data structures Rule
+: They will usually give you much better performance than any other trick.
+
+3. Include performance in your process
+: Design & code reviews, run & compare benchmarks on CI ...
+
 
 ## Go Specific
 
@@ -78,7 +95,7 @@ know the size. Be careful of slices keep large amounts of memory
 : You can extract the value from the interface first. However it's less 
 generic code.
 
-8. Use `go run -gcflags=-m`
+8. Use `go run -gcflags=-m -l`
 : You'll see what escapes to the heap.
 
 ### Reading
@@ -86,16 +103,3 @@ generic code.
 - [Performance tuning workshop](https://github.com/davecheney/gophercon2018-performance-tuning-workshop/blob/master/6-tips-and-tricks/1-tips-and-tricks.md).
 - [Quick look at some compiler optimization](http://www.golangbootcamp.com/book/tricks_and_tips#sec-compiler_optimizations)
 
-## Non Go Specific
-
-1. Know thy Hardware
-: CPU affinity, CPU cache, memory, [latency numbers
-...](https://people.eecs.berkeley.edu/~rcs/research/interactive_latency.html).
-For example: [Cache-oblivious
-algorithms](https://en.wikipedia.org/wiki/Cache-oblivious_algorithm)
-
-2. Algorithms & Data structures Rule
-: They will usually give you much better performance than any other trick.
-
-3. Include performance in your process
-: Design & code reviews, run & compare benchmarks on CI ...

@@ -7,7 +7,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/tebeka/nlp"
+	"github.com/353solutions/nlp"
 )
 
 func main() {
