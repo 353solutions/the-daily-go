@@ -1,21 +1,33 @@
-# About
-- Professional work with Go for about 8 years, 20 years in general
-- Worked
-    - Big companies: Intel, Qualcomm, Applied Materials
-    - Small: EWT/FATTOC, SauceLabs, ...
-- Things I wrote in Go
-    - HTTP Proxy
-    - In memory database
-    - go2xunit
-    - selenium
-    - Serverless (nuclio), close to 500K RPS
-    - Data streaming
-    - Cyber Security
-- Contributed to many open source projects
-    - Including Go
-- Still code every day
-    - Mostly Go, Python, bash, Clojure, C, ...
-- Still learn every day
+# Setup
+- terminator 2 tabs (one vim)
+- start terminal logger
+- open slides
+- silence phone
+
+# Slides
+- Me
+    - Professional work with Go for about 8 years, 20 years in general
+    - Worked
+	- Big companies: Intel, Qualcomm, Applied Materials
+	- Small: EWT/FATTOC, SauceLabs, ...
+    - Things I wrote in Go
+	- HTTP Proxy
+	- In memory database
+	- go2xunit
+	- selenium
+	- Serverless (nuclio), close to 500K RPS
+	- Data streaming
+	- Cyber Security
+    - Contributed to many open source projects
+	- Including Go
+    - Still code every day
+	- Mostly Go, Python, bash, Clojure, C, ...
+    - Still learn every day
+- logistics
+    - retired army major
+    - netflix prize (2007-2009), didn't get to production
+- Cone of learning
+    - Ask questions
     - ןלוכמ רתוי ידימלתמו יתוברמ רתוי ירבחמו יתוברמ יתדמל הברה 
 
 # Workshop
@@ -33,6 +45,7 @@
     - table
     - [] vs nil
 - go mod init
+    - cat quotes/grove.txt (or http://j.mp/2W1cp7U)
     - go.mod
     - go mod tidy
     - testify (assert vs require)
@@ -40,10 +53,12 @@
 	- modules.md, our software dependency problem
 	- vendor
     - quick
+	- cat quotes/hickey.txt
     - example_test.go
 	- show on godoc.org
     - CI & skip
 - Performance tuning
+    - cat quotes/rules-of-optimization.txt
     - BenchmarkToeknizer
     - go test -bench . -run '^$' .
 	- GOMAXPROCS
@@ -51,16 +66,11 @@
 	- nlp.test
     - go tool pprof -http :8080 cpu.pprof
     - change to `make([]string, 0, 20)`
-    - Much of the doubling of speed for core Python that has occurred over the
-      last ten decade has occurred one little step at a time, none of the them
-      being individually dramatic.
-	- Raymond Hettinger
+    - cat quotes/rdh.txt
     - optimize.md
 - debugging
-    - The most effective debugging tool is still careful thought, coupled with
-      judiciously placed print statements. - Brian Kernighan
-	- And a good night sleep sleep (hammock driven development)
-    - Feynman algorithm?
+    - cat quotes/debug.txt
+    - Feynman algorithm? (quotes/feynman.txt)
     - IDE
     - dlv test .
     - mention gdb
@@ -92,6 +102,7 @@
     - GitHub account
     - feature branches
     - PR
+	- Fixes #...
     - tag version (semver)
     - go get in testing
     - license (IANAL)
@@ -100,6 +111,7 @@
     - GOOS=windows go build
 - Continuous integration
     - Circle CI?
+	- https://circleci.com/gh/353solutions
     - solutions/nlp/.circleci/, solutions/nlp/Dockerfile.test
     - Jenkins
     - chatops
