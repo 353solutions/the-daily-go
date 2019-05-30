@@ -1,0 +1,5 @@
+Rules of Optimization
+
+1. Don't
+2. Don't ... yet
+3. Profile before optimizing

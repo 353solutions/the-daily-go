@@ -1,0 +1,2 @@
+I'm a big proponent of testing, I'm not a big proponent of test writing.
+    - Rich Hickey
