@@ -20,53 +20,19 @@ use a profiler and see.
 See more [here](https://users.ece.utexas.edu/~adnan/pike.html) and
 [here](http://wiki.c2.com/?RulesOfOptimization).
 
-{::comment}
-## Performance Mantras
-
-By [Craig Hanson and Pat
-Crain](http://www.brendangregg.com/blog/2018-06-30/benchmarking-checklist.html)
-
-1. Don't do it
-: Can we avoid doing the calculation at all? For example: Do we need to parse
-the input or just pass it as-is?
-
-2. Do it, but don't do it again
-: Can we use [memoization](https://en.wikipedia.org/wiki/Memoization)/caching?
-Parse objects once at the "edges" and use the parsed objects internally.
-
-3. Do it less
-: Do we need to run this every millisecond? Can every second work? Can we use
-only a subset of the data?
-
-4. Do it later
-: Can we make this API call async?
-
-5. Do it when they're not looking
-: Can we run the calculation in the background while doing another task?
-
-6. Do it concurrently
-: Will concurrency help here? Consider [Amdhal's law](https://en.wikipedia.org/wiki/Amdahl%27s_law).
-
-7. Do it cheaper
-: Can we use a map here instead of a slice? Research available algorithms and
-data structures and know their complexity. Test them on *your* data
-
-{:/comment}
-
 ## General
 
-1. Know thy Hardware
+1. Algorithms & Data structures Rule
+: They will usually give you much better performance than any other trick.
+
+2. Know thy Hardware
 : CPU affinity, CPU cache, memory, [latency numbers
 ...](https://twitter.com/piecalculus/status/459485747842523136?lang=en).
 For example: [Cache-oblivious
 algorithms](https://en.wikipedia.org/wiki/Cache-oblivious_algorithm)
 
-2. Algorithms & Data structures Rule
-: They will usually give you much better performance than any other trick.
-
 3. Include performance in your process
 : Design & code reviews, run & compare benchmarks on CI ...
-
 
 ## Go Specific
 
@@ -102,4 +68,39 @@ generic code.
 - [So you wanna go fast](https://www.slideshare.net/TylerTreat/so-you-wanna-go-fast-80300458)
 - [Performance tuning workshop](https://github.com/davecheney/gophercon2018-performance-tuning-workshop/blob/master/6-tips-and-tricks/1-tips-and-tricks.md).
 - [Quick look at some compiler optimization](http://www.golangbootcamp.com/book/tricks_and_tips#sec-compiler_optimizations)
+- [Performance Mantras](http://www.brendangregg.com/blog/2018-06-30/benchmarking-checklist.html)
+
+
+{::comment}
+## Performance Mantras
+
+By [Craig Hanson and Pat
+Crain](http://www.brendangregg.com/blog/2018-06-30/benchmarking-checklist.html)
+
+1. Don't do it
+: Can we avoid doing the calculation at all? For example: Do we need to parse
+the input or just pass it as-is?
+
+2. Do it, but don't do it again
+: Can we use [memoization](https://en.wikipedia.org/wiki/Memoization)/caching?
+Parse objects once at the "edges" and use the parsed objects internally.
+
+3. Do it less
+: Do we need to run this every millisecond? Can every second work? Can we use
+only a subset of the data?
+
+4. Do it later
+: Can we make this API call async?
+
+5. Do it when they're not looking
+: Can we run the calculation in the background while doing another task?
+
+6. Do it concurrently
+: Will concurrency help here? Consider [Amdhal's law](https://en.wikipedia.org/wiki/Amdahl%27s_law).
+
+7. Do it cheaper
+: Can we use a map here instead of a slice? Research available algorithms and
+data structures and know their complexity. Test them on *your* data
+
+{:/comment}
 

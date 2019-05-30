@@ -11,7 +11,10 @@ Miki Tebeka <br />
 <i class="far fa-envelope"></i> [miki@353solutions.com](mailto:miki@353solutions.com), 
 <i class="fab fa-twitter"></i> [@tebeka](https://twitter.com/tebeka),
 <i class="fab fa-linkedin-in"></i> [mikitebeka](https://www.linkedin.com/in/mikitebeka/),
+
+{::comment}
 <i class="fab fa-blogger-b"></i> [pythonwise blog](http://pythonwise.blogspot.com/)
+{:/comment}
 
 #### Shameless Plugs
 
