@@ -46,7 +46,8 @@ sync: all
 	    --exclude .vscode \
 	    --exclude Makefile \
 	    --exclude solutions \
-	    --exclude nlp/nlp/vendor \
+	    --exclude nlp/vendor \
+	    --exclude quotes \
 	    -av . /tmp/$(class)
 	@gsutil -m rsync -r /tmp/$(class) $(bucket)/$(class)
 	@gsutil -q -m acl -r ch -u AllUsers:R $(bucket)/$(class)
@@ -59,6 +60,7 @@ zip: all
 	    -x '*.gitkeep' \
 	    -x '*.idea*' \
 	    -x '*.swp' \
+	    -x 'vendor/* \
 	    -x Makefile
 
 upload-zip:

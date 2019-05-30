@@ -48,6 +48,7 @@ Also at [https://github.com/353solutions/nlp](https://github.com/353solutions/nl
 
 # Links
 - [Effective Go](https://golang.org/doc/effective_go.html) - Read this!
+- [Go Proverbs](https://go-proverbs.github.io/) - Think about them ☺
 
 {::comment}
 - Debugging
@@ -84,7 +85,6 @@ Also at [https://github.com/353solutions/nlp](https://github.com/353solutions/nl
     - [Go Modules for Package Mainainers](https://www.youtube.com/watch?v=ms5l0zxC-uM)
     - Also [this summary](modules.html)
 - [How to Write Go Code](https://golang.org/doc/code.html)
-- [Go Proverbs](https://go-proverbs.github.io/) - Think about them ☺
 - [Miki's .vimrc](vimrc)
 
 
