@@ -1,10 +1,12 @@
 # The Daily Go
 GopherCon Tenerife ∴  2019<br />
 URL: [353solutions.com/c/tdg/](http://353solutions.com/c/tdg/)
+([Download Zip](https://storage.googleapis.com/353solutions/c/tdg/tdg.zip) - Unzip and open `README.html`)
 {: .url}
 
+
 {::comment}
-([Download Zip](https://storage.googleapis.com/353solutions/c/tdg/tdg.zip) - Unzip and open `README.html`)
+Wifi: Hard Rock Wifi, VIP, Code: 136997
 {:/comment}
 
 Miki Tebeka <br />
@@ -26,16 +28,15 @@ Miki Tebeka <br />
 
 <pre>
 ├── <a href="html/README.html">REAMDE.md</a> - Landing page
-├── <a href="html/nlp.html">nlp.go</a> - Main package code
-</pre>
-
-Also at [https://github.com/353solutions/nlp](https://github.com/353solutions/nlp).
-
-{::comment}
 ├── <a href="html/go.html">go.mod</a> - Dependencies
 ├── <a href="html/Makefile.html">Makefile</a> - Task automation
+├── <a href="html/.gitignore.html">.gitignore</a> - Ignoring files
+├── <a href="html/nlp.html">nlp.go</a> - Main package code
 ├── <a href="html/nlp_test.html">nlp_test.go</a> - Test
 ├── <a href="html/example_test.html">example_test.go</a> - Testable example
+├── <a href="html/Dockerfile.test.html">Dockerfile.test</a> - Test docker
+├── .circleci
+│   └── <a href="html/.circleci/config.html">config.yml</a> - CircleCI configuration
 ├── stemmer - Sub package
 │   ├── <a href="html/stemmer/stemmer.html">stemmer.go</a>
 │   └── <a href="html/stemmer/stemmer_test.html">stemmer_test.go</a>
@@ -43,31 +44,54 @@ Also at [https://github.com/353solutions/nlp](https://github.com/353solutions/nl
     └── nlpd
         ├── <a href="html/cmd/nlpd/Dockerfile.html">Dockerfile</a> - Build in docker
         └── <a href="html/cmd/nlpd/nlpd.html">nlpd.go</a> - HTTP (REST) front end
-{:/comment}
+</pre>
 
-
-# Links
-- [Effective Go](https://golang.org/doc/effective_go.html) - Read this!
-- [Go Proverbs](https://go-proverbs.github.io/) - Think about them ☺
+Also at [https://github.com/353solutions/nlp](https://github.com/353solutions/nlp).
 
 {::comment}
+
+{:/comment}
+
+{::comment}
+# Exercises
+- Test nlpd `tokenizeHandler`
+- Validate that `Port` in configuration is above 8000
+- Add metrics
+    - Last time `/healtz` was hit
+    - Number of bytes sent
+    - Median runtime of last 10 calls to `Tokenize`
+    - Consider using a [middleware](https://www.alexedwards.net/blog/making-and-using-middleware) for the last two
+- Ignore stop (common) words in `Tokenizer`. 
+    - Write a Go script to generate a Go file with stop words as
+      `map[string]bool` from [stop_words.txt](data/stop_words.txt)
+    - Add a rule in the `Makefile` to call it
+- Use `gorilla/mux` for routing instead of `http.HandleFunc`
+    - See that only `POST` requests get to `Tokenize`
+- Add a gRPC back end
+{:/comment}
+
+# Links
+- [Fallacies of distributed computing](https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing#The_fallacies)
+- [The Twelve-Factor App](https://12factor.net/)
 - Debugging
     - [dlv](https://github.com/go-delve/delve)
     - [Debug a Go Application running on Kubernetes cluster](https://www.youtube.com/watch?v=YXu2box7z9k)
     - [gdb](https://golang.org/doc/gdb)
     - [VSCode](https://github.com/Microsoft/vscode-go/wiki/Debugging-Go-code-using-VS-Code)
-- Logging & Metrics
-    - [zap](https://godoc.org/go.uber.org/zap) - Logging library
-    - [logrus](https://godoc.org/github.com/sirupsen/logrus)
-    - Built-in [log](https://golang.org/pkg/log/) (See [here](https://dave.cheney.net/2015/11/05/lets-talk-about-logging) why)
-    - [expvar](https://golang.org/pkg/expvar/)
-- [Semantic versioning](https://semver.org/)
-- [Latency numbers](https://twitter.com/piecalculus/status/459485747842523136?lang=en)
 - Benchmarking & Profiling
     - [High Performance Go Workshop](https://dave.cheney.net/high-performance-go-workshop/dotgo-paris.html)
     - [Performance](https://github.com/golang/go/wiki/Performance) in the Go Wiki
     - [benchcmp](https://godoc.org/golang.org/x/tools/cmd/benchcmp) - Compare benchmarks
     - [pprof](https://golang.org/pkg/pprof/) & [net/http/pprof](https://golang.org/pkg/net/http/pprof/)
+    - [Optimization Tips](optimize.html)
+- [Who's on First?'](https://www.youtube.com/watch?v=kTcRRaXV-fg)
+- [Our Software Depedency Problem](https://research.swtch.com/deps) by Russ Cox
+- Modules
+    - [Using Go Modules](https://blog.golang.org/using-go-modules)
+    - [Using Go modules with vendor support on Travis CI](https://arslan.io/2018/08/26/using-go-modules-with-vendor-support-on-travis-ci/)
+    - [Go Modules](https://github.com/golang/go/wiki/Modules)
+    - [Go Modules for Package Mainainers](https://www.youtube.com/watch?v=ms5l0zxC-uM)
+    - Also [this summary](modules.html)
 - [Documenting Go Code](https://blog.golang.org/godoc-documenting-go-code)
 - Testing
     - [testing](https://golang.org/pkg/testing/)
@@ -77,14 +101,18 @@ Also at [https://github.com/353solutions/nlp](https://github.com/353solutions/nl
     - [gocheck](https://labix.org/gocheck)
     - [Testable examples](https://blog.golang.org/examples)
     - [Using sub tests](https://blog.golang.org/subtests)
-- [Our Software Depedency Problem](https://research.swtch.com/deps) by Russ Cox
-- Modules
-    - [Using Go Modules](https://blog.golang.org/using-go-modules)
-    - [Using Go modules with vendor support on Travis CI](https://arslan.io/2018/08/26/using-go-modules-with-vendor-support-on-travis-ci/)
-    - [Go Modules](https://github.com/golang/go/wiki/Modules)
-    - [Go Modules for Package Mainainers](https://www.youtube.com/watch?v=ms5l0zxC-uM)
-    - Also [this summary](modules.html)
 - [How to Write Go Code](https://golang.org/doc/code.html)
+- [Effective Go](https://golang.org/doc/effective_go.html) - Read this!
+- [Go Proverbs](https://go-proverbs.github.io/) - Think about them ☺
+
+{::comment}
+- Logging & Metrics
+    - [zap](https://godoc.org/go.uber.org/zap) - Logging library
+    - [logrus](https://godoc.org/github.com/sirupsen/logrus)
+    - Built-in [log](https://golang.org/pkg/log/) (See [here](https://dave.cheney.net/2015/11/05/lets-talk-about-logging) why)
+    - [expvar](https://golang.org/pkg/expvar/)
+- [Semantic versioning](https://semver.org/)
+- [Latency numbers](https://twitter.com/piecalculus/status/459485747842523136?lang=en)
 - [Miki's .vimrc](vimrc)
 
 
@@ -164,15 +192,17 @@ Also at [https://github.com/353solutions/nlp](https://github.com/353solutions/nl
     - [gometalinter](https://github.com/alecthomas/gometalinter) - For all your linting needs
 - [Error handling and Go](https://blog.golang.org/error-handling-and-go) blog post
 - [Go standard library](https://golang.org/pkg/)
-- [Fallacies of distributed computing](https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing#The_fallacies)
 - [Falsehoods Programmers Believe about Time](https://infiniteundo.com/post/25326999628/falsehoods-programmers-believe-about-time)
-- [The Twelve-Factor App](https://12factor.net/)
 {:/comment}
 
 
 # Data & Other
+- [.circleci/config.yml](data/config.yml)
+- [Dockerfile](data/Dockerfile)
+- [Dockerfile.test](data/Dockerfile.test)
 - [Console log](console.log)
 - [nlp.go](data/nlp.go)
 - [nlpd.go](data/nlpd.go)
 - [stemmer.go](data/stemmer.go)
 - [stop_words.txt](data/stop_words.txt)
+- [tokenizer_cases.json](data/tokenizer_cases.json)

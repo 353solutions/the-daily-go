@@ -23,9 +23,12 @@ modout=$(subst nlp/,html/,$(modhtml))
 other=tdg.log
 
 other_out=\
-      html/README.html
-#      html/cmd/nlpd/Dockerfile.html \
-#      html/Makefile.html \
+      html/.gitignore.html \
+      html/Makefile.html \
+      html/README.html \
+      html/cmd/nlpd/Dockerfile.html \
+      html/Dockerfile.test.html \
+      html/.circleci/config.html
 
 class=tdg
 bucket=gs://353solutions/c
@@ -60,7 +63,7 @@ zip: all
 	    -x '*.gitkeep' \
 	    -x '*.idea*' \
 	    -x '*.swp' \
-	    -x 'vendor/* \
+	    -x 'vendor/*' \
 	    -x Makefile
 
 upload-zip:
@@ -75,7 +78,17 @@ html/cmd/nlpd/Dockerfile.html: nlp/cmd/nlpd/Dockerfile
 	    mkdir -p $(shell dirname $@)
 	    pygmentize -Ofull,linenos=1,style=vs,lineanchors=l -l docker -f html -o $@ $<
 
+html/Dockerfile.test.html: nlp/Dockerfile.test
+	    mkdir -p $(shell dirname $@)
+	    pygmentize -Ofull,linenos=1,style=vs,lineanchors=l -l docker -f html -o $@ $<
 
 html/README.html: nlp/README.md
 	    mkdir -p $(shell dirname $@)
 	    pygmentize -Ofull,linenos=1,style=vs,lineanchors=l -l md -f html -o $@ $<
+
+html/.gitignore.html: nlp/.gitignore
+	    pygmentize -Ofull,linenos=1,style=vs,lineanchors=l -l text -f html -o $@ $<
+
+html/.circleci/config.html: nlp/.circleci/config.yml
+	    mkdir -p $(shell dirname $@)
+	    pygmentize -Ofull,linenos=1,style=vs,lineanchors=l -l yaml -f html -o $@ $<

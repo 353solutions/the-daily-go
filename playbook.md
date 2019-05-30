@@ -4,6 +4,7 @@
 - open slides
 - silence phone
 
+
 # Slides
 - Me
     - Professional work with Go for about 8 years, 20 years in general
@@ -44,7 +45,8 @@
     - fail vs fatal
     - table
     - [] vs nil
-- go mod init
+    - exercise: read cases from JSON
+- go mod init github.com/353solutions/nlp
     - cat quotes/grove.txt (or http://j.mp/2W1cp7U)
     - go.mod
     - go mod tidy

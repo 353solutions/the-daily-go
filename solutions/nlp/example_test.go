@@ -10,7 +10,7 @@ func ExampleTokenize() {
 	s := "Hi, how are you feeling today?"
 	tokens := nlp.Tokenize(s)
 	fmt.Println(tokens)
-	// Output
+	// Output:
 	// [hi how are you feeling today]
 }
 
