@@ -71,6 +71,11 @@ Also at [https://github.com/353solutions/nlp](https://github.com/353solutions/nl
 {:/comment}
 
 # Links
+- Logging & Metrics
+    - [zap](https://godoc.org/go.uber.org/zap) - Logging library
+    - [logrus](https://godoc.org/github.com/sirupsen/logrus)
+    - Built-in [log](https://golang.org/pkg/log/) (See [here](https://dave.cheney.net/2015/11/05/lets-talk-about-logging) why)
+    - [expvar](https://golang.org/pkg/expvar/)
 - [Fallacies of distributed computing](https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing#The_fallacies)
 - [The Twelve-Factor App](https://12factor.net/)
 - Debugging
@@ -84,6 +89,7 @@ Also at [https://github.com/353solutions/nlp](https://github.com/353solutions/nl
     - [benchcmp](https://godoc.org/golang.org/x/tools/cmd/benchcmp) - Compare benchmarks
     - [pprof](https://golang.org/pkg/pprof/) & [net/http/pprof](https://golang.org/pkg/net/http/pprof/)
     - [Optimization Tips](optimize.html)
+    - [Latency numbers](https://twitter.com/piecalculus/status/459485747842523136?lang=en)
 - [Who's on First?'](https://www.youtube.com/watch?v=kTcRRaXV-fg)
 - [Our Software Depedency Problem](https://research.swtch.com/deps) by Russ Cox
 - Modules
@@ -106,13 +112,7 @@ Also at [https://github.com/353solutions/nlp](https://github.com/353solutions/nl
 - [Go Proverbs](https://go-proverbs.github.io/) - Think about them ☺
 
 {::comment}
-- Logging & Metrics
-    - [zap](https://godoc.org/go.uber.org/zap) - Logging library
-    - [logrus](https://godoc.org/github.com/sirupsen/logrus)
-    - Built-in [log](https://golang.org/pkg/log/) (See [here](https://dave.cheney.net/2015/11/05/lets-talk-about-logging) why)
-    - [expvar](https://golang.org/pkg/expvar/)
 - [Semantic versioning](https://semver.org/)
-- [Latency numbers](https://twitter.com/piecalculus/status/459485747842523136?lang=en)
 - [Miki's .vimrc](vimrc)
 
 
