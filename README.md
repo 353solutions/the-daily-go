@@ -5,18 +5,11 @@ URL: [353solutions.com/c/tdg/](http://353solutions.com/c/tdg/)
 {: .url}
 
 
-{::comment}
-Wifi: Hard Rock Wifi, VIP, Code: 136997
-{:/comment}
-
 Miki Tebeka <br />
 <i class="far fa-envelope"></i> [miki@353solutions.com](mailto:miki@353solutions.com), 
 <i class="fab fa-twitter"></i> [@tebeka](https://twitter.com/tebeka),
 <i class="fab fa-linkedin-in"></i> [mikitebeka](https://www.linkedin.com/in/mikitebeka/),
 
-{::comment}
-<i class="fab fa-blogger-b"></i> [pythonwise blog](http://pythonwise.blogspot.com/)
-{:/comment}
 
 #### Shameless Plugs
 
@@ -48,11 +41,8 @@ Miki Tebeka <br />
 
 Also at [https://github.com/353solutions/nlp](https://github.com/353solutions/nlp).
 
-{::comment}
 
-{:/comment}
-
-{::comment}
+<!--
 # Exercises
 - Test nlpd `tokenizeHandler`
 - Validate that `Port` in configuration is above 8000
@@ -68,7 +58,7 @@ Also at [https://github.com/353solutions/nlp](https://github.com/353solutions/nl
 - Use `gorilla/mux` for routing instead of `http.HandleFunc`
     - See that only `POST` requests get to `Tokenize`
 - Add a gRPC back end
-{:/comment}
+-->
 
 # Links
 - Logging & Metrics
@@ -111,7 +101,7 @@ Also at [https://github.com/353solutions/nlp](https://github.com/353solutions/nl
 - [Effective Go](https://golang.org/doc/effective_go.html) - Read this!
 - [Go Proverbs](https://go-proverbs.github.io/) - Think about them ☺
 
-{::comment}
+<!--
 - [Semantic versioning](https://semver.org/)
 - [Miki's .vimrc](vimrc)
 
@@ -193,7 +183,7 @@ Also at [https://github.com/353solutions/nlp](https://github.com/353solutions/nl
 - [Error handling and Go](https://blog.golang.org/error-handling-and-go) blog post
 - [Go standard library](https://golang.org/pkg/)
 - [Falsehoods Programmers Believe about Time](https://infiniteundo.com/post/25326999628/falsehoods-programmers-believe-about-time)
-{:/comment}
+-->
 
 
 # Data & Other
