@@ -1,7 +1,7 @@
 # Setup
 - terminator 2 tabs (one vim)
 - start terminal logger
-- open slides
+- open slides.html
 - silence phone
 
 
@@ -39,6 +39,11 @@
 - Go over the code
     - Tokenize (document)
     - Must in init/var
+- `go mod init github.com/353solutions/nlp`
+- Documentation
+    - README
+    - document
+    - solutions/nlp/example_test.go (only tokenize)
 - testing
     - `go build` ignores files ending with `_test.go`
     - solutions/nlp/nlp_test.go
@@ -46,7 +51,7 @@
     - table
     - [] vs nil
     - exercise: read cases from JSON
-- go mod init github.com/353solutions/nlp
+- Dependency management
     - cat quotes/grove.txt (or http://j.mp/2W1cp7U)
     - go.mod
     - go mod tidy
@@ -54,22 +59,19 @@
     - go get github.com/stretchr/testify
 	- modules.md, our software dependency problem
 	- vendor
+- Fuzzing
     - quick
 	- cat quotes/hickey.txt
-    - example_test.go
-	- show on godoc.org
     - CI & skip
-- Performance tuning
-    - cat quotes/rules-of-optimization.txt
-    - BenchmarkToeknizer
-    - go test -bench . -run '^$' .
-	- GOMAXPROCS
-    - go test -bench . -run '^$' . -cpuprofile=cpu.pprof
-	- nlp.test
-    - go tool pprof -http :8080 cpu.pprof
-    - change to `make([]string, 0, 20)`
-    - cat quotes/rdh.txt
-    - optimize.md
+- Linters
+    - golangci-lint
+    - Makefile for automation
+- add stemmer
+    - Conway's law
+- add stop words
+    - go generate
+    - build tags
+    - go generate
 - debugging
     - cat quotes/debug.txt
     - Feynman algorithm? (quotes/feynman.txt)
@@ -77,16 +79,9 @@
     - dlv test .
     - mention gdb
     - mention logs
-- add stemmer
-    - Conway's law
-- add stop words
-    - go generate
-    - build tags
-    - go generate
 - solutions/nlp/cmd/nlpd/nlpd.go
-    - grpc?
     - gorilla
-    - `_healthz`
+    - `/health`
     - handler
     - flag just for --help
 	- joke on nukedb
@@ -112,9 +107,8 @@
     - README.md
     - GOOS=windows go build
 - Continuous integration
-    - Circle CI?
-	- https://circleci.com/gh/353solutions
-    - solutions/nlp/.circleci/, solutions/nlp/Dockerfile.test
+    - github actions
+    - solutions/nlp/.github/workflows/test.yml
     - Jenkins
     - chatops
 - Deployment strategies

@@ -93,7 +93,10 @@ Also at [https://github.com/353solutions/nlp](https://github.com/353solutions/nl
     - [Go Modules](https://github.com/golang/go/wiki/Modules)
     - [Go Modules for Package Mainainers](https://www.youtube.com/watch?v=ms5l0zxC-uM)
     - Also [this summary](modules.html)
-- [Documenting Go Code](https://blog.golang.org/godoc-documenting-go-code)
+- Documentation
+    - [Documenting Go Code](https://blog.golang.org/godoc-documenting-go-code)
+    - [godock-tricks](https://pkg.go.dev/github.com/fluhus/godoc-tricks)
+    - `gob` package [doc.go](https://golang.org/src/encoding/gob/doc.go)
 - Testing
     - [testing](https://golang.org/pkg/testing/)
     - [testing/quick](https://golang.org/pkg/testing/quick/)

@@ -1,4 +1,4 @@
-module nlp
+module github.com/353solutions/nlp
 
 go 1.12
 
