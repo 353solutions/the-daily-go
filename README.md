@@ -60,6 +60,16 @@ Also at [https://github.com/353solutions/nlp](https://github.com/353solutions/nl
 - Add a gRPC back end
 -->
 
+# Data
+- [.github/workflows/test.yml](data/test.yml)
+- [Dockerfile.test](data/Dockerfile.test)
+- [Dockerfile](data/Dockerfile)
+- [nlp.go](data/nlp.go)
+- [nlpd.go](data/nlpd.go)
+- [stemmer.go](data/stemmer.go)
+- [stop_words.txt](data/stop_words.txt)
+- [tokenizer_cases.json](data/tokenizer_cases.json)
+
 # Links
 
 - [How to Write Go Code](https://golang.org/doc/code.html)
@@ -188,14 +198,3 @@ Also at [https://github.com/353solutions/nlp](https://github.com/353solutions/nl
 - [Go standard library](https://golang.org/pkg/)
 - [Falsehoods Programmers Believe about Time](https://infiniteundo.com/post/25326999628/falsehoods-programmers-believe-about-time)
 -->
-
-
-# Data & Other
-- [.circleci/config.yml](data/config.yml)
-- [Dockerfile](data/Dockerfile)
-- [Dockerfile.test](data/Dockerfile.test)
-- [nlp.go](data/nlp.go)
-- [nlpd.go](data/nlpd.go)
-- [stemmer.go](data/stemmer.go)
-- [stop_words.txt](data/stop_words.txt)
-- [tokenizer_cases.json](data/tokenizer_cases.json)

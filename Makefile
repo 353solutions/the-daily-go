@@ -7,7 +7,7 @@ mdignore=playbook.md TODO.md
 mdfiles=$(filter-out $(mdignore),$(wildcard *.md))
 mdout=$(subst .md,.html,$(mdfiles))
 
-class=tdg1
+class=tdg21
 bucket=gs://353solutions/c
 
 
@@ -38,7 +38,7 @@ sync: all
 
 
 zip: all
-	zip -r9 $(class).zip nlp html data $(other) README.html \
+	zip -r9 $(class).zip nlp html data README.html \
 	    -x '*.cache*' \
 	    -x '*.git/*' \
 	    -x '*.gitkeep' \

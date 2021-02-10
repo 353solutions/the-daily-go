@@ -71,7 +71,6 @@
 - add stop words
     - go generate
     - build tags
-    - go generate
 - debugging
     - cat quotes/debug.txt
     - Feynman algorithm? (quotes/feynman.txt)
@@ -89,6 +88,7 @@
 - logging & metrics
     - expvar
 	- start with _ import
+    - profiler with build tag
     - https://medium.com/netflix-techblog/sps-the-pulse-of-netflix-streaming-ae4db0e05f8a
 - Dockerfile
     - Version
