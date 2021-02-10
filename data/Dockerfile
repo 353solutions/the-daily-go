@@ -1,17 +1,18 @@
-# Docker container for nlpd
-# Run
-#   docker run -p8080:8080 tdg/nlp
+FROM golang:1.15-buster as build
 
-
-FROM golang:1.12.5-stretch as build
-
-WORKDIR /nlp
+WORKDIR /app
+COPY go.mod go.sum ./
+RUN go mod download
 COPY . .
-ENV CGO_ENABLED=0
-RUN go build ./cmd/nlpd
+ARG VERSION=unknown
+RUN go build -ldflags="-X main.version=${VERSION}" -o nlpd ./cmd/nlpd
 
-FROM debian:stretch-slim
-COPY --from=build /nlp/nlp /usr/local/bin
+FROM debian:buster-slim
+RUN mkdir /app
+COPY --from=build /app/nlpd /app/nlpd
 
-ENV NLP_PORT 8080
-CMD nlpd
+# Don't run as root user
+RUN useradd nlp
+USER nlp
+ENV NLPD_ADDR 8080
+CMD /app/nlpd

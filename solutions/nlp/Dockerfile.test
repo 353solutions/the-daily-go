@@ -1,5 +1,10 @@
-FROM golang:1.12.4
+FROM golang:1.15
 WORKDIR /nlp
+COPY go.mod go.sum ./
+RUN go mod download
 COPY . .
 ENV CI="yes"
 RUN go test -v ./...
+
+
+# vim: ft=dockerfile

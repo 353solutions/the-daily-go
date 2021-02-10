@@ -1,24 +1,25 @@
 # The Daily Go
-GopherCon Tenerife ∴  2019<br />
-URL: [353solutions.com/c/tdg/](http://353solutions.com/c/tdg/)
+GopherCon Israel ∴  2021<br />
+URL: [353solutions.com/c/tdg21/](http://353solutions.com/c/tdg21/)
+
+<!--
 ([Download Zip](https://storage.googleapis.com/353solutions/c/tdg/tdg.zip) - Unzip and open `README.html`)
-{: .url}
+-->
 
-
-Miki Tebeka <br />
-<i class="far fa-envelope"></i> [miki@353solutions.com](mailto:miki@353solutions.com), 
-<i class="fab fa-twitter"></i> [@tebeka](https://twitter.com/tebeka),
-<i class="fab fa-linkedin-in"></i> [mikitebeka](https://www.linkedin.com/in/mikitebeka/),
+Miki Tebeka
+<i class="far fa-envelope"></i> [miki@353solutions.com](mailto:miki@353solutions.com), <i class="fab fa-twitter"></i> [@tebeka](https://twitter.com/tebeka), <i class="fab fa-linkedin-in"></i> [mikitebeka](https://www.linkedin.com/in/mikitebeka/)
 
 
 #### Shameless Plugs
 
-* [Go Essential Training](https://www.linkedin.com/learning/go-essential-training/) - LinkedIn Learning
-    - [Rest of classes](https://www.linkedin.com/learning/instructors/miki-tebeka)
-* [Forging Python](http://forging-python.com) - Miki's book<br />
+- [Books](https://www.353solutions.com/books)
+- [LinkedIn Learning classes](https://www.linkedin.com/learning/instructors/miki-tebeka)
 
 # Code
 
+TBD
+
+<!--
 <pre>
 ├── <a href="html/README.html">REAMDE.md</a> - Landing page
 ├── <a href="html/go.html">go.mod</a> - Dependencies
@@ -42,7 +43,6 @@ Miki Tebeka <br />
 Also at [https://github.com/353solutions/nlp](https://github.com/353solutions/nlp).
 
 
-<!--
 # Exercises
 - Test nlpd `tokenizeHandler`
 - Validate that `Port` in configuration is above 8000
@@ -61,6 +61,11 @@ Also at [https://github.com/353solutions/nlp](https://github.com/353solutions/nl
 -->
 
 # Links
+
+- [How to Write Go Code](https://golang.org/doc/code.html)
+- [Effective Go](https://golang.org/doc/effective_go.html) - Read this!
+
+<!--
 - Logging & Metrics
     - [zap](https://godoc.org/go.uber.org/zap) - Logging library
     - [logrus](https://godoc.org/github.com/sirupsen/logrus)
@@ -97,11 +102,7 @@ Also at [https://github.com/353solutions/nlp](https://github.com/353solutions/nl
     - [gocheck](https://labix.org/gocheck)
     - [Testable examples](https://blog.golang.org/examples)
     - [Using sub tests](https://blog.golang.org/subtests)
-- [How to Write Go Code](https://golang.org/doc/code.html)
-- [Effective Go](https://golang.org/doc/effective_go.html) - Read this!
 - [Go Proverbs](https://go-proverbs.github.io/) - Think about them ☺
-
-<!--
 - [Semantic versioning](https://semver.org/)
 - [Miki's .vimrc](vimrc)
 
@@ -190,7 +191,6 @@ Also at [https://github.com/353solutions/nlp](https://github.com/353solutions/nl
 - [.circleci/config.yml](data/config.yml)
 - [Dockerfile](data/Dockerfile)
 - [Dockerfile.test](data/Dockerfile.test)
-- [Console log](console.log)
 - [nlp.go](data/nlp.go)
 - [nlpd.go](data/nlpd.go)
 - [stemmer.go](data/stemmer.go)

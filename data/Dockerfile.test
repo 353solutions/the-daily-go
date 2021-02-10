@@ -1,4 +1,4 @@
-FROM golang:1.12.4
+FROM golang:1.15-slim
 WORKDIR /nlp
 COPY . .
 ENV CI="yes"
