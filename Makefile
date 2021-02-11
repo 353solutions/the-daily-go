@@ -38,7 +38,7 @@ sync: all
 
 
 zip: all
-	zip -r9 $(class).zip nlp html data README.html \
+	zip -r9 353-tdg.zip nlp html data README.html \
 	    -x '*.cache*' \
 	    -x '*.git/*' \
 	    -x '*.gitkeep' \

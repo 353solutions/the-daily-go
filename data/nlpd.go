@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"io"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -11,7 +12,7 @@ import (
 )
 
 func main() {
-	http.HandleFunc("/healthz", healthHandler)
+	http.HandleFunc("/health", healthHandler)
 	http.HandleFunc("/tokenize", tokenizeHandler)
 	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
@@ -21,7 +22,7 @@ func main() {
 
 func tokenizeHandler(w http.ResponseWriter, r *http.Request) {
 	defer r.Body.Close()
-	data, err := ioutil.ReadAll(r.Body)
+	data, err := ioutil.ReadAll(io.LimitReader(r.Body, 1<<20))
 	if err != nil {
 		log.Printf("can't read request - %s", err)
 		http.Error(w, err.Error(), http.StatusBadRequest)

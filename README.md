@@ -1,9 +1,9 @@
 # The Daily Go
 GopherCon Israel ∴  2021<br />
-URL: [353solutions.com/c/tdg21/](http://353solutions.com/c/tdg21/)
+URL: [353solutions.com/c/tdg21/](http://353solutions.com/c/tdg21/) ([Download Zip](353-tdg.zip) - Unzip and open `README.html`)
+GitHub Repo: [https://github.com/353solutions/nlp](https://github.com/353solutions/nlp) (we're on the `gcil2021`  branch)
 
 <!--
-([Download Zip](https://storage.googleapis.com/353solutions/c/tdg/tdg.zip) - Unzip and open `README.html`)
 -->
 
 Miki Tebeka
@@ -17,65 +17,69 @@ Miki Tebeka
 
 # Code
 
-TBD
-
-<!--
 <pre>
-├── <a href="html/README.html">REAMDE.md</a> - Landing page
-├── <a href="html/go.html">go.mod</a> - Dependencies
-├── <a href="html/Makefile.html">Makefile</a> - Task automation
-├── <a href="html/.gitignore.html">.gitignore</a> - Ignoring files
-├── <a href="html/nlp.html">nlp.go</a> - Main package code
-├── <a href="html/nlp_test.html">nlp_test.go</a> - Test
-├── <a href="html/example_test.html">example_test.go</a> - Testable example
-├── <a href="html/Dockerfile.test.html">Dockerfile.test</a> - Test docker
-├── .circleci
-│   └── <a href="html/.circleci/config.html">config.yml</a> - CircleCI configuration
+├── <a href="html/README.md.html">REAMDE.md</a> - Landing page
+├── <a href="html/go.mod.html">go.mod</a> - Dependencies
+├── <a href="html/nlp.go.html">nlp.go</a> - Main package code
+├── <a href="html/doc.go.html">doc.go</a> - Package level documentation
+├── <a href="html/example_test.go.html">example_test.go</a> - Testable example
+├── <a href="html/gen_stop.go.html">gen_stop.go</a> - Generate `stop_words.go`
+├── <a href="html/stop_words.txt.html">stop_words.txt</a> - Stop word list
+├── <a href="html/nlp_test.go.html">nlp_test.go</a> - Test
+├── testdata - Test data files
+│   └── <a href="html/testdata/tokenizer_cases.json.html">tokenizer_cases.json</a> - Test cases
 ├── stemmer - Sub package
 │   ├── <a href="html/stemmer/stemmer.html">stemmer.go</a>
 │   └── <a href="html/stemmer/stemmer_test.html">stemmer_test.go</a>
 └── cmd - Front ends
     └── nlpd
-        ├── <a href="html/cmd/nlpd/Dockerfile.html">Dockerfile</a> - Build in docker
         └── <a href="html/cmd/nlpd/nlpd.html">nlpd.go</a> - HTTP (REST) front end
 </pre>
 
-Also at [https://github.com/353solutions/nlp](https://github.com/353solutions/nlp).
+[Console Log](console.log)
 
+# Possible Exercises
 
-# Exercises
 - Test nlpd `tokenizeHandler`
 - Validate that `Port` in configuration is above 8000
 - Add metrics
-    - Last time `/healtz` was hit
+    - Last time `/health` was hit
     - Number of bytes sent
     - Median runtime of last 10 calls to `Tokenize`
     - Consider using a [middleware](https://www.alexedwards.net/blog/making-and-using-middleware) for the last two
-- Ignore stop (common) words in `Tokenizer`. 
-    - Write a Go script to generate a Go file with stop words as
-      `map[string]bool` from [stop_words.txt](data/stop_words.txt)
-    - Add a rule in the `Makefile` to call it
 - Use `gorilla/mux` for routing instead of `http.HandleFunc`
     - See that only `POST` requests get to `Tokenize`
 - Add a gRPC back end
--->
 
 # Data
-- [.github/workflows/test.yml](data/test.yml)
-- [Dockerfile.test](data/Dockerfile.test)
-- [Dockerfile](data/Dockerfile)
 - [nlp.go](data/nlp.go)
 - [nlpd.go](data/nlpd.go)
 - [stemmer.go](data/stemmer.go)
+- [gen_stop.go](data/gen_stop.go)
 - [stop_words.txt](data/stop_words.txt)
 - [tokenizer_cases.json](data/tokenizer_cases.json)
 
 # Links
 
-- [How to Write Go Code](https://golang.org/doc/code.html)
-- [Effective Go](https://golang.org/doc/effective_go.html) - Read this!
-
-<!--
+- [Standard Project Layout](https://github.com/golang-standards/project-layout)
+- [Go 1.16 "embed"](https://golangtutorial.dev/tips/embed-files-in-go/)
+- [Conway's Law](https://en.wikipedia.org/wiki/Conway%27s_law)
+- [Use internal packages to reduce your public API surface](https://dave.cheney.net/2019/10/06/use-internal-packages-to-reduce-your-public-api-surface) by Dave Cheney
+- [Crash only software](https://en.wikipedia.org/wiki/Crash-only_software)
+    - See also [here](https://lwn.net/Articles/191059/)
+- Linters
+    - [go vet](https://golang.org/cmd/vet/)
+    - [golangci-lint](https://github.com/golangci/golangci-lint)
+    - [staticcheck](https://staticcheck.io/)
+    - [gosec](https://github.com/securego/gosec)
+    - Miki's [recheck](https://github.com/tebeka/recheck)
+- Dependency Management
+    - [Our Software Depedency Problem](https://research.swtch.com/deps) by Russ Cox
+    - [Using Go Modules](https://blog.golang.org/using-go-modules)
+    - [Using Go modules with vendor support on Travis CI](https://arslan.io/2018/08/26/using-go-modules-with-vendor-support-on-travis-ci/)
+    - [Go Modules](https://github.com/golang/go/wiki/Modules)
+    - [Go Modules for Package Mainainers](https://www.youtube.com/watch?v=ms5l0zxC-uM)
+    - Also [this summary](modules.html)
 - Logging & Metrics
     - [zap](https://godoc.org/go.uber.org/zap) - Logging library
     - [logrus](https://godoc.org/github.com/sirupsen/logrus)
@@ -83,6 +87,31 @@ Also at [https://github.com/353solutions/nlp](https://github.com/353solutions/nl
     - [expvar](https://golang.org/pkg/expvar/)
 - [Fallacies of distributed computing](https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing#The_fallacies)
 - [The Twelve-Factor App](https://12factor.net/)
+- [Who's on First?'](https://www.youtube.com/watch?v=kTcRRaXV-fg)
+- [Systems that run forever and self heal](https://www.infoq.com/presentations/self-heal-scalable-system/) by Joe Armstrong
+- Fuzzing
+    - [testing/quick](https://golang.org/pkg/testing/quick/) - In the standard library
+    - [go-fuzz](https://github.com/dvyukov/go-fuzz) - Discovery driven
+    - [gofuzz](https://github.com/google/gofuzz) - By Google
+    - [Fuzzing Design Draft](https://go.googlesource.com/proposal/+/master/design/draft-fuzzing.md)
+- Testing
+    - [testing](https://golang.org/pkg/testing/)
+    - [http/httptest](https://golang.org/pkg/net/http/httptest/)
+    - [testify](https://godoc.org/github.com/stretchr/testify) for more testing frills
+    - [gocheck](https://labix.org/gocheck)
+    - [ginko](https://onsi.github.io/ginkgo/)
+    - [Testable examples](https://blog.golang.org/examples)
+    - [Using sub tests](https://blog.golang.org/subtests)
+    - [How SQLite is Tested](https://www.sqlite.org/testing.html)
+- Documentation
+    - [Documenting Go Code](https://blog.golang.org/godoc-documenting-go-code)
+    - [godock-tricks](https://pkg.go.dev/github.com/fluhus/godoc-tricks)
+    - `gob` package [doc.go](https://golang.org/src/encoding/gob/doc.go)
+- [Open Source Licences](https://opensource.org/licenses/)
+- [How to Write Go Code](https://golang.org/doc/code.html)
+- [Effective Go](https://golang.org/doc/effective_go.html) - Read this!
+
+<!--
 - Debugging
     - [dlv](https://github.com/go-delve/delve)
     - [Debug a Go Application running on Kubernetes cluster](https://www.youtube.com/watch?v=YXu2box7z9k)
@@ -95,26 +124,6 @@ Also at [https://github.com/353solutions/nlp](https://github.com/353solutions/nl
     - [pprof](https://golang.org/pkg/pprof/) & [net/http/pprof](https://golang.org/pkg/net/http/pprof/)
     - [Optimization Tips](optimize.html)
     - [Latency numbers](https://twitter.com/piecalculus/status/459485747842523136?lang=en)
-- [Who's on First?'](https://www.youtube.com/watch?v=kTcRRaXV-fg)
-- [Our Software Depedency Problem](https://research.swtch.com/deps) by Russ Cox
-- Modules
-    - [Using Go Modules](https://blog.golang.org/using-go-modules)
-    - [Using Go modules with vendor support on Travis CI](https://arslan.io/2018/08/26/using-go-modules-with-vendor-support-on-travis-ci/)
-    - [Go Modules](https://github.com/golang/go/wiki/Modules)
-    - [Go Modules for Package Mainainers](https://www.youtube.com/watch?v=ms5l0zxC-uM)
-    - Also [this summary](modules.html)
-- Documentation
-    - [Documenting Go Code](https://blog.golang.org/godoc-documenting-go-code)
-    - [godock-tricks](https://pkg.go.dev/github.com/fluhus/godoc-tricks)
-    - `gob` package [doc.go](https://golang.org/src/encoding/gob/doc.go)
-- Testing
-    - [testing](https://golang.org/pkg/testing/)
-    - [testing/quick](https://golang.org/pkg/testing/quick/)
-    - [http/httptest](https://golang.org/pkg/net/http/httptest/)
-    - [testify](https://godoc.org/github.com/stretchr/testify) for more testing frills
-    - [gocheck](https://labix.org/gocheck)
-    - [Testable examples](https://blog.golang.org/examples)
-    - [Using sub tests](https://blog.golang.org/subtests)
 - [Go Proverbs](https://go-proverbs.github.io/) - Think about them ☺
 - [Semantic versioning](https://semver.org/)
 - [Miki's .vimrc](vimrc)
@@ -188,12 +197,6 @@ Also at [https://github.com/353solutions/nlp](https://github.com/353solutions/nl
 - [Knight Capital](https://en.wikipedia.org/wiki/Knight_Capital_Group#2012_stock_trading_disruption) - the price of bugs in deployment
 - [HTTP cats](https://www.flickr.com/photos/girliemac/sets/72157628409467125/)
     - Has [an API](https://http.cat/)
-- [Crash only software](https://en.wikipedia.org/wiki/Crash-only_software)
-    - See also [here](https://lwn.net/Articles/191059/)
-- Linters
-    - [go vet](https://golang.org/cmd/vet/)
-    - [golangci-lint](https://github.com/golangci/golangci-lint)
-    - [gometalinter](https://github.com/alecthomas/gometalinter) - For all your linting needs
 - [Error handling and Go](https://blog.golang.org/error-handling-and-go) blog post
 - [Go standard library](https://golang.org/pkg/)
 - [Falsehoods Programmers Believe about Time](https://infiniteundo.com/post/25326999628/falsehoods-programmers-believe-about-time)

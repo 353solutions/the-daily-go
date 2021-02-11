@@ -5,7 +5,7 @@ import (
 )
 
 var (
-	suffixes = []string{"s", "ing"}
+	suffixes = []string{"s", "ing", "ed"}
 )
 
 // Stem returns the stemmed version of word

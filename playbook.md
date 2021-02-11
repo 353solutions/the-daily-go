@@ -51,18 +51,10 @@
     - table
     - [] vs nil
     - exercise: read cases from JSON
-- Dependency management
-    - cat quotes/grove.txt (or http://j.mp/2W1cp7U)
-    - go.mod
-    - go mod tidy
-    - testify (assert vs require)
-    - go get github.com/stretchr/testify
-	- modules.md, our software dependency problem
-	- vendor
 - Fuzzing
     - quick
 	- cat quotes/hickey.txt
-    - CI & skip
+- CI & skip
 - Linters
     - golangci-lint
     - Makefile for automation
@@ -71,6 +63,14 @@
 - add stop words
     - go generate
     - build tags
+- Dependency management
+    - cat quotes/grove.txt (or http://j.mp/2W1cp7U)
+    - go.mod
+    - go mod tidy
+    - testify (assert vs require)
+    - go get github.com/stretchr/testify
+	- modules.md, our software dependency problem
+	- vendor
 - debugging
     - cat quotes/debug.txt
     - Feynman algorithm? (quotes/feynman.txt)
@@ -81,6 +81,7 @@
 - solutions/nlp/cmd/nlpd/nlpd.go
     - gorilla
     - `/health`
+	- self check 
     - handler
     - flag just for --help
 	- joke on nukedb

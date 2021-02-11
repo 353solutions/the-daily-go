@@ -1,1027 +1,987 @@
-ls                                                                        Thu May 30, 08:23 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+nlp on  gcil2021 [?] via go v1.15.8 
+$ls
 LICENSE.txt  nlp.go  README.md
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ cat ../wifi.txt                                                           Thu May 30, 09:13 
-Hard Rock Wifi
-VIP
-Code: 136997
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test                                                                   Thu May 30, 09:13 
-PASS
-ok  	_/home/miki/Teaching/the-daily-go/nlp	0.001s
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test -v                                                                Thu May 30, 09:29 
-=== RUN   TestTokenize
---- PASS: TestTokenize (0.00s)
-PASS
-ok  	_/home/miki/Teaching/the-daily-go/nlp	0.001s
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test -v                                                                Thu May 30, 09:29 
-=== RUN   TestTokenize
---- FAIL: TestTokenize (0.00s)
-    nlp_test.go:14: [who s on first ?] != [who s on first]
-FAIL
-exit status 1
-FAIL	_/home/miki/Teaching/the-daily-go/nlp	0.001s╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test -v                                                             Thu May 30, 09:30 1 ↵
-=== RUN   TestTokenize
---- FAIL: TestTokenize (0.00s)
-    nlp_test.go:14: []string{"who", "s", "on", "first", "?"} != []string{"who", "s", "on", "first"}
-FAIL
-exit status 1
-FAIL	_/home/miki/Teaching/the-daily-go/nlp	0.001s
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test -v                                                             Thu May 30, 09:31 1 ↵
-=== RUN   TestTokenizeMulti
---- PASS: TestTokenizeMulti (0.00s)
-=== RUN   TestTokenize
---- FAIL: TestTokenize (0.00s)
-    nlp_test.go:36: []string{"who", "s", "on", "first", "?"} != []string{"who", "s", "on", "first"}
-FAIL
-exit status 1
-FAIL	_/home/miki/Teaching/the-daily-go/nlp	0.001s╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test -v                                                             Thu May 30, 09:43 1 ↵
-=== RUN   TestTokenizeMulti
---- PASS: TestTokenizeMulti (0.00s)
-=== RUN   TestTokenize
---- PASS: TestTokenize (0.00s)
-PASS
-ok  	_/home/miki/Teaching/the-daily-go/nlp	0.001s
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test -v                                                                Thu May 30, 09:43 
-=== RUN   TestTokenizeMulti
---- FAIL: TestTokenizeMulti (0.00s)
-    nlp_test.go:22: []string{} != []string(nil)
-=== RUN   TestTokenize
---- PASS: TestTokenize (0.00s)
-FAIL
-exit status 1
-FAIL	_/home/miki/Teaching/the-daily-go/nlp	0.001s
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test -v                                                             Thu May 30, 09:44 1 ↵=== RUN   TestTokenizeMulti
-=== RUN   TestTokenizeMulti/hi
-=== RUN   TestTokenizeMulti/HI
-=== RUN   TestTokenizeMulti/What's_on_second?
-=== RUN   TestTokenizeMulti/#00
---- FAIL: TestTokenizeMulti (0.00s)
-    --- PASS: TestTokenizeMulti/hi (0.00s)
-    --- PASS: TestTokenizeMulti/HI (0.00s)
-    --- PASS: TestTokenizeMulti/What's_on_second? (0.00s)
-    --- FAIL: TestTokenizeMulti/#00 (0.00s)
-        nlp_test.go:23: []string{} != []string(nil)
-=== RUN   TestTokenize
---- PASS: TestTokenize (0.00s)
-FAIL
-exit status 1
-FAIL	_/home/miki/Teaching/the-daily-go/nlp	0.001s
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test -v                                                             Thu May 30, 09:46 1 ↵
-=== RUN   TestTokenizeMulti
-=== RUN   TestTokenizeMulti/hi
-=== RUN   TestTokenizeMulti/HI
-=== RUN   TestTokenizeMulti/What's_on_second?
-=== RUN   TestTokenizeMulti/#00
---- FAIL: TestTokenizeMulti (0.00s)
-    --- PASS: TestTokenizeMulti/hi (0.00s)
-    --- PASS: TestTokenizeMulti/HI (0.00s)
-    --- PASS: TestTokenizeMulti/What's_on_second? (0.00s)
-    --- FAIL: TestTokenizeMulti/#00 (0.00s)
-        nlp_test.go:27: []string(nil) != []string{"empty"}
-=== RUN   TestTokenize
---- PASS: TestTokenize (0.00s)
-FAIL
-exit status 1
-FAIL	_/home/miki/Teaching/the-daily-go/nlp	0.001s╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test -v                                                             Thu May 30, 09:48 1 ↵
-=== RUN   TestTokenizeMulti
-=== RUN   TestTokenizeMulti/hi
-=== RUN   TestTokenizeMulti/HI
-=== RUN   TestTokenizeMulti/What's_on_second?
-=== RUN   TestTokenizeMulti/<empty>
---- PASS: TestTokenizeMulti (0.00s)
-    --- PASS: TestTokenizeMulti/hi (0.00s)
-    --- PASS: TestTokenizeMulti/HI (0.00s)
-    --- PASS: TestTokenizeMulti/What's_on_second? (0.00s)
-    --- PASS: TestTokenizeMulti/<empty> (0.00s)
-=== RUN   TestTokenize
---- PASS: TestTokenize (0.00s)
-PASS
-ok  	_/home/miki/Teaching/the-daily-go/nlp	0.001s
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test --help | grep parall                                              Thu May 30, 09:49 
-usage: go test [build/test flags] [packages] [build/test flags & test binary flags]
-Run 'go help test' for details.╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go help test --help | grep parall                                      Thu May 30, 09:50 1 ↵
-go help test --help: unknown help topic. Run ' test'.
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go help test  | grep parall                                            Thu May 30, 09:50 1 ↵
--parallel, -run, -short, and -v. If a run of go test has any test
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test -v                                                                Thu May 30, 09:50 
-=== RUN   TestTokenizeMulti
-=== RUN   TestTokenizeMulti/hi
-=== RUN   TestTokenizeMulti/HI
-=== RUN   TestTokenizeMulti/What's_on_second?
-=== RUN   TestTokenizeMulti/<empty>
---- FAIL: TestTokenizeMulti (0.00s)
-    --- FAIL: TestTokenizeMulti/hi (0.00s)
-        nlp_test.go:44: []string(nil) != []string{"hi"}
-    --- FAIL: TestTokenizeMulti/HI (0.00s)
-        nlp_test.go:44: []string(nil) != []string{"hi"}
-    --- FAIL: TestTokenizeMulti/What's_on_second? (0.00s)
-        nlp_test.go:44: []string(nil) != []string{"what", "s", "on", "second"}
-    --- PASS: TestTokenizeMulti/<empty> (0.00s)
-=== RUN   TestTokenize
---- PASS: TestTokenize (0.00s)
-FAIL
-exit status 1
-FAIL	_/home/miki/Teaching/the-daily-go/nlp	0.001s╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test -v                                                             Thu May 30, 10:12 1 ↵
-=== RUN   TestTokenizeMulti
-=== RUN   TestTokenizeMulti/hi
-=== RUN   TestTokenizeMulti/HI
-=== RUN   TestTokenizeMulti/What's_on_second?
-=== RUN   TestTokenizeMulti/<empty>
---- FAIL: TestTokenizeMulti (0.00s)
-    --- PASS: TestTokenizeMulti/hi (0.00s)
-    --- PASS: TestTokenizeMulti/HI (0.00s)
-    --- PASS: TestTokenizeMulti/What's_on_second? (0.00s)
-    --- FAIL: TestTokenizeMulti/<empty> (0.00s)
-        nlp_test.go:44: []string{} != []string(nil)
-=== RUN   TestTokenize
---- PASS: TestTokenize (0.00s)
-FAIL
-exit status 1
-FAIL	_/home/miki/Teaching/the-daily-go/nlp	0.001s
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test -v                                                             Thu May 30, 10:13 1 ↵=== RUN   TestTokenizeMulti
-=== RUN   TestTokenizeMulti/hi
-=== RUN   TestTokenizeMulti/HI
-=== RUN   TestTokenizeMulti/What's_on_second?
-=== RUN   TestTokenizeMulti/<empty>
---- PASS: TestTokenizeMulti (0.00s)
-    --- PASS: TestTokenizeMulti/hi (0.00s)
-    --- PASS: TestTokenizeMulti/HI (0.00s)
-    --- PASS: TestTokenizeMulti/What's_on_second? (0.00s)
-    --- PASS: TestTokenizeMulti/<empty> (0.00s)
-=== RUN   TestTokenize
---- PASS: TestTokenize (0.00s)
-PASS
-ok  	_/home/miki/Teaching/the-daily-go/nlp	0.001s
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test -v                                                                Thu May 30, 10:13 
-=== RUN   TestTokenizeMulti
-=== RUN   TestTokenizeMulti/hi
-=== RUN   TestTokenizeMulti/HI
-=== RUN   TestTokenizeMulti/What's_on_second?
-=== RUN   TestTokenizeMulti/<empty>
---- PASS: TestTokenizeMulti (0.00s)
-    --- PASS: TestTokenizeMulti/hi (0.00s)
-    --- PASS: TestTokenizeMulti/HI (0.00s)
-    --- PASS: TestTokenizeMulti/What's_on_second? (0.00s)
-    --- PASS: TestTokenizeMulti/<empty> (0.00s)
-=== RUN   TestTokenize
---- PASS: TestTokenize (0.00s)
-PASS
-ok  	_/home/miki/Teaching/the-daily-go/nlp	0.002s╭─miki@saitama  nlp (git:gceu2019) 
-╰─$                                                                           Thu May 30, 10:18 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ echo Back 10:35                                                           Thu May 30, 10:19 
-Back 10:35
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$     var testCases []TestCase                                              Thu May 30, 10:19 
 
-        file, err := os.Open("tokenizer_cases.json")
-        if err != nil {
-                t.Fatalf("can't open test cases - %s", err)
-        }
-        defer file.Close()
-
-        dec := json.NewDecoder(file)
-        if err := dec.Decode(&testCases); err != nil {
-                t.Fatalf("bad JSON in test cases - %s", err)
-        }
-
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$go env GOPATH                                                          Thu May 30, 10:42 1 ↵
-/home/miki/go
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ ls /home/miki/go                                                          Thu May 30, 10:42 
-bin  pkg  src
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$                                                                           Thu May 30, 10:42 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go mod init github.com/353solutions/nlp                              Thu May 30, 10:43 130 ↵
+nlp on  gcil2021 [?] via go v1.15.8 
+$ go mod init github.com/353solutions/nlp
 go: creating new go.mod: module github.com/353solutions/nlp
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git add nlp*.go tokenizer_cases.json                                      Thu May 30, 10:44 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git commit -m 'testing'                                                   Thu May 30, 10:46 
-[gceu2019 768b8dd] testing
- 3 files changed, 75 insertions(+)
- create mode 100644 nlp_test.go
- create mode 100644 tokenizer_cases.json
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git push                                                                  Thu May 30, 10:46 Enumerating objects: 7, done.
-Counting objects: 100% (7/7), done.
-Delta compression using up to 4 threads
-Compressing objects: 100% (5/5), done.
-Writing objects: 100% (5/5), 1.15 KiB | 588.00 KiB/s, done.
-Total 5 (delta 1), reused 0 (delta 0)
-remote: Resolving deltas: 100% (1/1), completed with 1 local object.
-To github.com:353solutions/nlp.git
-   4b429b0..768b8dd  gceu2019 -> gceu2019
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ tree                                                                      Thu May 30, 10:46 
+
+nlp on  gcil2021 [?] via go v1.15.8 
+$ tree
 .
 ├── go.mod
 ├── LICENSE.txt
 ├── nlp.go
-├── nlp_test.go
-├── README.md
-└── tokenizer_cases.json
+└── README.md
 
-0 directories, 6 files╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go get github.com/stretchr/testify                                        Thu May 30, 10:46 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test -v                                                                Thu May 30, 10:47 
-# github.com/353solutions/nlp [github.com/353solutions/nlp.test]
-./nlp_test.go:6:2: imported and not used: "reflect"
-FAIL	github.com/353solutions/nlp [build failed]
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test -v                                                             Thu May 30, 10:58 2 ↵
-=== RUN   TestTokenizeMulti
-=== RUN   TestTokenizeMulti/hi
-=== RUN   TestTokenizeMulti/HI
-=== RUN   TestTokenizeMulti/What's_on_second?
-=== RUN   TestTokenizeMulti/<empty>
---- PASS: TestTokenizeMulti (0.00s)
-    --- PASS: TestTokenizeMulti/hi (0.00s)
-    --- PASS: TestTokenizeMulti/HI (0.00s)
-    --- PASS: TestTokenizeMulti/What's_on_second? (0.00s)
-    --- PASS: TestTokenizeMulti/<empty> (0.00s)
-=== RUN   TestTokenize
---- PASS: TestTokenize (0.00s)
-PASS
-ok  	github.com/353solutions/nlp	0.003s╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test -v                                                                Thu May 30, 10:58 
-=== RUN   TestTokenizeMulti
-=== RUN   TestTokenizeMulti/hi
-=== RUN   TestTokenizeMulti/HI
---- FAIL: TestTokenizeMulti (0.00s)
-    --- PASS: TestTokenizeMulti/hi (0.00s)
-    require.go:157: 
-        	Error Trace:	nlp_test.go:61
-        	Error:      	Not equal: 
-        	            	expected: []string{"hiz"}
-        	            	actual  : []string{"hi"}
-        	            	
-        	            	Diff:
-        	            	--- Expected
-        	            	+++ Actual
-        	            	@@ -1,3 +1,3 @@
-        	            	 ([]string) (len=1) {
-        	            	- (string) (len=3) "hiz"
-        	            	+ (string) (len=2) "hi"
-        	            	 }
-        	Test:       	TestTokenizeMulti
-    --- FAIL: TestTokenizeMulti/HI (0.00s)
-        testing.go:820: test executed panic(nil) or runtime.Goexit: subtest may have called FailNow on a parent test
-=== RUN   TestTokenize
---- PASS: TestTokenize (0.00s)
-FAIL
-exit status 1
-FAIL	github.com/353solutions/nlp	0.003s╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test -v                                                             Thu May 30, 10:59 1 ↵
-=== RUN   TestTokenizeMulti
-=== RUN   TestTokenizeMulti/hi
-=== RUN   TestTokenizeMulti/HI
-=== RUN   TestTokenizeMulti/What's_on_second?
-=== RUN   TestTokenizeMulti/<empty>
---- PASS: TestTokenizeMulti (0.00s)
-    --- PASS: TestTokenizeMulti/hi (0.00s)
-    --- PASS: TestTokenizeMulti/HI (0.00s)
-    --- PASS: TestTokenizeMulti/What's_on_second? (0.00s)
-    --- PASS: TestTokenizeMulti/<empty> (0.00s)
-=== RUN   TestTokenize
---- PASS: TestTokenize (0.00s)
-PASS
-ok  	github.com/353solutions/nlp	0.003s
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git add -u                                                                Thu May 30, 10:59 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git status -u                                                             Thu May 30, 11:01 
-On branch gceu2019Your branch is up to date with 'origin/gceu2019'.
+0 directories, 4 files
 
-Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
+nlp on  gcil2021 [?] via go v1.15.8 
+$ go doc .
+package nlp // import "github.com/353solutions/nlp"
 
-	modified:   nlp_test.go
+func Tokenize(text string) []string
+nlp on  gcil2021 [?] via go v1.15.8 
+❮ go doc .
+package nlp // import "github.com/353solutions/nlp"
 
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
+func Tokenize(text string) []string
 
-	go.mod
-	go.sum
+nlp on  gcil2021 [?] via go v1.15.8 
+$ go doc Tokenize
+package nlp // import "."
 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git add go.mod go.sum                                                     Thu May 30, 11:01 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git commit 'using testify & modules'                                      Thu May 30, 11:01 
-error: pathspec 'using testify & modules' did not match any file(s) known to git
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git commit -m 'using testify & modules'                                Thu May 30, 11:02 1 ↵[gceu2019 e31e59c] using testify & modules
- 3 files changed, 46 insertions(+), 15 deletions(-)
- create mode 100644 go.mod
- create mode 100644 go.sum
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git push                                                                  Thu May 30, 11:02 
-Enumerating objects: 7, done.
-Counting objects: 100% (7/7), done.
-Delta compression using up to 4 threads
-Compressing objects: 100% (5/5), done.
-Writing objects: 100% (5/5), 1.24 KiB | 1.24 MiB/s, done.
-Total 5 (delta 1), reused 0 (delta 0)
-remote: Resolving deltas: 100% (1/1), completed with 1 local object.
-To github.com:353solutions/nlp.git
-   768b8dd..e31e59c  gceu2019 -> gceu2019
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test -v                                                                Thu May 30, 11:05 
-=== RUN   TestFloat
---- PASS: TestFloat (0.00s)
-=== RUN   TestTokenizeMulti
-=== RUN   TestTokenizeMulti/hi
-=== RUN   TestTokenizeMulti/HI
-=== RUN   TestTokenizeMulti/What's_on_second?
-=== RUN   TestTokenizeMulti/<empty>
---- PASS: TestTokenizeMulti (0.00s)
-    --- PASS: TestTokenizeMulti/hi (0.00s)
-    --- PASS: TestTokenizeMulti/HI (0.00s)
-    --- PASS: TestTokenizeMulti/What's_on_second? (0.00s)
-    --- PASS: TestTokenizeMulti/<empty> (0.00s)
-=== RUN   TestTokenize
---- PASS: TestTokenize (0.00s)
-PASS
-ok  	github.com/353solutions/nlp	0.003s╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test -v                                                                Thu May 30, 11:05 
-=== RUN   TestFloat
---- FAIL: TestFloat (0.00s)
-    require.go:157: 
-        	Error Trace:	nlp_test.go:30
-        	Error:      	Not equal: 
-        	            	expected: 1.21
-        	            	actual  : 1.2100000000000002
-        	Test:       	TestFloat
-        	Messages:   	float
-=== RUN   TestTokenizeMulti
-=== RUN   TestTokenizeMulti/hi
-=== RUN   TestTokenizeMulti/HI
-=== RUN   TestTokenizeMulti/What's_on_second?
-=== RUN   TestTokenizeMulti/<empty>
---- PASS: TestTokenizeMulti (0.00s)
-    --- PASS: TestTokenizeMulti/hi (0.00s)
-    --- PASS: TestTokenizeMulti/HI (0.00s)
-    --- PASS: TestTokenizeMulti/What's_on_second? (0.00s)
-    --- PASS: TestTokenizeMulti/<empty> (0.00s)
-=== RUN   TestTokenize
---- PASS: TestTokenize (0.00s)
-FAIL
-exit status 1
-FAIL	github.com/353solutions/nlp	0.004s╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test -v                                                             Thu May 30, 11:06 1 ↵
-=== RUN   TestFloat
---- PASS: TestFloat (0.00s)
-=== RUN   TestTokenizeMulti
-=== RUN   TestTokenizeMulti/hi
-=== RUN   TestTokenizeMulti/HI
-=== RUN   TestTokenizeMulti/What's_on_second?
-=== RUN   TestTokenizeMulti/<empty>
---- PASS: TestTokenizeMulti (0.00s)
-    --- PASS: TestTokenizeMulti/hi (0.00s)
-    --- PASS: TestTokenizeMulti/HI (0.00s)
-    --- PASS: TestTokenizeMulti/What's_on_second? (0.00s)
-    --- PASS: TestTokenizeMulti/<empty> (0.00s)
-=== RUN   TestTokenize
---- PASS: TestTokenize (0.00s)
-PASS
-ok  	github.com/353solutions/nlp	0.006s
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go mod vendor                                                             Thu May 30, 11:07 ╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ ls vendor                                                                 Thu May 30, 11:10 
-github.com  modules.txt
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test -mod=vendor -v                                                    Thu May 30, 11:10 
-=== RUN   TestTokenizeMulti
-=== RUN   TestTokenizeMulti/hi
-=== RUN   TestTokenizeMulti/HI
-=== RUN   TestTokenizeMulti/What's_on_second?
-=== RUN   TestTokenizeMulti/<empty>
---- PASS: TestTokenizeMulti (0.00s)
-    --- PASS: TestTokenizeMulti/hi (0.00s)
-    --- PASS: TestTokenizeMulti/HI (0.00s)
-    --- PASS: TestTokenizeMulti/What's_on_second? (0.00s)
-    --- PASS: TestTokenizeMulti/<empty> (0.00s)
-=== RUN   TestTokenize
---- PASS: TestTokenize (0.00s)
-PASS
-ok  	github.com/353solutions/nlp	0.003s
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$cat ../quotes/hickey.txt                                                  Thu May 30, 11:10 
-I'm a big proponent of testing, I'm not a big proponent of test writing.
-    - Rich Hickey
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test  -v                                                               Thu May 30, 11:25 
-=== RUN   TestTokenizerQuick
---- PASS: TestTokenizerQuick (0.00s)
-=== RUN   TestTokenizeMulti
-=== RUN   TestTokenizeMulti/hi
-=== RUN   TestTokenizeMulti/HI
-=== RUN   TestTokenizeMulti/What's_on_second?
-=== RUN   TestTokenizeMulti/<empty>
---- PASS: TestTokenizeMulti (0.00s)
-    --- PASS: TestTokenizeMulti/hi (0.00s)
-    --- PASS: TestTokenizeMulti/HI (0.00s)
-    --- PASS: TestTokenizeMulti/What's_on_second? (0.00s)
-    --- PASS: TestTokenizeMulti/<empty> (0.00s)
-=== RUN   TestTokenize
---- PASS: TestTokenize (0.00s)
-PASS
-ok  	github.com/353solutions/nlp	0.003s╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ rm -r vendor                                                              Thu May 30, 11:25 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ rm -r vendor                                                              Thu May 30, 11:25 
-rm: cannot remove 'vendor': No such file or directory
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test  -v                                                            Thu May 30, 11:28 1 ↵
-=== RUN   TestTokenizerQuick
---- FAIL: TestTokenizerQuick (0.00s)
-    require.go:794: 
-        	Error Trace:	nlp_test.go:22
-        	Error:      	Received unexpected error:
-        	            	#1: failed on input "\U000ba1fc\U0010cd47\U000cc28e\U0009d8ba\U000a5a4e\U00101d7e\U00049b80\U0003ff1e\U0001ab4e㳎\U0006ff33惔\U000de1cf\U000bfaa0\U000dc072\U000bccde\U0007082e\U0005b98e𫈢\U000cbb71\U0004067b\U000df15d\U000a4f98\U000afe2c\U000e17a1\U00086e3a\U000d23b7𞺲\U00071bf8\U0009b6e2\U00088751\U000def93\U000d3d19\U00051484\U0010c525\U000eeeec\U000be944\U000fc4c8𦆒\U000ba236\U000f9c2f\U00109ceb\U000dc15a\U0010e452\U000b506f\U000fa74c𨥃"
-        	Test:       	TestTokenizerQuick
-        	Messages:   	quick
-=== RUN   TestTokenizeMulti
-=== RUN   TestTokenizeMulti/hi
-=== RUN   TestTokenizeMulti/HI
-=== RUN   TestTokenizeMulti/What's_on_second?
-=== RUN   TestTokenizeMulti/<empty>
---- PASS: TestTokenizeMulti (0.00s)
-    --- PASS: TestTokenizeMulti/hi (0.00s)
-    --- PASS: TestTokenizeMulti/HI (0.00s)
-    --- PASS: TestTokenizeMulti/What's_on_second? (0.00s)
-    --- PASS: TestTokenizeMulti/<empty> (0.00s)
-=== RUN   TestTokenize
---- PASS: TestTokenize (0.00s)
-FAIL
-exit status 1
-FAIL	github.com/353solutions/nlp	0.003s╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test  -v                                                            Thu May 30, 11:33 1 ↵
-=== RUN   TestTokenizerQuick
---- PASS: TestTokenizerQuick (0.00s)
-=== RUN   TestTokenizeMulti
-=== RUN   TestTokenizeMulti/hi
-=== RUN   TestTokenizeMulti/HI
-=== RUN   TestTokenizeMulti/What's_on_second?
-=== RUN   TestTokenizeMulti/<empty>
---- PASS: TestTokenizeMulti (0.00s)
-    --- PASS: TestTokenizeMulti/hi (0.00s)
-    --- PASS: TestTokenizeMulti/HI (0.00s)
-    --- PASS: TestTokenizeMulti/What's_on_second? (0.00s)
-    --- PASS: TestTokenizeMulti/<empty> (0.00s)
-=== RUN   TestTokenize
---- PASS: TestTokenize (0.00s)
-PASS
-ok  	github.com/353solutions/nlp	0.003s
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test  -v                                                               Thu May 30, 11:33 === RUN   TestTokenizerQuick
---- PASS: TestTokenizerQuick (0.00s)
-=== RUN   TestTokenizeMulti
-=== RUN   TestTokenizeMulti/hi
-=== RUN   TestTokenizeMulti/HI
-=== RUN   TestTokenizeMulti/What's_on_second?
-=== RUN   TestTokenizeMulti/<empty>
---- PASS: TestTokenizeMulti (0.00s)
-    --- PASS: TestTokenizeMulti/hi (0.00s)
-    --- PASS: TestTokenizeMulti/HI (0.00s)
-    --- PASS: TestTokenizeMulti/What's_on_second? (0.00s)
-    --- PASS: TestTokenizeMulti/<empty> (0.00s)
-=== RUN   TestTokenize
---- PASS: TestTokenize (0.00s)
+func Tokenize(text string) []string
+    Tokenize returns list of tokens in text
+
+
+nlp on  gcil2021 [?] via go v1.15.8 
+$ go doc .       
+package nlp // import "github.com/353solutions/nlp"
+
+
+    Package nlp provides simple natural language processing utilities for Go
+...
+
+func Tokenize(text string) []string
+nlp on  gcil2021 [?] via go v1.15.8 
+$ go test -v
+go: finding module for package github.com/353solutions.com/nlp
+# github.com/353solutions/nlp
+example_test.go:6:2: cannot find module providing package github.com/353solutions.com/nlp: module github.com/353solutions.com/nlp: git ls-remote -q origin in /home/miki/go/pkg/mod/cache/vcs/af32e3b6ffbeaa2b6806a56d1df8044887cac3d45ad58127676f026177b0dbcd: exit status 128:
+	fatal: could not read Username for 'https://github.com': terminal prompts disabled
+Confirm the import path was entered correctly.
+If this is a private repository, see https://golang.org/doc/faq#git_https for additional information.
+FAIL	github.com/353solutions/nlp [setup failed]
+
+nlp on  gcil2021 [?] via go v1.15.8 
+$ cat go.mod                                                                                                1 ↵
+module github.com/353solutions/nlp
+
+go 1.15
+
+nlp on  gcil2021 [?] via go v1.15.8 
+$ ls
+doc.go  example_test.go  go.mod  LICENSE.txt  nlp.go  README.md
+nlp on  gcil2021 [?] via go v1.15.8 
+$ cat example_test.go 
+package nlp
+
+import (
+	"fmt"
+
+	"github.com/353solutions.com/nlp"
+)
+
+func ExampleTokenize() {
+	text := "Hi, how are you feeling today?"
+	tokens := nlp.Tokenize(text)
+	fmt.Println(tokens)
+
+	// Output:
+	// [hi how are you feeling today]
+}
+
+nlp on  gcil2021 [?] via go v1.15.8 
+$ go test -v         # github.com/353solutions/nlp
+package github.com/353solutions/nlp (test)
+	imports github.com/353solutions/nlp: import cycle not allowed in test
+FAIL	github.com/353solutions/nlp [setup failed]
+
+nlp on  gcil2021 [?] via go v1.15.8 
+$ go test -v                                                                                                1 ↵
 === RUN   ExampleTokenize
 --- PASS: ExampleTokenize (0.00s)
 PASS
-ok  	github.com/353solutions/nlp	0.004s
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test  -v                                                               Thu May 30, 11:33 === RUN   TestTokenizerQuick
---- PASS: TestTokenizerQuick (0.00s)
-=== RUN   TestTokenizeMulti
-=== RUN   TestTokenizeMulti/hi
-=== RUN   TestTokenizeMulti/HI
-=== RUN   TestTokenizeMulti/What's_on_second?
-=== RUN   TestTokenizeMulti/<empty>
---- PASS: TestTokenizeMulti (0.00s)
-    --- PASS: TestTokenizeMulti/hi (0.00s)
-    --- PASS: TestTokenizeMulti/HI (0.00s)
-    --- PASS: TestTokenizeMulti/What's_on_second? (0.00s)
-    --- PASS: TestTokenizeMulti/<empty> (0.00s)
-=== RUN   TestTokenize
---- PASS: TestTokenize (0.00s)
+ok  	github.com/353solutions/nlp	0.002s
+
+nlp on  gcil2021 [?] via go v1.15.8 
+$ go test -v
 === RUN   ExampleTokenize
 --- FAIL: ExampleTokenize (0.00s)
 got:
-[i don t know on third]
+[hi how are you feeling today]
 want:
-[i don t know on third hi]
+[hi how you feeling today]
 FAIL
 exit status 1
-FAIL	github.com/353solutions/nlp	0.005s╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ echo Back 12                                                           Thu May 30, 11:34 1 ↵
-Back 12
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test -v                                                                Thu May 30, 11:43 
-=== RUN   TestTokenizerQuick
---- PASS: TestTokenizerQuick (0.00s)
-=== RUN   TestTokenizeMulti
-=== RUN   TestTokenizeMulti/hi
-=== RUN   TestTokenizeMulti/HI
-=== RUN   TestTokenizeMulti/What's_on_second?
-=== RUN   TestTokenizeMulti/<empty>
---- PASS: TestTokenizeMulti (0.00s)
-    --- PASS: TestTokenizeMulti/hi (0.00s)
-    --- PASS: TestTokenizeMulti/HI (0.00s)
-    --- PASS: TestTokenizeMulti/What's_on_second? (0.00s)
-    --- PASS: TestTokenizeMulti/<empty> (0.00s)
-=== RUN   TestTokenize
---- PASS: TestTokenize (0.00s)
-=== RUN   ExampleTokenize
---- PASS: ExampleTokenize (0.00s)
-PASS
-ok  	github.com/353solutions/nlp	0.004s╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test -v -bench .                                                       Thu May 30, 12:15 
-=== RUN   TestTokenizerQuick
---- PASS: TestTokenizerQuick (0.00s)
-=== RUN   TestTokenizeMulti
-=== RUN   TestTokenizeMulti/hi
-=== RUN   TestTokenizeMulti/HI
-=== RUN   TestTokenizeMulti/What's_on_second?
-=== RUN   TestTokenizeMulti/<empty>
---- PASS: TestTokenizeMulti (0.00s)
-    --- PASS: TestTokenizeMulti/hi (0.00s)
-    --- PASS: TestTokenizeMulti/HI (0.00s)
-    --- PASS: TestTokenizeMulti/What's_on_second? (0.00s)
-    --- PASS: TestTokenizeMulti/<empty> (0.00s)
-=== RUN   TestTokenize
---- PASS: TestTokenize (0.00s)
-=== RUN   ExampleTokenize
---- PASS: ExampleTokenize (0.00s)
-goos: linux
-goarch: amd64
-pkg: github.com/353solutions/nlp
-BenchmarkTokenize-4     200000	      6082 ns/op
-PASS
-ok  	github.com/353solutions/nlp	1.303s
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test -v -bench . -run '^$'                                             Thu May 30, 12:17 
-goos: linux
-goarch: amd64
-pkg: github.com/353solutions/nlp
-BenchmarkTokenize-4   	  200000	      5958 ns/op
-PASS
-ok  	github.com/353solutions/nlp	1.261s
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test -v -bench . -run '^$' -cpuprofile=cpu.pprof                       Thu May 30, 12:20 
-goos: linux
-goarch: amd64
-pkg: github.com/353solutions/nlp
-BenchmarkTokenize-4   	  200000	      6002 ns/op
-PASS
-ok  	github.com/353solutions/nlp	1.413s
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$cat ../wifi.txt                                                           Thu May 30, 12:20 
-Hard Rock Wifi
-VIP
-Code: 136997
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ ls                                                                        Thu May 30, 12:21 
-cpu.pprof        go.mod  LICENSE.txt  nlp.test     README.md
-example_test.go  go.sum  nlp.go       nlp_test.go  tokenizer_cases.json
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go tool pprof cpu.pprof                                                   Thu May 30, 12:21 
-File: nlp.test
-Type: cpu
-Time: May 30, 2019 at 12:20pm (BST)
-Duration: 1.41s, Total samples = 1.27s (90.31%)
-Entering interactive mode (type "help" for commands, "o" for options)
-(pprof) %                                                                                        ╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go tool pprof -http :8080 cpu.pprof                                       Thu May 30, 12:24 
-open /tmp/go-build637315405/b001/nlp.test: no such file or directory
-ShowFrom expression matched no samples
-No source information for open /tmp/go-build637315405/b001/nlp.test: no such file or directory
-open /tmp/go-build637315405/b001/nlp.test: no such file or directory
+FAIL	github.com/353solutions/nlp	0.002s
+nlp on  gcil2021 [?] via go v1.15.8 
+$ curl -LO gopkg.in/yaml.v2                                                                                 1 ↵
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   282  100   282    0     0    909      0 --:--:-- --:--:-- --:--:--   912
+100  3684    0  3684    0     0    921      0 --:--:--  0:00:03 --:--:--  1518
 
+nlp on  gcil2021 [?] via go v1.15.8 took 4s 
+❮ curl -L gopkg.in/yaml.v2 
 ^C
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test -v -bench . -run '^$'                                        Thu May 30, 12:34 130 ↵
-goos: linux
-goarch: amd64
-pkg: github.com/353solutions/nlp
-BenchmarkTokenize-4   	  200000	      5646 ns/op
-PASS
-ok  	github.com/353solutions/nlp	1.206s
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ code .                                                                    Thu May 30, 12:34 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ cat ../quotes/debug.txt                                                   Thu May 30, 12:49 
-The most effective debugging tool is still careful thought, coupled with
-judiciously placed print statements.
-    - Brian Kernighan
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$git status                                                                Thu May 30, 12:52 
-On branch gceu2019
-Your branch is up to date with 'origin/gceu2019'.
 
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
+nlp on  gcil2021 [?] via go v1.15.8 took 3s 
+❮ curl -i gopkg.in/yaml.v2                                                                                130 ↵
+HTTP/1.1 302 Found
+Date: Thu, 11 Feb 2021 08:17:01 GMT
+Server: Apache/2.4.29 (Ubuntu)
+Location: https://gopkg.in/yaml.v2
+Content-Length: 282
+Content-Type: text/html; charset=iso-8859-1
 
-	modified:   nlp.go
-	modified:   nlp_test.go
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>302 Found</title>
+</head><body>
+<h1>Found</h1>
+<p>The document has moved <a href="https://gopkg.in/yaml.v2">here</a>.</p>
+<hr>
+<address>Apache/2.4.29 (Ubuntu) Server at gopkg.in Port 80</address>
+</body></html>
+nlp on  gcil2021 [?] via go v1.15.8 
+$ curl -i https://gopkg.in/yaml.v2
+HTTP/1.1 200 OK
+Date: Thu, 11 Feb 2021 08:17:15 GMT
+Server: Apache/2.4.29 (Ubuntu)
+Content-Type: text/html
+Vary: Accept-Encoding
+Transfer-Encoding: chunked
 
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
+<!DOCTYPE html>
+<html >
+	<head>
+		<meta charset="utf-8">
+		<title>yaml.v2 - gopkg.in/yaml.v2</title>
+		<link href='//fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' >
+		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" >
+		<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" >
+		<style>
+			html,
+			body {
+				height: 100%;
+			}
 
-	cpu.pprof
-	debug.test
-	example_test.go
-	nlp.test
+			@media (min-width: 1200px) {
+				.container {
+					width: 970px;
+				}
+			}
 
-no changes added to commit (use "git add" and/or "git commit -a")╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git add example_test.go                                                   Thu May 30, 12:56 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git commit -m 'Example test'                                              Thu May 30, 13:00 
+			body {
+				font-family: 'Ubuntu', sans-serif;
+			}
 
-[gceu2019 fc42deb] Example test
- 1 file changed, 16 insertions(+)
- create mode 100644 example_test.go
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git add .gitignore                                                        Thu May 30, 13:00 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git commit -m ignore                                                      Thu May 30, 13:00 
-[gceu2019 0bad882] ignore
- 1 file changed, 3 insertions(+)
- create mode 100644 .gitignore
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git status -u                                                             Thu May 30, 13:00 
-On branch gceu2019
-Your branch is ahead of 'origin/gceu2019' by 2 commits.
-  (use "git push" to publish your local commits)
+			pre {
+				font-family: 'Ubuntu Mono', sans-serif;
+			}
 
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
+			.main {
+				padding-top: 20px;
+			}
 
-	modified:   nlp.go
-	modified:   nlp_test.go
+			.buttons a {
+				width: 100%;
+				text-align: left;
+				margin-bottom: 5px;
+			}
 
-no changes added to commit (use "git add" and/or "git commit -a")╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git add nlp.go nlp_test.go                                                Thu May 30, 13:00 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git commit -m 'benchmark'                                                 Thu May 30, 13:00 
-[gceu2019 ec160ba] benchmark
- 2 files changed, 46 insertions(+), 3 deletions(-)
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ make test                                                                 Thu May 30, 13:00 
-go test -v ./...
-=== RUN   TestTokenizerQuick
---- PASS: TestTokenizerQuick (0.00s)
-=== RUN   TestTokenizeMulti
-=== RUN   TestTokenizeMulti/hi
-=== RUN   TestTokenizeMulti/HI
-=== RUN   TestTokenizeMulti/What's_on_second?
-=== RUN   TestTokenizeMulti/<empty>
---- FAIL: TestTokenizeMulti (0.00s)
-    --- PASS: TestTokenizeMulti/hi (0.00s)
-    --- PASS: TestTokenizeMulti/HI (0.00s)
-    --- PASS: TestTokenizeMulti/What's_on_second? (0.00s)
-    require.go:157: 
-        	Error Trace:	nlp_test.go:86
-        	Error:      	Not equal: 
-        	            	expected: []string(nil)
-        	            	actual  : []string{}
-        	            	
-        	            	Diff:
-        	            	--- Expected
-        	            	+++ Actual
-        	            	@@ -1,2 +1,3 @@
-        	            	-([]string) <nil>
-        	            	+([]string) {
-        	            	+}
-        	            	 
-        	Test:       	TestTokenizeMulti
-    --- FAIL: TestTokenizeMulti/<empty> (0.00s)
-        testing.go:820: test executed panic(nil) or runtime.Goexit: subtest may have called FailNow on a parent test
-=== RUN   TestTokenize
---- PASS: TestTokenize (0.00s)
+			.getting-started div {
+				padding-top: 12px;
+			}
+
+			.getting-started p, .synopsis p {
+				font-size: 1.3em;
+			}
+
+			.getting-started pre {
+				font-size: 15px;
+			}
+
+			.versions {
+				font-size: 1.3em;
+			}
+			.versions div {
+				padding-top: 5px;
+			}
+			.versions a {
+				font-weight: bold;
+			}
+			.versions a.current {
+				color: black;
+				font-decoration: none;
+			}
+
+			 
+			#wrap {
+				min-height: 100%;
+				height: auto !important;
+				height: 100%;
+				 
+				margin: 0 auto -40px;
+			}
+
+			 
+			#footer {
+				height: 40px;
+				background-color: #eee;
+				padding-top: 8px;
+				text-align: center;
+			}
+
+			 
+			@media (max-width: 767px) {
+				#footer {
+					margin-left: -20px;
+					margin-right: -20px;
+					padding-left: 20px;
+					padding-right: 20px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			if (window.location.hash.length > 1) {
+				window.location = "https://godoc.org/gopkg.in\/yaml.v2" + window.location.hash;
+			}
+		</script>
+		<div id="wrap" >
+			<div class="container" >
+				<div class="row" >
+					<div class="col-sm-12" >
+						<div class="page-header">
+							<h1>gopkg.in/yaml.v2</h1>
+							
+						</div>
+					</div>
+				</div>
+				
+				<div class="row" >
+					<div class="col-sm-12" >
+						<a class="btn btn-lg btn-info" href="https://github.com/go-yaml/yaml/tree/v2.4.0" ><i class="fa fa-github"></i> Source Code</a>
+						<a class="btn btn-lg btn-info" href="https://godoc.org/gopkg.in/yaml.v2" ><i class="fa fa-info-circle"></i> API Documentation</a>
+					</div>
+				</div>
+				<div class="row main" >
+					<div class="col-sm-8 info" >
+						<div class="getting-started" >
+							<h2>Getting started</h2>
+							<div>
+								<p>To get the package, execute:</p>
+								<pre>go get gopkg.in/yaml.v2</pre>
+							</div>
+							<div>
+								<p>To import this package, add the following line to your code:</p>
+								<pre>import "gopkg.in/yaml.v2"</pre>
+								
+							</div>
+							<div>
+								<p>For more details, see the API documentation.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3 col-sm-offset-1 versions" >
+						<h2>Versions</h2>
+						
+							
+								<div>
+									<a href="//gopkg.in/yaml.v3" >v3</a>
+									&rarr;
+									<span class="label label-default">v3</span>
+								</div>
+							
+								<div>
+									<a href="//gopkg.in/yaml.v2" class="current">v2</a>
+									&rarr;
+									<span class="label label-default">v2.4.0</span>
+								</div>
+							
+								<div>
+									<a href="//gopkg.in/yaml.v1" >v1</a>
+									&rarr;
+									<span class="label label-default">v1</span>
+								</div>
+							
+						
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<p class="text-muted credit"><a href="https://gopkg.in">gopkg.in<a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		
+		
+	</body>
+</html>%                                                                                                       
+nlp on  gcil2021 [?] via go v1.15.8 took 3s 
+$ ls
+doc.go  example_test.go  go.mod  LICENSE.txt  nlp.go  README.md  yaml.v2
+
+nlp on  gcil2021 [?] via go v1.15.8 
+$ rm yaml.v2 
+
+nlp on  gcil2021 [?] via go v1.15.8 
+$ go test -v
+go: finding module for package github.com/353solutions/nlp
+# github.com/353solutions/nlp2
+example_test.go:6:2: module github.com/353solutions/nlp@latest found (v0.0.0-20190512081133-8439268a6919), but does not contain package github.com/353solutions/nlp
+FAIL	github.com/353solutions/nlp2 [setup failed]
+
+nlp on  gcil2021 [?] via go v1.15.8 
+$ go test -v                                                                                                1 ↵
+# github.com/353solutions/nlp2_test [github.com/353solutions/nlp2.test]
+./example_test.go:6:2: imported and not used: "github.com/353solutions/nlp2" as nlp
+./example_test.go:11:12: undefined: nlp2
+FAIL	github.com/353solutions/nlp2 [build failed]
+nlp on  gcil2021 [?] via go v1.15.8 
+$ go test -v                                                                                                2 ↵
 === RUN   ExampleTokenize
 --- PASS: ExampleTokenize (0.00s)
-FAIL
-FAIL	github.com/353solutions/nlp	0.003s
-make: *** [Makefile:5: test] Error 1╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ make bench                                                             Thu May 30, 13:01 2 ↵
-go test -bench . -run XXX -cpuprofile=cpu.pprof
-goos: linux
-goarch: amd64
-pkg: github.com/353solutions/nlp
-BenchmarkTokenize-4   	  200000	      5664 ns/op
 PASS
-ok  	github.com/353solutions/nlp	1.312s
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ make bench                                                                Thu May 30, 13:01 
-go test -bench . -run ZZZ -cpuprofile=cpu.pprof
-goos: linux
-goarch: amd64
-pkg: github.com/353solutions/nlp
-BenchmarkTokenize-4   	  200000	      6155 ns/op
-PASS
-ok  	github.com/353solutions/nlp	1.515s
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ make test                                                                 Thu May 30, 13:01 
-go test -v ./...=== RUN   TestTokenizerQuick
---- PASS: TestTokenizerQuick (0.00s)
-=== RUN   TestTokenizeMulti
-=== RUN   TestTokenizeMulti/hi
-=== RUN   TestTokenizeMulti/HI
-=== RUN   TestTokenizeMulti/What's_on_second?
-=== RUN   TestTokenizeMulti/<empty>
---- FAIL: TestTokenizeMulti (0.00s)
-    --- PASS: TestTokenizeMulti/hi (0.00s)
-    --- PASS: TestTokenizeMulti/HI (0.00s)
-    --- PASS: TestTokenizeMulti/What's_on_second? (0.00s)
-    require.go:157: 
-        	Error Trace:	nlp_test.go:86
+ok  	github.com/353solutions/nlp2	0.003s
+
+nlp on  gcil2021 [?] via go v1.15.8 
+$ tree
+.
+├── doc.go
+├── example_test.go
+├── go.mod
+├── go.sum
+├── LICENSE.txt
+├── nlp.go
+└── README.md
+
+0 directories, 7 files
+
+nlp on  gcil2021 [?] via go v1.15.8 
+$go build
+
+nlp on  gcil2021 [?] via go v1.15.8 
+❮ go build
+
+nlp on  gcil2021 [?] via go v1.15.8 
+$ go test -v
+go: finding module for package github.com/stretchr/testify/require
+go: found github.com/stretchr/testify/require in github.com/stretchr/testify v1.7.0
+=== RUN   TestTokenize
+=== RUN   TestTokenize/<empty>
+    nlp_test.go:29: 
+        	Error Trace:	nlp_test.go:29
         	Error:      	Not equal: 
-        	            	expected: []string(nil)
-        	            	actual  : []string{}
+        	            	expected: []string{}
+        	            	actual  : []string(nil)
         	            	
         	            	Diff:
         	            	--- Expected
         	            	+++ Actual
-        	            	@@ -1,2 +1,3 @@
-        	            	-([]string) <nil>
-        	            	+([]string) {
-        	            	+}
+        	            	@@ -1,3 +1,2 @@
+        	            	-([]string) {
+        	            	-}
+        	            	+([]string) <nil>
         	            	 
-        	Test:       	TestTokenizeMulti
-    --- FAIL: TestTokenizeMulti/<empty> (0.00s)
-        testing.go:820: test executed panic(nil) or runtime.Goexit: subtest may have called FailNow on a parent test
-=== RUN   TestTokenize
---- PASS: TestTokenize (0.00s)
-=== RUN   ExampleTokenize
---- PASS: ExampleTokenize (0.00s)
-FAIL
-FAIL	github.com/353solutions/nlp	0.004s
-make: *** [Makefile:5: test] Error 1╭─miki@saitama  nlp (git:gceu2019) 
-╰─$                                                                        Thu May 30, 13:02 2 ↵
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ ls                                                                     Thu May 30, 14:00 2 ↵
-cpu.pprof   example_test.go  go.sum       Makefile  nlp.test     README.md
-debug.test  go.mod           LICENSE.txt  nlp.go    nlp_test.go  tokenizer_cases.json
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ rm *.test cpu.pprof                                                       Thu May 30, 14:00 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ ls                                                                        Thu May 30, 14:01 
-example_test.go  go.sum       Makefile  nlp_test.go  tokenizer_cases.json
-go.mod           LICENSE.txt  nlp.go    README.md
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ clear                                                                     Thu May 30, 14:01 
-
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go                                                                        Thu May 30, 14:02 
-Go is a tool for managing Go source code.
-
-Usage:
-
-	go <command> [arguments]
-
-The commands are:
-
-	bug         start a bug report
-	build       compile packages and dependencies
-	clean       remove object files and cached files
-	doc         show documentation for package or symbol
-	env         print Go environment information
-	fix         update packages to use new APIs
-	fmt         gofmt (reformat) package sources
-	generate    generate Go files by processing source
-	get         download and install packages and dependencies
-	install     compile and install packages and dependencies
-	list        list packages or modules
-	mod         module maintenance
-	run         compile and run Go program
-	test        test packages
-	tool        run specified go tool
-	version     print Go version
-	vet         report likely mistakes in packages
-
-Use "go help <command>" for more information about a command.
-
-Additional help topics:
-
-	buildmode   build modes
-	c           calling between Go and C
-	cache       build and test caching
-	environment environment variables
-	filetype    file types
-	go.mod      the go.mod file
-	gopath      GOPATH environment variable
-	gopath-get  legacy GOPATH go get
-	goproxy     module proxy protocol
-	importpath  import path syntax
-	modules     modules, module versions, and more
-	module-get  module-aware go get
-	packages    package lists and patterns
-	testflag    testing flags
-	testfunc    testing functions
-
-Use "go help <topic>" for more information about that topic.
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test -v -bench . -run '^$' -cpuprofile=cpu.pprof                    Thu May 30, 14:06 2 ↵
-goos: linux
-goarch: amd64
-pkg: github.com/353solutions/nlp
-BenchmarkTokenize-4   	  300000	      4937 ns/op
-PASS
-ok  	github.com/353solutions/nlp	1.736s
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ ls                                                                        Thu May 30, 14:06 
-cpu.pprof        go.mod  LICENSE.txt  nlp.go    nlp_test.go  tokenizer_cases.json
-example_test.go  go.sum  Makefile     nlp.test  README.md
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ ls -lh nlp.test                                                           Thu May 30, 14:06 
--rwxr-xr-x 1 miki miki 9.5M May 30 14:06 nlp.test
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git add .gitignore                                                        Thu May 30, 14:06 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git commit -m 'ignore bench output files'                                 Thu May 30, 14:08 
-[gceu2019 6934420] ignore bench output files
- 1 file changed, 1 insertion(+), 2 deletions(-)╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test -v                                                                Thu May 30, 14:08 
-=== RUN   TestTokenizerQuick
---- PASS: TestTokenizerQuick (0.00s)
-=== RUN   TestTokenizeMulti
-=== RUN   TestTokenizeMulti/hi
-=== RUN   TestTokenizeMulti/HI
-=== RUN   TestTokenizeMulti/What's_on_second?
-=== RUN   TestTokenizeMulti/<empty>
---- FAIL: TestTokenizeMulti (0.00s)
-    --- PASS: TestTokenizeMulti/hi (0.00s)
-    --- PASS: TestTokenizeMulti/HI (0.00s)
-    --- PASS: TestTokenizeMulti/What's_on_second? (0.00s)
-    require.go:157: 
-        	Error Trace:	nlp_test.go:86
-        	Error:      	Not equal: 
-        	            	expected: []string(nil)
-        	            	actual  : []string{}
-        	            	
-        	            	Diff:
-        	            	--- Expected
-        	            	+++ Actual
-        	            	@@ -1,2 +1,3 @@
-        	            	-([]string) <nil>
-        	            	+([]string) {
-        	            	+}
-        	            	 
-        	Test:       	TestTokenizeMulti
-    --- FAIL: TestTokenizeMulti/<empty> (0.00s)
-        testing.go:820: test executed panic(nil) or runtime.Goexit: subtest may have called FailNow on a parent test
-=== RUN   TestTokenize
---- PASS: TestTokenize (0.00s)
+        	Test:       	TestTokenize/<empty>
+=== RUN   TestTokenize/hi
+=== RUN   TestTokenize/HI
+=== RUN   TestTokenize/Who's_on_first?
+--- FAIL: TestTokenize (0.00s)
+    --- FAIL: TestTokenize/<empty> (0.00s)
+    --- PASS: TestTokenize/hi (0.00s)
+    --- PASS: TestTokenize/HI (0.00s)
+    --- PASS: TestTokenize/Who's_on_first? (0.00s)
 === RUN   ExampleTokenize
 --- PASS: ExampleTokenize (0.00s)
 FAIL
 exit status 1
-FAIL	github.com/353solutions/nlp	0.003s╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test -v                                                             Thu May 30, 14:08 1 ↵
-=== RUN   TestTokenizerQuick
---- PASS: TestTokenizerQuick (0.00s)
-=== RUN   TestTokenizeMulti
-=== RUN   TestTokenizeMulti/hi
-=== RUN   TestTokenizeMulti/HI
-=== RUN   TestTokenizeMulti/What's_on_second?
-=== RUN   TestTokenizeMulti/<empty>
---- PASS: TestTokenizeMulti (0.00s)
-    --- PASS: TestTokenizeMulti/hi (0.00s)
-    --- PASS: TestTokenizeMulti/HI (0.00s)
-    --- PASS: TestTokenizeMulti/What's_on_second? (0.00s)
-    --- PASS: TestTokenizeMulti/<empty> (0.00s)
+FAIL	github.com/353solutions/nlp	0.004s
+nlp on  gcil2021 [?] via go v1.15.8 
+$ go test -v                                                                                                1 ↵
 === RUN   TestTokenize
+=== RUN   TestTokenize/<empty>
+    nlp_test.go:29: 
+        	Error Trace:	nlp_test.go:29
+        	Error:      	Not equal: 
+        	            	expected: []string{}
+        	            	actual  : []string(nil)
+        	            	
+        	            	Diff:
+        	            	--- Expected
+        	            	+++ Actual
+        	            	@@ -1,3 +1,2 @@
+        	            	-([]string) {
+        	            	-}
+        	            	+([]string) <nil>
+        	            	 
+        	Test:       	TestTokenize/<empty>
+=== RUN   TestTokenize/hi
+=== RUN   TestTokenize/HI
+=== RUN   TestTokenize/Who's_on_first?
+--- FAIL: TestTokenize (0.00s)
+    --- FAIL: TestTokenize/<empty> (0.00s)
+    --- PASS: TestTokenize/hi (0.00s)
+    --- PASS: TestTokenize/HI (0.00s)
+    --- PASS: TestTokenize/Who's_on_first? (0.00s)
+=== RUN   ExampleTokenize
+--- PASS: ExampleTokenize (0.00s)
+FAIL
+exit status 1
+FAIL	github.com/353solutions/nlp	0.005s
+nlp on  gcil2021 [?] via go v1.15.8 
+$ go test -v                                                                                                1 ↵
+=== RUN   TestTokenize
+=== RUN   TestTokenize/<empty>
+=== RUN   TestTokenize/hi
+=== RUN   TestTokenize/HI
+=== RUN   TestTokenize/Who's_on_first?
 --- PASS: TestTokenize (0.00s)
+    --- PASS: TestTokenize/<empty> (0.00s)
+    --- PASS: TestTokenize/hi (0.00s)
+    --- PASS: TestTokenize/HI (0.00s)
+    --- PASS: TestTokenize/Who's_on_first? (0.00s)
 === RUN   ExampleTokenize
 --- PASS: ExampleTokenize (0.00s)
 PASS
-ok  	github.com/353solutions/nlp	0.003s╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ make bench                                                                Thu May 30, 14:09 
-go test -bench . -run ZZZ -cpuprofile=cpu.pprof
-goos: linux
-goarch: amd64
-pkg: github.com/353solutions/nlp
-BenchmarkTokenize-4   	  300000	      4578 ns/op
-PASS
-ok  	github.com/353solutions/nlp	1.609s
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ make                                                                      Thu May 30, 14:11 
-Makefile:2: *** please pick a target.  Stop.
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ make test                                                              Thu May 30, 14:12 2 ↵
-go test -v
-=== RUN   TestTokenizerQuick
---- PASS: TestTokenizerQuick (0.00s)
-=== RUN   TestTokenizeMulti
-=== RUN   TestTokenizeMulti/hi
-=== RUN   TestTokenizeMulti/HI
-=== RUN   TestTokenizeMulti/What's_on_second?
-=== RUN   TestTokenizeMulti/<empty>
---- PASS: TestTokenizeMulti (0.00s)
-    --- PASS: TestTokenizeMulti/hi (0.00s)
-    --- PASS: TestTokenizeMulti/HI (0.00s)
-    --- PASS: TestTokenizeMulti/What's_on_second? (0.00s)
-    --- PASS: TestTokenizeMulti/<empty> (0.00s)
-=== RUN   TestTokenize
---- PASS: TestTokenize (0.00s)
-=== RUN   ExampleTokenize
---- PASS: ExampleTokenize (0.00s)
-PASS
-ok  	github.com/353solutions/nlp	0.003s╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ tree                                                                      Thu May 30, 14:12 
-.
-├── cpu.pprof
-├── example_test.go
-├── go.mod
-├── go.sum
-├── LICENSE.txt
-├── Makefile
-├── nlp.go
-├── nlp.test
-├── nlp_test.go
-├── README.md
-└── tokenizer_cases.json
+ok  	github.com/353solutions/nlp	0.010s
 
-0 directories, 11 files
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ rm  nlp.test                                                              Thu May 30, 14:13 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ make clean                                                           Thu May 30, 14:13 130 ↵rm -f *.test
-rm -f cpu.pprof
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ tree                                                                      Thu May 30, 14:13 
+nlp on  gcil2021 [?] via go v1.15.8 
+$ go test -v
+# github.com/353solutions/nlp [github.com/353solutions/nlp.test]
+./nlp_test.go:15:10: missing type in composite literal
+FAIL	github.com/353solutions/nlp [build failed]
+nlp on  gcil2021 [?] via go v1.15.8 
+❮ go test -v                                                                                                2 ↵
+Before main
+=== RUN   TestTokenize
+=== RUN   TestTokenize/<empty>
+=== RUN   TestTokenize/hi
+=== RUN   TestTokenize/HI
+=== RUN   TestTokenize/Who's_on_first?
+--- PASS: TestTokenize (0.00s)
+    --- PASS: TestTokenize/<empty> (0.00s)
+    --- PASS: TestTokenize/hi (0.00s)
+    --- PASS: TestTokenize/HI (0.00s)
+    --- PASS: TestTokenize/Who's_on_first? (0.00s)
+=== RUN   ExampleTokenize
+--- PASS: ExampleTokenize (0.00s)
+PASS
+After main
+ok  	github.com/353solutions/nlp	0.004s
+
+nlp on  gcil2021 [?] via go v1.15.8 
+$ cp ../data/tokenizer_cases.json .
+nlp on  gcil2021 [?] via go v1.15.8 
+$ tree
 .
+├── doc.go
 ├── example_test.go
 ├── go.mod
 ├── go.sum
 ├── LICENSE.txt
-├── Makefile
 ├── nlp.go
 ├── nlp_test.go
 ├── README.md
 └── tokenizer_cases.json
 
 0 directories, 9 files
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git add Makefile                                                          Thu May 30, 14:13 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git commit -m 'Project automation'                                        Thu May 30, 14:13 [gceu2019 652eaad] Project automation
- 1 file changed, 14 insertions(+)
- create mode 100644 Makefile
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git status                                                                Thu May 30, 14:14 
-On branch gceu2019
-Your branch is ahead of 'origin/gceu2019' by 5 commits.
-  (use "git push" to publish your local commits)
 
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
+nlp on  gcil2021 [?] via go v1.15.8 
+$ git add .
 
-	modified:   tokenizer_cases.json
+nlp on  gcil2021 [+] via go v1.15.8 
+$ git ci -m 'start of testing'
+[gcil2021 6bc1e4e] start of testing
+ 7 files changed, 110 insertions(+)
+ create mode 100644 doc.go
+ create mode 100644 example_test.go
+ create mode 100644 go.mod
+ create mode 100644 go.sum
+ create mode 100644 nlp.go
+ create mode 100644 nlp_test.go
+ create mode 100644 tokenizer_cases.json
+nlp on  gcil2021 [⇡] via go v1.15.8 
+$ git push
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 2.27 KiB | 2.27 MiB/s, done.
+Total 9 (delta 0), reused 1 (delta 0), pack-reused 0
+To github.com:353solutions/nlp.git
+   8439268..6bc1e4e  gcil2021 -> gcil2021
 
-no changes added to commit (use "git add" and/or "git commit -a")
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git add tokenizer_cases.json                                              Thu May 30, 14:14 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git commit -m 'fixing tests'                                              Thu May 30, 14:14 [gceu2019 f427f25] fixing tests
- 1 file changed, 1 insertion(+), 1 deletion(-)
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ mkdir stemmer                                                             Thu May 30, 14:14 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ cp ../data/stemmer.go stemmer                                             Thu May 30, 14:16 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ ls                                                                        Thu May 30, 14:17 
-example_test.go  go.sum       Makefile  nlp_test.go  stemmer
-go.mod           LICENSE.txt  nlp.go    README.md    tokenizer_cases.json
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ tree                                                                      Thu May 30, 14:17 
+nlp on  gcil2021 via go v1.15.8 took 3s 
+$ tree
 .
+├── doc.go
+├── example_test.go
+├── go.mod
+├── go.sum
+├── LICENSE.txt
+├── nlp.go
+├── nlp_test.go
+├── README.md
+└── tokenizer_cases.json
+
+0 directories, 9 files
+nlp on  gcil2021 [!] via go v1.15.8 
+$ mkdir data 
+
+nlp on  gcil2021 [!] via go v1.15.8 
+$ go test -v
+# github.com/353solutions/nlp [github.com/353solutions/nlp.test]
+./nlp_test.go:4:2: imported and not used: "encoding/json"
+FAIL	github.com/353solutions/nlp [build failed]
+
+nlp on  gcil2021 [!] via go v1.15.8 
+$ go test -v                                                                                                2 ↵
+# github.com/353solutions/nlp [github.com/353solutions/nlp.test]
+./nlp_test.go:18:1: missing return at end of function
+FAIL	github.com/353solutions/nlp [build failed]
+
+nlp on  gcil2021 [!] via go v1.15.8 
+$ go test -v                                                                                                2 ↵
+Before main
+=== RUN   TestTokenize
+=== RUN   TestTokenize/<empty>
+=== RUN   TestTokenize/hi
+=== RUN   TestTokenize/HI
+=== RUN   TestTokenize/Who's_on_first?
+--- PASS: TestTokenize (0.00s)
+    --- PASS: TestTokenize/<empty> (0.00s)
+    --- PASS: TestTokenize/hi (0.00s)
+    --- PASS: TestTokenize/HI (0.00s)
+    --- PASS: TestTokenize/Who's_on_first? (0.00s)
+=== RUN   ExampleTokenize
+--- PASS: ExampleTokenize (0.00s)
+PASS
+After main
+ok  	github.com/353solutions/nlp	0.005s
+nlp on  gcil2021 [!] via go v1.15.8 
+$ go build ./...
+
+nlp on  gcil2021 [!] via go v1.15.8 
+$ ls
+data    example_test.go  go.sum       nlp.go       README.md
+doc.go  go.mod           LICENSE.txt  nlp_test.go  tokenizer_cases.json
+
+nlp on  gcil2021 [!] via go v1.15.8 
+$ mv data testdata
+
+nlp on  gcil2021 [!] via go v1.15.8 
+$ mv tokenizer_cases.json testdata 
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ tree
+.
+├── doc.go
+├── example_test.go
+├── go.mod
+├── go.sum
+├── LICENSE.txt
+├── nlp.go
+├── nlp_test.go
+├── README.md
+└── testdata
+    └── tokenizer_cases.json
+
+1 directory, 9 files
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ tree
+.
+├── doc.go
+├── example_test.go
+├── go.mod
+├── go.sum
+├── LICENSE.txt
+├── nlp.go
+├── nlp_test.go
+├── README.md
+└── testdata
+    └── tokenizer_cases.json
+
+1 directory, 9 files
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ go test -v                      
+# github.com/353solutions/nlp [github.com/353solutions/nlp.test]
+./nlp_test.go:46:38: not enough arguments in call to loadTokenizeCases
+	have (*testing.T)
+	want (*testing.T, string)
+FAIL	github.com/353solutions/nlp [build failed]
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ go test -v                                                                                                2 ↵
+Before main
+=== RUN   TestTokenize
+=== RUN   TestTokenize/<empty>
+=== RUN   TestTokenize/<empty>#01
+=== RUN   TestTokenize/<empty>#02
+=== RUN   TestTokenize/<empty>#03
+--- PASS: TestTokenize (0.00s)
+    --- PASS: TestTokenize/<empty> (0.00s)
+    --- PASS: TestTokenize/<empty>#01 (0.00s)
+    --- PASS: TestTokenize/<empty>#02 (0.00s)
+    --- PASS: TestTokenize/<empty>#03 (0.00s)
+=== RUN   ExampleTokenize
+--- PASS: ExampleTokenize (0.00s)
+PASS
+After main
+ok  	github.com/353solutions/nlp	0.003s
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ go test -vBefore main
+=== RUN   TestTokenize
+=== RUN   TestTokenize/hi
+    nlp_test.go:55: 
+        	Error Trace:	nlp_test.go:55
+        	Error:      	Not equal: 
+        	            	expected: []string(nil)
+        	            	actual  : []string{"hi"}
+        	            	
+        	            	Diff:
+        	            	--- Expected
+        	            	+++ Actual
+        	            	@@ -1,2 +1,4 @@
+        	            	-([]string) <nil>
+        	            	+([]string) (len=1) {
+        	            	+ (string) (len=2) "hi"
+        	            	+}
+        	            	 
+        	Test:       	TestTokenize/hi
+=== RUN   TestTokenize/HI
+    nlp_test.go:55: 
+        	Error Trace:	nlp_test.go:55
+        	Error:      	Not equal: 
+        	            	expected: []string(nil)
+        	            	actual  : []string{"hi"}
+        	            	
+        	            	Diff:
+        	            	--- Expected
+        	            	+++ Actual
+        	            	@@ -1,2 +1,4 @@
+        	            	-([]string) <nil>
+        	            	+([]string) (len=1) {
+        	            	+ (string) (len=2) "hi"
+        	            	+}
+        	            	 
+        	Test:       	TestTokenize/HI
+=== RUN   TestTokenize/What's_on_second?
+    nlp_test.go:55: 
+        	Error Trace:	nlp_test.go:55
+        	Error:      	Not equal: 
+        	            	expected: []string(nil)
+        	            	actual  : []string{"what", "s", "on", "second"}
+        	            	
+        	            	Diff:
+        	            	--- Expected
+        	            	+++ Actual
+        	            	@@ -1,2 +1,7 @@
+        	            	-([]string) <nil>
+        	            	+([]string) (len=4) {
+        	            	+ (string) (len=4) "what",
+        	            	+ (string) (len=1) "s",
+        	            	+ (string) (len=2) "on",
+        	            	+ (string) (len=6) "second"
+        	            	+}
+        	            	 
+        	Test:       	TestTokenize/What's_on_second?
+=== RUN   TestTokenize/<empty>
+--- FAIL: TestTokenize (0.00s)
+    --- FAIL: TestTokenize/hi (0.00s)
+    --- FAIL: TestTokenize/HI (0.00s)
+    --- FAIL: TestTokenize/What's_on_second? (0.00s)
+    --- PASS: TestTokenize/<empty> (0.00s)
+=== RUN   ExampleTokenize
+--- PASS: ExampleTokenize (0.00s)
+FAIL
+After main
+exit status 1
+FAIL	github.com/353solutions/nlp	0.006s
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ go test -v                                                                                                1 ↵
+Before main
+=== RUN   TestTokenize
+=== RUN   TestTokenize/hi
+=== RUN   TestTokenize/HI
+=== RUN   TestTokenize/What's_on_second?
+=== RUN   TestTokenize/<empty>
+--- PASS: TestTokenize (0.00s)
+    --- PASS: TestTokenize/hi (0.00s)
+    --- PASS: TestTokenize/HI (0.00s)
+    --- PASS: TestTokenize/What's_on_second? (0.00s)
+    --- PASS: TestTokenize/<empty> (0.00s)
+=== RUN   ExampleTokenize
+--- PASS: ExampleTokenize (0.00s)
+PASS
+After main
+ok  	github.com/353solutions/nlp	0.006s
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ cat ../quotes/hickey.txt 
+I'm a big proponent of testing, I'm not a big proponent of test writing.
+    - Rich Hickey
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ go test -v              
+Before main
+=== RUN   TestTokenizeFuzz
+--- PASS: TestTokenizeFuzz (0.00s)
+=== RUN   TestTokenize
+=== RUN   TestTokenize/hi
+=== RUN   TestTokenize/HI
+=== RUN   TestTokenize/What's_on_second?
+=== RUN   TestTokenize/<empty>
+--- PASS: TestTokenize (0.00s)
+    --- PASS: TestTokenize/hi (0.00s)
+    --- PASS: TestTokenize/HI (0.00s)
+    --- PASS: TestTokenize/What's_on_second? (0.00s)
+    --- PASS: TestTokenize/<empty> (0.00s)
+=== RUN   ExampleTokenize
+--- PASS: ExampleTokenize (0.00s)
+PASS
+After main
+ok  	github.com/353solutions/nlp	0.006s
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$go test -v
+Before main
+=== RUN   TestTokenizeFuzz
+    nlp_test.go:16: 
+    nlp_test.go:16: 𴂍򲾴񣁱񤛢򫖇񴣮򕃐􇥅񼡾񒸮񈢣
+    nlp_test.go:16: 񇩑󚤅󸷗󷙾𩪹򐈵򃊻𶮱𾑊񂄂󎻎񨑓򀖷𡁧򜇩񔷬𜵌󦙶񈠜󬹼
+    nlp_test.go:16: 󌍮󥣥󡢪⇅𝀝
+    nlp_test.go:16: 󸅅򒞼򠩕󥤬񏚳򈾌娋󅐃𑗲󩝐䑉񬏑
+    nlp_test.go:16: 򤚃󩼤𣵪񉗴󞇏ͩ򕒔𪯈򓫉񓓋񅮣𕦔󡯵񻻂󾭌򽽤򰘧
+    nlp_test.go:16: 󇹛
+    nlp_test.go:16: 􆋰򲑛򰮃􋌲𪦽򹮭򚦱򪏞񒗅򔣡񟌠󲑰𨼐󧚺񭃜򻁦񍗬񪄲쪿𣓃񎽚򈀊𮙲󘯓񞄒󓈅񦸋򯹳𕺇񘧉񚋦󾄵𮐞򺰪񽠞膳
+    nlp_test.go:16: 񜵐򫷖󶛵湰G󧥮󝘓𵚨󀎼􀻶𝧯𷁫􋭇񈻛󢭩򿱑񿖊򣏦񸯠󢢝򞯫􋔬򄼂󷐽䰜􃐃󥷊󥪢񸨠𝈶񛽨󞭃𰰢𔭼󋊨
+    nlp_test.go:16: 񆋞󆄄򭑚󐭯񷴅򔪟𺿆񃒢𛬸𔴘򷽥󻋛񆥭񿴪򂻣󾱃畓򮰜󌿾󺬰򾓺
+    nlp_test.go:16: 𢳐깅񞼶񙪗󡕚
+    nlp_test.go:16: 񀍫񃡑󤡓󬭽󬆱𻊊򙕇𨦠󈛧񨦺򹌄񶜨򳍀𬹌𦏈񂅢갛􌑍󮋧𲬵𖸒񮏴𵂽󔖴򐒦𭵶򌺹񶰺
+    nlp_test.go:16: 􄵶󶈷ⱶ󋐪񠱞򶼪񦊻񯯾񻧖񔡽񓝐𱟾󮓌�󳞊򵈆򐧄􇤩𖪵󋖆򸚌􄉝񼝌󯔑􌄼𓋖㎕򣖣򹽲󈰡󨫸
+    nlp_test.go:16: 󿝈󅱌񠑣򆂢򿔅󹛰񻝙㔦󣑀𶩒𵜥񸞒򄄛򸓞򾏇򑂛ꃦ󄔈񣟪򄏢򮏨𦾴𸴩񁿆񄁐󜖶񖜜󟓐
+    nlp_test.go:16: 󒛼򸏼𦊬񨭓𰴆㵗󳜇𺂜󂔝󃸏򷎏􊡪򈣡𔧼򞉄𮭾􈂃𴠨򒴂򫺡􀦝
+    nlp_test.go:16: 񕝽񅥖񁶀謃􊓔󺯔򦲃򏔉񼹠񵟣񫐞񣠅󄶈󇵁񧀣🮥󸪒󡯔𝨌
+    nlp_test.go:16: 𝄳馞𗖛󒄨򗫄񴲯򸬌𘜕򘘲𩸖󭪎𫹥󔼼􌠞󫑍򱬂𨽣񿯂𣤶荽򁳅󒆖򡾍򱓿򸃨򋲤򆅏
+    nlp_test.go:16: 򸛖󐞔񹚤𗘛򓀊𿖸򑾲􈕬᷎񐆦
+    nlp_test.go:16: 򣝯💾󨑰𳢐󔜀󩌉񅊳󑄸񈎗񐘏𿟹󩈰
+    nlp_test.go:16: 񮊥󬎡񃰹򿄅񰓤󴂚񘮡𙢼僤򭅍𳃥󖾢񎮗򦚝𕀥񢼔򕎈󀑭𧩡𔋵𤂧􃪹􃝺󎢌񪴳󖿨񫅩􂜱򹜀󿯖󈑹󌝱
+    nlp_test.go:16: 񵝷򼂘󆂛򠢈󈊰񄑑򂆲𻿳򪌪󜕚񏈌󅼢
+    nlp_test.go:16: 𽬏𖝯𛔵楫񀚀󰸪򬰐𡾄􋖜󉐈񧜝󉯈𖀯𾢅񔵅񎼛񄇒򶤩𢠐󆤇𵿱𜽁󬟭򩿅𡆁𔐌򌐙󩥎􌞛Ƚ񪒂읢󐰤򽐘􍩛𨣪񣝌󜼒񍮿񕌖򤿻򞑻򵐿􁎵
+    nlp_test.go:16: 򜏯𮵄󊑞򜱒󅿩􀢪򍴱򩺍񤳐򛑇򶕂򂠭񴨉񦪥
+    nlp_test.go:16: 
+    nlp_test.go:16: 󇪼򫓥🣰񵦔󪽘񕤷򥮧𔞪񹽷舣񀈎􎄨󽨒򤛲񋭡쩑󈷈􎕪򠱛񘞙𯌼𵙸󉷫󞏚􉤟󹒱񓣯􃶥􊌨񟄧𷬅󏗅񥌣
+    nlp_test.go:16: 𩔱򒴤򷔦𢾂뫧𜇼󵃤𥪢󻡢򼼑󤤙񰶆􇺾򗓛󁻦򀐗𙞺
+    nlp_test.go:16: 򶨲񃫥遳󽳲򧋘�󫩫𧨬𕂵򚿮򳩝򢵪􀏩󍅍𨟥򧵁􂏃򋙋󪏂򡅰񳼿񻇙󚋴򇒀𰡟񪫡𛩯ᷮ񈈯󇺚򂎄𔷖
+    nlp_test.go:16: 򇋉𫃤𹱗𸏯𹄌򚏎󰉕᝚
+    nlp_test.go:16: 𺞶󚼁򿘝𨦬򗃼򊯴򬼦򞪕󋦕򔳏򿴂󐷔񖡏񁝞򅢔󂨝􇀱򌜎𻺵񞹺񧞧򪾕𶟜򯷆򩏏𪔲􆻽㢊犔󛿶􊤛򙘖󀒠򼏽
+    nlp_test.go:16: 󌝌󳯃󐤥𘘛򂬬򏨡𷷷𩩕
+    nlp_test.go:16: 띉𤹸򔒥􋞂򗥔򶝶􎠰󊰓񊙱񄩜򝅭󭣭芖󏫰󜯁񔤶񜗆񻹤񾷼􉴒򎵗󶕮
+    nlp_test.go:16: 􊊗򃈮󃂑񸥦𚊰񷆛󌯚󮏓򔞉񮨚󦦏𞮌񐄃񳲊𶳞򨛒𥋴𸡁󤨻
+    nlp_test.go:16: 򬳥󙛸򴼒󝈊񷐽򪓗񹂓񫙭󄤆𖒜񲕭𽘟󈟢񑰇񍽍􉉁􏕣􋰾򶈝霠𯮌󰕷󹽘󊇊􉚄򆣠󞦅󃻱񟟣󇋳򖃠𱌩󺈭󻁕󆡧󳷂
+    nlp_test.go:16: 򗾢󉐆񢍑񬽣򫥢􏶫򜔈𝭽𲱢󅕋񝅗𾤒񤙤
+    nlp_test.go:16: 򺅸񭇋􇠄󄊀𑬚򱮑񖪃􍇊𮙜򔤦􉟸񈙑򄭹񚞭󔛁񉹂󣶃񍰆򬓾󱺈
+    nlp_test.go:16: 󥁴񡬦􇢖󓑚𪢌㌺󯀵󵒳󯚮𡄘򒋧𷕯򩢫򱩯񶾨󛛀񫛁𡤜񿪦췘𓼇򼎟
+    nlp_test.go:16: 𩌕򆕚𩾜󟩓󟘍󍵹􆌓𬋋𾔒󤾑򨨋򆬨񏻳󤤀򒫻󈐹񃩶𽙼񻿦򹎏񑊿񧷝􀨄􂔌𰘝񤛒혢򸩷󲊖񰅨񠔫􂡁
+    nlp_test.go:16: Ⲫ󢭥󎮱􀩏񁓜᱕𦫮񆑙񼬳򨳦󠃲󀁘𨘏򢿐󅹿𔛣󸮕󍽸򄴺񋡓񉚆𤛎񉹡񜫪
+    nlp_test.go:16: 𛒖󡟔򟒝񧀤󊽡
+    nlp_test.go:16: 􍟱񴢳񆩷򺢙񈂛񉩳񚙑󅕃󛳾򃾰뭙񹞴郎󖒞𚺟𧖌򥞚񲀘
+    nlp_test.go:16: 񥻣󲋤𬙍𥃒񹣡󬎓𔨱񉥹񍗒򄹴󷪷ᒥ򕹲󹮶񢭴󾻸󁊱󃩍򩏴򻶦󙗮𫭟󸅂󯀽
+    nlp_test.go:16: 󴎔퉂󸡂򵁻񪕝򂸩򝀪󘤚򝜪򻸫񉉛𐁇󖻓񟖬
+    nlp_test.go:16: 󘴰󫰖񴭊鹰𩑹񉌢􆃻󲦢񱺔󫽳󱸤򚀘񋪀􎖉򄁤򬍐񄦼𭎰𲔑󾜒񆿗򸢇񍬅𫎒򔫦򑶑弰󤥂񶌺񩧒򠦖񣏐򤸍󤼮󦨳󷚓򯼡򁋔򖵀𤻦剆
+    nlp_test.go:16: ﹅񳌻𨔪񧚞𵶳󎞢򌯺񍙹󐟎񭁮󢪉򊝵
+    nlp_test.go:16: 󹛈󙨪񒢋񋿛򡿶󫈯󨈽򞂒󴈳􏞵񚝰􃄇􆀶􄝟򅚳琧񞣵񉜮򩈰񷐌񼽣􉞃򋘷󾛆񏿍䂘𵚇󚋛򵖟򉀓򝌷𮿏򟭲𩁶󐠰񏮲騗񰯴򬝜􄐋󶷰􊞮񹞘񶢛󳻊𼺵򢈦𬩿
+    nlp_test.go:16: 򿉝򉮒𪣫򋈣
+    nlp_test.go:16: 󇪧󫌠񠃟󃧤󄘍𡉛񜥇𘒙񎉧𷚵򇽈򾌯𔯯癨󤖺󼪝󔱌𙾡𳢁󶟟𮱋򥃑򅴽򧥠󤷢䒚񳕢񃯗󽡃󆆴򑗣𩋂񟐫媏򧮅򚃫񬊘𡾡񅞟𗵗𥔹蛕򶖤򇥃򋮻񪭑
+    nlp_test.go:16: 𣺭󬯝򬳊󱽼񢍷񉐄󾐫񠦷򙛢𕾬󚔐񥛋񣩰񉯍󾲩𿚲񤤏󷌝𴩒𢜵𝖁񝾇𛄭𷉅񏐵𠜥򓝀勅
+    nlp_test.go:16: 𦤍򗜝𠌁輣񇊣鷊󌔤񝹲򓡼񃮱򾕰󍃟񙏁𫉽𽣹򾂐􊧫񸍹
+    nlp_test.go:16: 𐦟𶇴񰤽丳񁽾򐄑𲥽򑠕󮠪󎔒񪌡󖼋󇐕
+    nlp_test.go:16: 񙰷򗃙򐨁󔤡񷴠򰖈𞰹񊇛󜑼
+    nlp_test.go:16: 򿱫漘񏎖򵑌򟱬򞱳󘨈𓺚󣿶𞔕񎯇𝰟󺁕𨉅𨙭񴼖󾗨񓡖󦵓򯊱󕭾􏼸𺍵򌋗𲢴򪀩󞳍򙡝󢚮𳓮𬌨𭥨󗫉𚄂򪣥򴎇󅅗󐻡󤉉󃪤󩒶񏦖󌌷􁔕􃇐񦼎䴵򃂴󪒒
+    nlp_test.go:16: 񝭽𼆉
+    nlp_test.go:16: 𒚅񴍲񧓯͸𻬍󣩤𶖺󁧿򬯿󵉔
+    nlp_test.go:16: 񡵘򅻴󣴗򞜭񱿨皊𚼧𠍩𴣔󏠭𶰎񩵆򟉻򁹖󴵁򳀩򴑪𰿗󗎍񻜶󰟸򧊣󒡢󩯥𤒲𒷍䒦򥟂𧮑􃛎󯸍
+    nlp_test.go:16: 􌾻􀻫񸙢􀥝򥨡󌨠񔹫񒒗溧򁻟񚟟񇙰󐃛󲘄󵒬􅋑𬕗𞦂𵐽󩢶񮖦򬽏񲮏䢸🝴􉛡򹋚麷󈍬񂁭
+    nlp_test.go:16: 𭂯󈍼񩻹򃤆񫦱𔝓𿘮󉄾翨񗅣󛶆񭼝񪀟𭂹󲃿򐭌񛁦􉪏󿹲󁈈󭙤呧𗾘󺉧󾺭氉
+    nlp_test.go:16: ؖ膙粚񭊁𽞺򥢹𼰤򚳫򮫲𢐡𧏃󿫔󋽮񪋏󞢄≬񑿼򅒉𴜮
+    nlp_test.go:16: 𮆰𐖊𫽛
+    nlp_test.go:16: 򄇧񤊋񝒻񽘛񦝁𼪖󟟡󭆳򾰎𼗻𭱧󋐕񖓇쿷􌀇񻎒𤰱ﻱ񯦫񙔍񨎘򅴭⡾𯰯񹿔󟤭𖵂𮵈􇖎󒌈󅵅󃃔􂧰񁖏𙥌󴸂񪿗󄾥򼃵⟥󻒽𮉋񪶆𑥴𧾮񟁧􀤀򢨱
+    nlp_test.go:16: 𯱀񦧆򒕭􋦂󹉃򗐐񋯷󱎨򌥽򫕚񃌧񲼫󤕂񀡘􄙎񲓦񌕦򴢢􈿉󥤥򙲕󵫥𝝸󉥴򜕖񅾨󪬌򅻥񜤙񡉩𭚲򌊍󟺭􃇗񵆠򜡯񱺻�񐅮𘪛􊠜񨧃󡼧􇃐󇳜􇨇༫󮕭򿘔
+    nlp_test.go:16: 𿬂񲮾
+    nlp_test.go:16: 𼆊𵬇򎙾𞥫𐑡󍭎򪝧􋇓𳫉񞢲򔴲񘈡󕶠򋡑񼩬󣁜󛱂󲤍񁺲񱲞񏛝󶶒򛣼񩬚򲚢𓌞񣞈𾠬񭩢򑒺𙷅񮽘䫲񸥕𦈴􆬑򎋬
+    nlp_test.go:16: 󛟂񋞬𭥏򡶦𣌩𧩈􁛍򮥬򖘵񿻌󠲤򏔜ᾬ󾤃񝭆񗆚򎒐􂡋񇠘󃢶𡶻􈷩򇢈񎍼𜂼񤢡󭆴𨿂𦭟򷤬󿮸򈸲񔉃񓒴󣭓
+    nlp_test.go:16: 󚏋򃄴񄴥񴰑󒸃𪈞󈰣򤕕񶧚𑛩򎀆񌒅
+    nlp_test.go:16: 񢰷𒳢
+    nlp_test.go:16: 􍺏򣴇𹮹𥋢ㅭ򴐗񑚂󟯗񝫶󏌩󐵙󹕕򫆠񚸡󧱴򞏬􊣶𗉣󳅇򺀧򫓙񦑭𠒂󣦨򦌊󫟫񷹂􏍄񪅮􅛏󗲹󌛛󻲋􉂮񀋴􊌅𘡹񙫖𖉊𩶬󰐍񂹍󀋌𔝎
+    nlp_test.go:16: 򁚙񡘟𞥶🚕󢰘񬴣񸞢򿴻󑅾򤓙񄰤񜗭󍔈󘥨󴖁𿴌𷞨򚸘𦋭󣾏񰯷󭱵𸰳󚴅𓨦􈍢𲌲ᨣ𛿦󷸉򩿝􍈞𣃝򗈪􊃈񪀨򜲑󛚗񉲗󶘗񡗱򪧕🞰񠫄񣬏棘񒩿
+    nlp_test.go:16: 󳟾𻿆돳𓲂󵑡񟪤󸰻󊄂򄍮񺄺󹙮򩱖󳝭󅩁
+    nlp_test.go:16: 󫑵򙞵󾶇𴦐񲌳󻷼񫹻𔏩󄴬𢪀򠋇쇖𵩂򯫋󎴟𶽆𩸍󵪎򖜝񸡉񐵢񲀌򶬠򺟺񿀋𿹈򂩝󊲒𲏘
+    nlp_test.go:16: 򻗉򿺥󉁤ꢌ򹌥󄕫󧐩򶂽򹘢󪋐􉸥񾑠󹃁񪷮𴭶񓩠􈟯񧽉𠊬򝰼􁛋󩆷
+    nlp_test.go:16: 򃑉󛋢񝴩񷱲𯾖󎌒𪅆򱥤󺚋󃒙󖙧򲅘򐞳񍔁󑼙󥹯񁿞􉇢幽󾨬󗓎𼯂󰑔񘈼𛑹󼅫
+    nlp_test.go:16: 
+    nlp_test.go:16: 󹮝򛅱𶪂󣏯󣼂񾬮
+    nlp_test.go:16: 򫭒򅦐𚌁󥨍򮸲򟴤􅔛⬈𔭼񘧜󂻜񍆘󐒏򑂒𹈘󥷛򇲁𪝥򥅍񵐰󽀀󧨪򆰤󀱩򂇙𩡧򉔸瓩󨔫󪜾󯌥󊭽𵩆򖢯󄁦񈧅𯪦
+    nlp_test.go:16: 𸫠򩠼
+    nlp_test.go:16: 𾃽񸿝򖮯񨴃𱊠狗󏬉񢈖񯤬􂘮򫗵󆑙𐮵󟭱𘈧󽵉񂠬򦴊򺢧煫򃁮񿂚񰝢􅚷񃫁
+    nlp_test.go:16: 򭘫񉂊󄑏𩮨
+    nlp_test.go:16: 򤽯񼴺򽗇񨵑󂿧񤯩򍙼󨶇󬘣񳘧򍈲󑃮󐕀򥪱󕪎󫺃򅘳𴛖򵁫󚕵񝳫򩅠񗒻𑔘򫡑򡽺􃻧齣񗴊􇱣󜤐񠓲󋻇󺸽򫧒񚸊
+    nlp_test.go:16: ܺ񛈛𚙰
+    nlp_test.go:16: 򘭼󌛐򓫲񿚉𴔜򥀎𶿰򵴄򲙰𨦮򚂬􏺍񹺽𯖆񒎈󤇭񓟄򨦀
+    nlp_test.go:16: 򄅾󀯘𧿰񪈹򼕀򧼍򂳳򖓃󹈩𭘘𲫢􊥃񑐥兾󒎻񹦢񁍷􎗫񌬯򟊯򨿮񁩠𻻠󣦀󘗎𹯡𾈧󍷈嶌񚳔󓔩𩙧򘚩𕏵򾒣󿎦񼀟󌽱𯅆񶶤򧱍򤌉𘯣􀰣𑉦󏥭󨁗󒼇
+    nlp_test.go:16: 񅃦󅸆󕓫󤼅򉘩🠊򑡮󷀒򃘍
+    nlp_test.go:16: 򂬏󋤵򂯺𐅖򓯨𽛝쵎񻵓󜟿񦨲򀝺򴪉ꓤ󷦞񡫢󲌈򔍃󍄈󁤬󔩚򿦔󦍾􉛣񘿲𿲨񤠹򪧾򬶆𘟷𴣥𣛙ﵤ𖵨󙘈󚺌𗕊򧏪񢟝򎛮󎔯󴞹𜊴򈡈𖋽󹂨󂹻
+    nlp_test.go:16: 𳙻󣩗񺓰񟯆𸋧񹋬𷼟򘱌򺨨򘥱󧜖񃢉򿝪㒪񯀵򦙙󣨳󊸢򪬣񉔬򧣹𲠻𬷭𔄚􉹯󤞆
+    nlp_test.go:16: 񸴖󥼻
+    nlp_test.go:16: 񦑰󹴪󅽻𲽤񀸀񺼢󡰃󉰅󣁋񨑇󧁊󔱍񍀫𥏃򙛿񴴳
+    nlp_test.go:16: 񯩲󬿟󇝕񞫃򁈀𲾩󂔷􌬉򌷻񒲻񖼙򅀿󧎗󛜃񏣠󻐎𬨹񃙉񖊖񌍻󂩚糢񲎆򯐩񡔙򝈜򾢠󖷄񆇄ٟ󰘚񹺖𕎮�𔲬􀔦󉽠񆄴󞜄󹭒򒱳򡂋򡃟𫨾⫊
+    nlp_test.go:16: 򛀕񯍔󑥯𼎥񗠾򅥴􉖑񬖂򯚕񏵌⼼𜒑򸊍񏴼󻷴󖞳񄒣󾈦󼗕󭡺󔟲򙡛򃵅񏏛󀼄󰫭򐪴韓򖱓󗉷󜪳𻒼񻻑𯞖
+    nlp_test.go:16: 񡨵𪵯򣼧񢁥󧌢𞜞􅥭𾧖򧴋󾿶쯹𔀶󢚒򫿰򜁯𯌵񷂞󵦈򿛛󳡶򃚬񷴴􇿘󸓃ꭅ򍐶󼊵𛍜񎙋񴪠𼳁󙀝
+    nlp_test.go:16: 󷾻󊆞𩣢󧱧󐘄򎁾򊰨󼞓􁚑򥶝𖧻󐁽𰞅񖝲󋠾𠿾󢓭򑛦𺛽򪅆򩞍򧥑񶼥𷏜
+    nlp_test.go:16: 񓅃󆫉􁹮󥂺𓼎󮉋󩜵񰡘򮴖𐴣牨񿕤𣏭𶣚𸛼𨑷𨇵𦤒򡽔򼮂󱼱򆛧򺢋🗴򚜝򃇔񚳗񆦀𷒠𦬌񳃵𘔷􂐣󾖑񟞵𳍊捔𖿪񿷓󟇨󝙟󛷉򡓘󌋒
+    nlp_test.go:16: 󦺐􌖘󓾂𕚁󸅙򟹊򬁡􅴮򌚦󿐺𲯈󰩁𗀘򀍝񶅼󻥈󖻓񞤃䨧𹨘󳺏󽷵鳲󰯎𰾶񨘱𫥒񻁙򭳂𤫕񂎑𡖨򟿸򦼟뵃񺿘󈏅򫪸拓
+    nlp_test.go:16: 󍐊󣏘񹂕𛩖𮴮𲬭񴃂󃩗􆽲򋤠𥐵򫕨󮮞򃐞񛎇􆒳񛃪𦕲񾽯񇏅񌰹󨿺󖑲􉮨􏸅󌡈
+    nlp_test.go:16: 󪴣򌩝񣸪񔳵򩏫
+    nlp_test.go:16: 񭑯񳇘񫭈򍇎󹌤뤪󲕌􏯩􈨲𤑖񊳺󂖚񏀅
+    nlp_test.go:16: 򌾠󘎬񇷎󼋋򲔣񹧰Ꝭ󢟣鿀񾓇𫹴򪏪񷴂򲙺򨲦󇕒𛎥󺵋󭀇􇯻𶨇񵻵񍯂𔓟𯯞𞊓󞦯㾊򈘛򾰠򅵔󟁈󀯝󑟩󾁭񬻨릠򶃍󰼻󂖊񒽪𝷦󗬎񴓏􏥁􀹱𙒼𶭩
+    nlp_test.go:16: 񛓩򑘬񵻪򔼑񮌦񯂊𳪋򨜩󅸘󨺢󷾖񐙇򤢆𛸉𻦝𘦌򑜤󒔣󁟳񱊆􊥩񿢽򲥖ꍕ鿭𐲽񯅿𡈰𫙓􆀺򱤗𵢾񺓟򪏻󚂍𴎆򚭆򀭟𳞫
+    nlp_test.go:16: 򷦳򮄳񗳻򽜑𛌍򢆝񽪀񻈔򡇝𒚔
+    nlp_test.go:16: 𿬊𲱡녌񥩿𺠆򏇏𴱦򔖢􋩹�󍛥󥈂򱯲쫠𒄘乡򂪢󭴲򁂈𺏳𢿯񷇛𙗕󙱛󘗾󺹝󌽲񦬍򌘢󉶙
+--- PASS: TestTokenizeFuzz (0.00s)
+=== RUN   TestTokenize
+=== RUN   TestTokenize/hi
+=== RUN   TestTokenize/HI
+=== RUN   TestTokenize/What's_on_second?
+=== RUN   TestTokenize/<empty>
+--- PASS: TestTokenize (0.00s)
+    --- PASS: TestTokenize/hi (0.00s)
+    --- PASS: TestTokenize/HI (0.00s)
+    --- PASS: TestTokenize/What's_on_second? (0.00s)
+    --- PASS: TestTokenize/<empty> (0.00s)
+=== RUN   ExampleTokenize
+--- PASS: ExampleTokenize (0.00s)
+PASS
+After main
+ok  	github.com/353solutions/nlp	0.006s
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$     nlp_test.go:16: 
+
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ go run /tmp/r.go                                                                                          1 ↵
+# command-line-arguments
+/tmp/r.go:9:23: too many arguments in call to rand.Intn
+	have (number, number)
+	want (int)
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ go run /tmp/r.go                                                                                          2 ↵
+1
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ go run /tmp/r.go
+1
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ go run /tmp/r.go1
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ go run /tmp/r.go
+1
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ go run /tmp/r.go
+1
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ back-in 10m
+☕ - Back at 11:33 █████████████████████████████████████████████████████████████████████████████████████████████
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 took 10m4s 
+$ golangci-lint run .
+nlp_test.go:52:2: unreachable: unreachable code (govet)
+	return nil
+	^
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 took 8s 
+$ golangci-lint run .                                                                                       1 ↵
+nlp on  gcil2021 [✘!?] via go v1.15.8 took 2s 
+$ make test
+golangci-lint run .
+go test -v
+Before main
+=== RUN   TestTokenizeFuzz
+--- PASS: TestTokenizeFuzz (0.00s)
+=== RUN   TestTokenize
+=== RUN   TestTokenize/hi
+=== RUN   TestTokenize/HI
+=== RUN   TestTokenize/What's_on_second?
+=== RUN   TestTokenize/<empty>
+--- PASS: TestTokenize (0.00s)
+    --- PASS: TestTokenize/hi (0.00s)
+    --- PASS: TestTokenize/HI (0.00s)
+    --- PASS: TestTokenize/What's_on_second? (0.00s)
+    --- PASS: TestTokenize/<empty> (0.00s)
+=== RUN   ExampleTokenize
+--- PASS: ExampleTokenize (0.00s)
+PASS
+After main
+ok  	github.com/353solutions/nlp	0.006s
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ ls
+doc.go  example_test.go  go.mod  go.sum  LICENSE.txt  Makefile  nlp.go  nlp_test.go  README.md  testdata
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ tree
+.
+├── doc.go
+├── example_test.go
+├── go.mod
+├── go.sum
+├── LICENSE.txt
+├── Makefile
+├── nlp.go
+├── nlp_test.go
+├── README.md
+└── testdata
+    └── tokenizer_cases.json
+
+1 directory, 10 files
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$mkdir stemmer
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ cp ../data/stemmer.go stemmer 
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ tree
+.
+├── doc.go
 ├── example_test.go
 ├── go.mod
 ├── go.sum
@@ -1032,223 +992,485 @@ go.mod           LICENSE.txt  nlp.go    README.md    tokenizer_cases.json
 ├── README.md
 ├── stemmer
 │   └── stemmer.go
-└── tokenizer_cases.json
+└── testdata
+    └── tokenizer_cases.json
 
-1 directory, 10 files╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git add stemmer/                                                          Thu May 30, 14:17 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git commit -m 'stemmer'                                                   Thu May 30, 14:17 
-[gceu2019 e2cc4ab] stemmer
- 1 file changed, 19 insertions(+)
- create mode 100644 stemmer/stemmer.go
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git push                                                                  Thu May 30, 14:17 
-Enumerating objects: 27, done.
-Counting objects: 100% (27/27), done.
-Delta compression using up to 4 threads
-Compressing objects: 100% (20/20), done.
-Writing objects: 100% (23/23), 3.05 KiB | 520.00 KiB/s, done.
-Total 23 (delta 9), reused 0 (delta 0)
-remote: Resolving deltas: 100% (9/9), completed with 3 local objects.
-To github.com:353solutions/nlp.git
-   e31e59c..e2cc4ab  gceu2019 -> gceu2019
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ make test                                                                 Thu May 30, 14:17 go test -v
-=== RUN   TestTokenizerQuick
---- PASS: TestTokenizerQuick (0.00s)
-=== RUN   TestTokenizeMulti
-=== RUN   TestTokenizeMulti/hi
-=== RUN   TestTokenizeMulti/HI
-=== RUN   TestTokenizeMulti/What's_on_second?
-=== RUN   TestTokenizeMulti/<empty>
---- PASS: TestTokenizeMulti (0.00s)
-    --- PASS: TestTokenizeMulti/hi (0.00s)
-    --- PASS: TestTokenizeMulti/HI (0.00s)
-    --- PASS: TestTokenizeMulti/What's_on_second? (0.00s)
-    --- PASS: TestTokenizeMulti/<empty> (0.00s)
+2 directories, 11 files
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ go test
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ make est                                                                                                130 ↵
+make: *** No rule to make target 'est'.  Stop.
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ make test                                                                                                 2 ↵
+golangci-lint run .
+go test -v
+Before main
+=== RUN   TestTokenizeFuzz
+--- PASS: TestTokenizeFuzz (0.00s)
 === RUN   TestTokenize
---- PASS: TestTokenize (0.00s)
-=== RUN   ExampleTokenize
---- PASS: ExampleTokenize (0.00s)
-PASS
-ok  	github.com/353solutions/nlp	0.003s
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$make sync                                                                 Thu May 30, 14:34 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test -v                                                           Thu May 30, 14:34 130 ↵
-=== RUN   TestTokenizerQuick
---- PASS: TestTokenizerQuick (0.00s)
-=== RUN   TestTokenizeMulti
-=== RUN   TestTokenizeMulti/hi
-=== RUN   TestTokenizeMulti/HI
-=== RUN   TestTokenizeMulti/What's_on_second?
-=== RUN   TestTokenizeMulti/<empty>
---- PASS: TestTokenizeMulti (0.00s)
-    --- PASS: TestTokenizeMulti/hi (0.00s)
-    --- PASS: TestTokenizeMulti/HI (0.00s)
-    --- PASS: TestTokenizeMulti/What's_on_second? (0.00s)
-    --- PASS: TestTokenizeMulti/<empty> (0.00s)
-=== RUN   TestTokenize
---- PASS: TestTokenize (0.00s)
-=== RUN   ExampleTokenize
---- PASS: ExampleTokenize (0.00s)
-PASS
-ok  	github.com/353solutions/nlp	0.003s╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test -v ./..                                                           Thu May 30, 14:34 
-go: directory .. outside available modules
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go test -v ./...                                                       Thu May 30, 14:34 1 ↵
-=== RUN   TestTokenizerQuick
---- PASS: TestTokenizerQuick (0.00s)
-=== RUN   TestTokenizeMulti
-=== RUN   TestTokenizeMulti/hi
-=== RUN   TestTokenizeMulti/HI
-=== RUN   TestTokenizeMulti/What's_on_second?
-=== RUN   TestTokenizeMulti/<empty>
---- PASS: TestTokenizeMulti (0.00s)
-    --- PASS: TestTokenizeMulti/hi (0.00s)
-    --- PASS: TestTokenizeMulti/HI (0.00s)
-    --- PASS: TestTokenizeMulti/What's_on_second? (0.00s)
-    --- PASS: TestTokenizeMulti/<empty> (0.00s)
-=== RUN   TestTokenize
---- PASS: TestTokenize (0.00s)
-=== RUN   ExampleTokenize
---- PASS: ExampleTokenize (0.00s)
-PASS
-ok  	github.com/353solutions/nlp	0.003s
-=== RUN   TestStem
-=== RUN   TestStem/{runs_run}
-=== RUN   TestStem/{working_work}
-=== RUN   TestStem/{sleep_sleep}
---- PASS: TestStem (0.00s)
-    --- PASS: TestStem/{runs_run} (0.00s)
-    --- PASS: TestStem/{working_work} (0.00s)
-    --- PASS: TestStem/{sleep_sleep} (0.00s)
-PASS
-ok  	github.com/353solutions/nlp/stemmer	0.002s╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ make test                                                                 Thu May 30, 14:34 
-go test -v ./...
-=== RUN   TestTokenizerQuick
---- PASS: TestTokenizerQuick (0.00s)
-=== RUN   TestTokenizeMulti
-=== RUN   TestTokenizeMulti/hi
-=== RUN   TestTokenizeMulti/HI
-=== RUN   TestTokenizeMulti/What's_on_second?
-=== RUN   TestTokenizeMulti/<empty>
---- PASS: TestTokenizeMulti (0.00s)
-    --- PASS: TestTokenizeMulti/hi (0.00s)
-    --- PASS: TestTokenizeMulti/HI (0.00s)
-    --- PASS: TestTokenizeMulti/What's_on_second? (0.00s)
-    --- PASS: TestTokenizeMulti/<empty> (0.00s)
-=== RUN   TestTokenize
---- PASS: TestTokenize (0.00s)
-=== RUN   ExampleTokenize
---- PASS: ExampleTokenize (0.00s)
-PASS
-ok  	github.com/353solutions/nlp	(cached)
-=== RUN   TestStem
-=== RUN   TestStem/{runs_run}
-=== RUN   TestStem/{working_work}
-=== RUN   TestStem/{sleep_sleep}
---- PASS: TestStem (0.00s)
-    --- PASS: TestStem/{runs_run} (0.00s)
-    --- PASS: TestStem/{working_work} (0.00s)
-    --- PASS: TestStem/{sleep_sleep} (0.00s)
-PASS
-ok  	github.com/353solutions/nlp/stemmer	(cached)╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ make test                                                                 Thu May 30, 14:35 
-go test -v ./...
-=== RUN   TestTokenizerQuick
---- PASS: TestTokenizerQuick (0.00s)
-=== RUN   TestTokenizeMulti
-=== RUN   TestTokenizeMulti/hi
-=== RUN   TestTokenizeMulti/HI
-=== RUN   TestTokenizeMulti/What's_on_second?
---- FAIL: TestTokenizeMulti (0.00s)
-    --- PASS: TestTokenizeMulti/hi (0.00s)
-    --- PASS: TestTokenizeMulti/HI (0.00s)
-    require.go:157: 
-        	Error Trace:	nlp_test.go:86
+=== RUN   TestTokenize/hi
+=== RUN   TestTokenize/HI
+=== RUN   TestTokenize/What's_on_second?
+    nlp_test.go:76: 
+        	Error Trace:	nlp_test.go:76
         	Error:      	Not equal: 
         	            	expected: []string{"what", "s", "on", "second"}
-        	            	actual  : []string{"what", "", "on", "second"}
+        	            	actual  : []string{"what", "on", "second"}
         	            	
         	            	Diff:
         	            	--- Expected
         	            	+++ Actual
-        	            	@@ -2,3 +2,3 @@
+        	            	@@ -1,4 +1,3 @@
+        	            	-([]string) (len=4) {
+        	            	+([]string) (len=3) {
         	            	  (string) (len=4) "what",
         	            	- (string) (len=1) "s",
-        	            	+ (string) "",
         	            	  (string) (len=2) "on",
-        	Test:       	TestTokenizeMulti
-    --- FAIL: TestTokenizeMulti/What's_on_second? (0.00s)
-        testing.go:820: test executed panic(nil) or runtime.Goexit: subtest may have called FailNow on a parent test
-=== RUN   TestTokenize
+        	Test:       	TestTokenize/What's_on_second?
+=== RUN   TestTokenize/<empty>
 --- FAIL: TestTokenize (0.00s)
-    require.go:157: 
-        	Error Trace:	nlp_test.go:102
-        	Error:      	Not equal: 
-        	            	expected: []string{"who", "s", "on", "first"}
-        	            	actual  : []string{"who", "", "on", "first"}
-        	            	
-        	            	Diff:
-        	            	--- Expected
-        	            	+++ Actual
-        	            	@@ -2,3 +2,3 @@
-        	            	  (string) (len=3) "who",
-        	            	- (string) (len=1) "s",
-        	            	+ (string) "",
-        	            	  (string) (len=2) "on",
-        	Test:       	TestTokenize
+    --- PASS: TestTokenize/hi (0.00s)
+    --- PASS: TestTokenize/HI (0.00s)
+    --- FAIL: TestTokenize/What's_on_second? (0.00s)
+    --- PASS: TestTokenize/<empty> (0.00s)
+=== RUN   ExampleTokenize
+--- FAIL: ExampleTokenize (0.00s)
+got:
+[hi how are you feel today]
+want:
+[hi how are you feeling today]
+FAIL
+After main
+exit status 1
+FAIL	github.com/353solutions/nlp	0.005s
+make: *** [Makefile:3: test] Error 1
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+❮ make test                                                                                                 2 ↵
+golangci-lint run .
+go test -v
+Before main
+=== RUN   TestTokenizeFuzz
+--- PASS: TestTokenizeFuzz (0.00s)
+=== RUN   TestTokenize
+=== RUN   TestTokenize/hi
+=== RUN   TestTokenize/HI
+=== RUN   TestTokenize/What's_on_second?
+=== RUN   TestTokenize/<empty>
+--- PASS: TestTokenize (0.00s)
+    --- PASS: TestTokenize/hi (0.00s)
+    --- PASS: TestTokenize/HI (0.00s)
+    --- PASS: TestTokenize/What's_on_second? (0.00s)
+    --- PASS: TestTokenize/<empty> (0.00s)
+=== RUN   ExampleTokenize
+--- FAIL: ExampleTokenize (0.00s)
+got:
+[hi how are you feel today]
+want:
+[hi how are you feeling today]
+FAIL
+After main
+exit status 1
+FAIL	github.com/353solutions/nlp	0.004s
+make: *** [Makefile:3: test] Error 1
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ make test                                                                                                 2 ↵
+golangci-lint run .
+go test -v
+Before main
+=== RUN   TestTokenizeFuzz
+--- PASS: TestTokenizeFuzz (0.00s)
+=== RUN   TestTokenize
+=== RUN   TestTokenize/hi
+=== RUN   TestTokenize/HI
+=== RUN   TestTokenize/What's_on_second?
+=== RUN   TestTokenize/<empty>
+--- PASS: TestTokenize (0.00s)
+    --- PASS: TestTokenize/hi (0.00s)
+    --- PASS: TestTokenize/HI (0.00s)
+    --- PASS: TestTokenize/What's_on_second? (0.00s)
+    --- PASS: TestTokenize/<empty> (0.00s)
 === RUN   ExampleTokenize
 --- PASS: ExampleTokenize (0.00s)
+PASS
+After main
+ok  	github.com/353solutions/nlp	0.006s
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ ls
+doc.go           go.mod  LICENSE.txt  nlp.go       README.md  testdata
+example_test.go  go.sum  Makefile     nlp_test.go  stemmer
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ cat ../quotes/hickey.txt 
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ tree                                                                                                    130 ↵
+.
+├── doc.go
+├── example_test.go
+├── go.mod
+├── go.sum
+├── LICENSE.txt
+├── Makefile
+├── nlp.go
+├── nlp_test.go
+├── README.md
+├── stemmer
+│   └── stemmer.go
+└── testdata
+    └── tokenizer_cases.json
+
+2 directories, 11 files
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ tree
+.
+├── doc.go
+├── example_test.go
+├── go.mod
+├── go.sum
+├── LICENSE.txt
+├── Makefile
+├── nlp.go
+├── nlp_test.go
+├── README.md
+├── stemmer
+│   ├── stemmer.go
+│   └── stemmer_test.go
+└── testdata
+    └── tokenizer_cases.json
+
+2 directories, 12 files
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$make test
+golangci-lint run .
+go test -v
+Before main
+=== RUN   TestTokenizeFuzz
+--- PASS: TestTokenizeFuzz (0.00s)
+=== RUN   TestTokenize
+=== RUN   TestTokenize/hi
+=== RUN   TestTokenize/HI
+=== RUN   TestTokenize/What's_on_second?
+=== RUN   TestTokenize/<empty>
+--- PASS: TestTokenize (0.00s)
+    --- PASS: TestTokenize/hi (0.00s)
+    --- PASS: TestTokenize/HI (0.00s)
+    --- PASS: TestTokenize/What's_on_second? (0.00s)
+    --- PASS: TestTokenize/<empty> (0.00s)
+=== RUN   ExampleTokenize
+--- PASS: ExampleTokenize (0.00s)
+PASS
+After main
+ok  	github.com/353solutions/nlp	0.007s
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$make test
+golangci-lint run .
+go test -v ./...
+Before main
+=== RUN   TestTokenizeFuzz
+--- PASS: TestTokenizeFuzz (0.00s)
+=== RUN   TestTokenize
+=== RUN   TestTokenize/hi
+=== RUN   TestTokenize/HI
+=== RUN   TestTokenize/What's_on_second?
+=== RUN   TestTokenize/<empty>
+--- PASS: TestTokenize (0.00s)
+    --- PASS: TestTokenize/hi (0.00s)
+    --- PASS: TestTokenize/HI (0.00s)
+    --- PASS: TestTokenize/What's_on_second? (0.00s)
+    --- PASS: TestTokenize/<empty> (0.00s)
+=== RUN   ExampleTokenize
+--- PASS: ExampleTokenize (0.00s)
+PASS
+After main
+ok  	github.com/353solutions/nlp	0.003s
+=== RUN   TestStemmer
+--- PASS: TestStemmer (0.00s)
+PASS
+ok  	github.com/353solutions/nlp/stemmer	0.010s
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+❮ make test
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ go test --json -v ./...                                                                                 130 ↵
+{"Time":"2021-02-11T11:51:31.536635772+02:00","Action":"run","Package":"github.com/353solutions/nlp/stemmer","Test":"TestStemmer"}
+{"Time":"2021-02-11T11:51:31.536787107+02:00","Action":"output","Package":"github.com/353solutions/nlp/stemmer","Test":"TestStemmer","Output":"=== RUN   TestStemmer\n"}
+{"Time":"2021-02-11T11:51:31.536806695+02:00","Action":"output","Package":"github.com/353solutions/nlp/stemmer","Test":"TestStemmer","Output":"--- PASS: TestStemmer (0.00s)\n"}
+{"Time":"2021-02-11T11:51:31.53681544+02:00","Action":"pass","Package":"github.com/353solutions/nlp/stemmer","Test":"TestStemmer","Elapsed":0}
+{"Time":"2021-02-11T11:51:31.536824487+02:00","Action":"output","Package":"github.com/353solutions/nlp/stemmer","Output":"PASS\n"}
+{"Time":"2021-02-11T11:51:31.537405002+02:00","Action":"output","Package":"github.com/353solutions/nlp/stemmer","Output":"ok  \tgithub.com/353solutions/nlp/stemmer\t0.002s\n"}
+{"Time":"2021-02-11T11:51:31.537831457+02:00","Action":"pass","Package":"github.com/353solutions/nlp/stemmer","Elapsed":0.003}
+{"Time":"2021-02-11T11:51:31.704643695+02:00","Action":"output","Package":"github.com/353solutions/nlp","Output":"Before main\n"}
+{"Time":"2021-02-11T11:51:31.704687199+02:00","Action":"run","Package":"github.com/353solutions/nlp","Test":"TestTokenizeFuzz"}
+{"Time":"2021-02-11T11:51:31.704696067+02:00","Action":"output","Package":"github.com/353solutions/nlp","Test":"TestTokenizeFuzz","Output":"=== RUN   TestTokenizeFuzz\n"}
+{"Time":"2021-02-11T11:51:31.705281474+02:00","Action":"output","Package":"github.com/353solutions/nlp","Test":"TestTokenizeFuzz","Output":"--- PASS: TestTokenizeFuzz (0.00s)\n"}
+{"Time":"2021-02-11T11:51:31.705296857+02:00","Action":"pass","Package":"github.com/353solutions/nlp","Test":"TestTokenizeFuzz","Elapsed":0}
+{"Time":"2021-02-11T11:51:31.705304191+02:00","Action":"run","Package":"github.com/353solutions/nlp","Test":"TestTokenize"}
+{"Time":"2021-02-11T11:51:31.705308484+02:00","Action":"output","Package":"github.com/353solutions/nlp","Test":"TestTokenize","Output":"=== RUN   TestTokenize\n"}
+{"Time":"2021-02-11T11:51:31.705418163+02:00","Action":"run","Package":"github.com/353solutions/nlp","Test":"TestTokenize/hi"}
+{"Time":"2021-02-11T11:51:31.705448536+02:00","Action":"output","Package":"github.com/353solutions/nlp","Test":"TestTokenize/hi","Output":"=== RUN   TestTokenize/hi\n"}
+{"Time":"2021-02-11T11:51:31.705458043+02:00","Action":"run","Package":"github.com/353solutions/nlp","Test":"TestTokenize/HI"}
+{"Time":"2021-02-11T11:51:31.705464504+02:00","Action":"output","Package":"github.com/353solutions/nlp","Test":"TestTokenize/HI","Output":"=== RUN   TestTokenize/HI\n"}
+{"Time":"2021-02-11T11:51:31.705489626+02:00","Action":"run","Package":"github.com/353solutions/nlp","Test":"TestTokenize/What's_on_second?"}
+{"Time":"2021-02-11T11:51:31.705496715+02:00","Action":"output","Package":"github.com/353solutions/nlp","Test":"TestTokenize/What's_on_second?","Output":"=== RUN   TestTokenize/What's_on_second?\n"}
+{"Time":"2021-02-11T11:51:31.70552155+02:00","Action":"run","Package":"github.com/353solutions/nlp","Test":"TestTokenize/\u003cempty\u003e"}
+{"Time":"2021-02-11T11:51:31.705529365+02:00","Action":"output","Package":"github.com/353solutions/nlp","Test":"TestTokenize/\u003cempty\u003e","Output":"=== RUN   TestTokenize/\u003cempty\u003e\n"}
+{"Time":"2021-02-11T11:51:31.705551374+02:00","Action":"output","Package":"github.com/353solutions/nlp","Test":"TestTokenize","Output":"--- PASS: TestTokenize (0.00s)\n"}
+{"Time":"2021-02-11T11:51:31.705558356+02:00","Action":"output","Package":"github.com/353solutions/nlp","Test":"TestTokenize/hi","Output":"    --- PASS: TestTokenize/hi (0.00s)\n"}
+{"Time":"2021-02-11T11:51:31.705563158+02:00","Action":"pass","Package":"github.com/353solutions/nlp","Test":"TestTokenize/hi","Elapsed":0}
+{"Time":"2021-02-11T11:51:31.705567247+02:00","Action":"output","Package":"github.com/353solutions/nlp","Test":"TestTokenize/HI","Output":"    --- PASS: TestTokenize/HI (0.00s)\n"}
+{"Time":"2021-02-11T11:51:31.70557337+02:00","Action":"pass","Package":"github.com/353solutions/nlp","Test":"TestTokenize/HI","Elapsed":0}
+{"Time":"2021-02-11T11:51:31.705579123+02:00","Action":"output","Package":"github.com/353solutions/nlp","Test":"TestTokenize/What's_on_second?","Output":"    --- PASS: TestTokenize/What's_on_second? (0.00s)\n"}
+{"Time":"2021-02-11T11:51:31.705584637+02:00","Action":"pass","Package":"github.com/353solutions/nlp","Test":"TestTokenize/What's_on_second?","Elapsed":0}
+{"Time":"2021-02-11T11:51:31.705589045+02:00","Action":"output","Package":"github.com/353solutions/nlp","Test":"TestTokenize/\u003cempty\u003e","Output":"    --- PASS: TestTokenize/\u003cempty\u003e (0.00s)\n"}
+{"Time":"2021-02-11T11:51:31.705596425+02:00","Action":"pass","Package":"github.com/353solutions/nlp","Test":"TestTokenize/\u003cempty\u003e","Elapsed":0}
+{"Time":"2021-02-11T11:51:31.705600461+02:00","Action":"pass","Package":"github.com/353solutions/nlp","Test":"TestTokenize","Elapsed":0}
+{"Time":"2021-02-11T11:51:31.705605788+02:00","Action":"run","Package":"github.com/353solutions/nlp","Test":"ExampleTokenize"}
+{"Time":"2021-02-11T11:51:31.705609629+02:00","Action":"output","Package":"github.com/353solutions/nlp","Test":"ExampleTokenize","Output":"=== RUN   ExampleTokenize\n"}
+{"Time":"2021-02-11T11:51:31.705630179+02:00","Action":"output","Package":"github.com/353solutions/nlp","Test":"ExampleTokenize","Output":"--- PASS: ExampleTokenize (0.00s)\n"}
+{"Time":"2021-02-11T11:51:31.705640192+02:00","Action":"pass","Package":"github.com/353solutions/nlp","Test":"ExampleTokenize","Elapsed":0}
+{"Time":"2021-02-11T11:51:31.705648673+02:00","Action":"output","Package":"github.com/353solutions/nlp","Output":"PASS\n"}
+{"Time":"2021-02-11T11:51:31.705657639+02:00","Action":"output","Package":"github.com/353solutions/nlp","Output":"After main\n"}
+{"Time":"2021-02-11T11:51:31.706394022+02:00","Action":"output","Package":"github.com/353solutions/nlp","Output":"ok  \tgithub.com/353solutions/nlp\t0.005s\n"}
+{"Time":"2021-02-11T11:51:31.706915302+02:00","Action":"pass","Package":"github.com/353solutions/nlp","Elapsed":0.006}
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+❮ go test --json ./...   
+{"Time":"2021-02-11T11:52:03.942618305+02:00","Action":"run","Package":"github.com/353solutions/nlp/stemmer","Test":"TestStemmer"}
+{"Time":"2021-02-11T11:52:03.942768859+02:00","Action":"output","Package":"github.com/353solutions/nlp/stemmer","Test":"TestStemmer","Output":"=== RUN   TestStemmer\n"}
+{"Time":"2021-02-11T11:52:03.942789718+02:00","Action":"output","Package":"github.com/353solutions/nlp/stemmer","Test":"TestStemmer","Output":"--- PASS: TestStemmer (0.00s)\n"}
+{"Time":"2021-02-11T11:52:03.942798812+02:00","Action":"pass","Package":"github.com/353solutions/nlp/stemmer","Test":"TestStemmer","Elapsed":0}
+{"Time":"2021-02-11T11:52:03.942808177+02:00","Action":"output","Package":"github.com/353solutions/nlp/stemmer","Output":"PASS\n"}
+{"Time":"2021-02-11T11:52:03.94434546+02:00","Action":"output","Package":"github.com/353solutions/nlp/stemmer","Output":"ok  \tgithub.com/353solutions/nlp/stemmer\t0.005s\n"}
+{"Time":"2021-02-11T11:52:03.944781284+02:00","Action":"pass","Package":"github.com/353solutions/nlp/stemmer","Elapsed":0.006}
+{"Time":"2021-02-11T11:52:04.100444398+02:00","Action":"output","Package":"github.com/353solutions/nlp","Output":"Before main\n"}
+{"Time":"2021-02-11T11:52:04.100547573+02:00","Action":"run","Package":"github.com/353solutions/nlp","Test":"TestTokenizeFuzz"}
+{"Time":"2021-02-11T11:52:04.100562554+02:00","Action":"output","Package":"github.com/353solutions/nlp","Test":"TestTokenizeFuzz","Output":"=== RUN   TestTokenizeFuzz\n"}
+{"Time":"2021-02-11T11:52:04.101287661+02:00","Action":"output","Package":"github.com/353solutions/nlp","Test":"TestTokenizeFuzz","Output":"--- PASS: TestTokenizeFuzz (0.00s)\n"}
+{"Time":"2021-02-11T11:52:04.10131255+02:00","Action":"pass","Package":"github.com/353solutions/nlp","Test":"TestTokenizeFuzz","Elapsed":0}
+{"Time":"2021-02-11T11:52:04.101326595+02:00","Action":"run","Package":"github.com/353solutions/nlp","Test":"TestTokenize"}
+{"Time":"2021-02-11T11:52:04.1013343+02:00","Action":"output","Package":"github.com/353solutions/nlp","Test":"TestTokenize","Output":"=== RUN   TestTokenize\n"}
+{"Time":"2021-02-11T11:52:04.101462049+02:00","Action":"run","Package":"github.com/353solutions/nlp","Test":"TestTokenize/hi"}
+{"Time":"2021-02-11T11:52:04.101472302+02:00","Action":"output","Package":"github.com/353solutions/nlp","Test":"TestTokenize/hi","Output":"=== RUN   TestTokenize/hi\n"}
+{"Time":"2021-02-11T11:52:04.101813578+02:00","Action":"run","Package":"github.com/353solutions/nlp","Test":"TestTokenize/HI"}
+{"Time":"2021-02-11T11:52:04.101828145+02:00","Action":"output","Package":"github.com/353solutions/nlp","Test":"TestTokenize/HI","Output":"=== RUN   TestTokenize/HI\n"}
+{"Time":"2021-02-11T11:52:04.101837429+02:00","Action":"run","Package":"github.com/353solutions/nlp","Test":"TestTokenize/What's_on_second?"}
+{"Time":"2021-02-11T11:52:04.101844102+02:00","Action":"output","Package":"github.com/353solutions/nlp","Test":"TestTokenize/What's_on_second?","Output":"=== RUN   TestTokenize/What's_on_second?\n"}
+{"Time":"2021-02-11T11:52:04.101855284+02:00","Action":"run","Package":"github.com/353solutions/nlp","Test":"TestTokenize/\u003cempty\u003e"}
+{"Time":"2021-02-11T11:52:04.10186181+02:00","Action":"output","Package":"github.com/353solutions/nlp","Test":"TestTokenize/\u003cempty\u003e","Output":"=== RUN   TestTokenize/\u003cempty\u003e\n"}
+{"Time":"2021-02-11T11:52:04.101870832+02:00","Action":"output","Package":"github.com/353solutions/nlp","Test":"TestTokenize","Output":"--- PASS: TestTokenize (0.00s)\n"}
+{"Time":"2021-02-11T11:52:04.101878619+02:00","Action":"output","Package":"github.com/353solutions/nlp","Test":"TestTokenize/hi","Output":"    --- PASS: TestTokenize/hi (0.00s)\n"}
+{"Time":"2021-02-11T11:52:04.101885716+02:00","Action":"pass","Package":"github.com/353solutions/nlp","Test":"TestTokenize/hi","Elapsed":0}
+{"Time":"2021-02-11T11:52:04.101892995+02:00","Action":"output","Package":"github.com/353solutions/nlp","Test":"TestTokenize/HI","Output":"    --- PASS: TestTokenize/HI (0.00s)\n"}
+{"Time":"2021-02-11T11:52:04.101899582+02:00","Action":"pass","Package":"github.com/353solutions/nlp","Test":"TestTokenize/HI","Elapsed":0}
+{"Time":"2021-02-11T11:52:04.101905918+02:00","Action":"output","Package":"github.com/353solutions/nlp","Test":"TestTokenize/What's_on_second?","Output":"    --- PASS: TestTokenize/What's_on_second? (0.00s)\n"}
+{"Time":"2021-02-11T11:52:04.101913807+02:00","Action":"pass","Package":"github.com/353solutions/nlp","Test":"TestTokenize/What's_on_second?","Elapsed":0}
+{"Time":"2021-02-11T11:52:04.101920168+02:00","Action":"output","Package":"github.com/353solutions/nlp","Test":"TestTokenize/\u003cempty\u003e","Output":"    --- PASS: TestTokenize/\u003cempty\u003e (0.00s)\n"}
+{"Time":"2021-02-11T11:52:04.10192755+02:00","Action":"pass","Package":"github.com/353solutions/nlp","Test":"TestTokenize/\u003cempty\u003e","Elapsed":0}
+{"Time":"2021-02-11T11:52:04.101933902+02:00","Action":"pass","Package":"github.com/353solutions/nlp","Test":"TestTokenize","Elapsed":0}
+{"Time":"2021-02-11T11:52:04.101939812+02:00","Action":"run","Package":"github.com/353solutions/nlp","Test":"ExampleTokenize"}
+{"Time":"2021-02-11T11:52:04.101945594+02:00","Action":"output","Package":"github.com/353solutions/nlp","Test":"ExampleTokenize","Output":"=== RUN   ExampleTokenize\n"}
+{"Time":"2021-02-11T11:52:04.101952991+02:00","Action":"output","Package":"github.com/353solutions/nlp","Test":"ExampleTokenize","Output":"--- PASS: ExampleTokenize (0.00s)\n"}
+{"Time":"2021-02-11T11:52:04.10196153+02:00","Action":"pass","Package":"github.com/353solutions/nlp","Test":"ExampleTokenize","Elapsed":0}
+{"Time":"2021-02-11T11:52:04.101968194+02:00","Action":"output","Package":"github.com/353solutions/nlp","Output":"PASS\n"}
+{"Time":"2021-02-11T11:52:04.101974642+02:00","Action":"output","Package":"github.com/353solutions/nlp","Output":"After main\n"}
+{"Time":"2021-02-11T11:52:04.102961289+02:00","Action":"output","Package":"github.com/353solutions/nlp","Output":"ok  \tgithub.com/353solutions/nlp\t0.006s\n"}
+{"Time":"2021-02-11T11:52:04.103381125+02:00","Action":"pass","Package":"github.com/353solutions/nlp","Elapsed":0.006}
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+❮ go test ./...     
+ok  	github.com/353solutions/nlp	0.004s
+ok  	github.com/353solutions/nlp/stemmer	0.006s
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ go test ./...
+ok  	github.com/353solutions/nlp	(cached)
+--- FAIL: TestStemmer (0.00s)
+    stemmer_test.go:8: oops
 FAIL
+FAIL	github.com/353solutions/nlp/stemmer	0.002s
+FAIL
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ go ..                                                                                                     1 ↵
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ cp ../data/gen_stop.go .                                                                                130 ↵
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$go run gen_stop.go < stemmer/
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ cp ../data/stop_words.txt .                                                                             130 ↵
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ go run gen_stop.go < stop_words.txt > stop_words.go
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ go build      
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ go generate 
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ go generate
+hi
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ go build   
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$go generate
+hi
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+❮ go generate
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ tree 
+.
+├── doc.go
+├── example_test.go
+├── gen_stop.go
+├── go.mod
+├── go.sum
+├── LICENSE.txt
+├── Makefile
+├── nlp.go
+├── nlp_test.go
+├── README.md
+├── stemmer
+│   ├── stemmer.go
+│   └── stemmer_test.go
+├── stop_words.go
+├── stop_words.txt
+└── testdata
+    └── tokenizer_cases.json
+
+2 directories, 15 files
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ make stop_words.go 
+make: 'stop_words.go' is up to date.
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ touch stop_words.txt 
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+❮ make stop_words.go  
+go generate
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ make
+make: 'stop_words.go' is up to date.
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ make
+Makefile:2: *** please pick a target.  Stop.
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ go test --tags ci                                                                                         2 ↵Before main
+--- FAIL: TestTokenize (0.00s)
+    --- FAIL: TestTokenize/What's_on_second? (0.00s)
+        nlp_test.go:76: 
+            	Error Trace:	nlp_test.go:76
+            	Error:      	Not equal: 
+            	            	expected: []string{"what", "on", "second"}
+            	            	actual  : []string{"second"}
+            	            	
+            	            	Diff:
+            	            	--- Expected
+            	            	+++ Actual
+            	            	@@ -1,4 +1,2 @@
+            	            	-([]string) (len=3) {
+            	            	- (string) (len=4) "what",
+            	            	- (string) (len=2) "on",
+            	            	+([]string) (len=1) {
+            	            	  (string) (len=6) "second"
+            	Test:       	TestTokenize/What's_on_second?
+--- FAIL: ExampleTokenize (0.00s)
+got:
+[hi feel today]
+want:
+[hi how are you feel today]
+FAIL
+After main
+exit status 1
+FAIL	github.com/353solutions/nlp	0.004s
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ make test                                                                                                 1 ↵
+golangci-lint run .
+go test -v ./...
+Before main
+=== RUN   TestTokenizeFuzz
+--- PASS: TestTokenizeFuzz (0.00s)
+=== RUN   TestTokenize
+=== RUN   TestTokenize/hi
+=== RUN   TestTokenize/HI
+=== RUN   TestTokenize/What's_on_second?
+=== RUN   TestTokenize/<empty>
+--- PASS: TestTokenize (0.00s)
+    --- PASS: TestTokenize/hi (0.00s)
+    --- PASS: TestTokenize/HI (0.00s)
+    --- PASS: TestTokenize/What's_on_second? (0.00s)
+    --- PASS: TestTokenize/<empty> (0.00s)
+=== RUN   ExampleTokenize
+--- FAIL: ExampleTokenize (0.00s)
+got:
+[hi feel today]
+want:
+[hi how are you feel today]
+FAIL
+After main
 FAIL	github.com/353solutions/nlp	0.003s
-=== RUN   TestStem
-=== RUN   TestStem/{runs_run}
-=== RUN   TestStem/{working_work}
-=== RUN   TestStem/{sleep_sleep}
---- PASS: TestStem (0.00s)
-    --- PASS: TestStem/{runs_run} (0.00s)
-    --- PASS: TestStem/{working_work} (0.00s)
-    --- PASS: TestStem/{sleep_sleep} (0.00s)
+=== RUN   TestStemmer
+--- PASS: TestStemmer (0.00s)
 PASS
 ok  	github.com/353solutions/nlp/stemmer	(cached)
-make: *** [Makefile:5: test] Error 1╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ make test                                                              Thu May 30, 14:38 2 ↵
+FAIL
+make: *** [Makefile:9: test] Error 1
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ make test                                                                                                 2 ↵
+golangci-lint run .
 go test -v ./...
-=== RUN   TestTokenizerQuick
---- PASS: TestTokenizerQuick (0.00s)
-=== RUN   TestTokenizeMulti
-=== RUN   TestTokenizeMulti/hi
-=== RUN   TestTokenizeMulti/HI
-=== RUN   TestTokenizeMulti/What's_on_second?
-=== RUN   TestTokenizeMulti/<empty>
---- PASS: TestTokenizeMulti (0.00s)
-    --- PASS: TestTokenizeMulti/hi (0.00s)
-    --- PASS: TestTokenizeMulti/HI (0.00s)
-    --- PASS: TestTokenizeMulti/What's_on_second? (0.00s)
-    --- PASS: TestTokenizeMulti/<empty> (0.00s)
+Before main
+=== RUN   TestTokenizeFuzz
+--- PASS: TestTokenizeFuzz (0.00s)
 === RUN   TestTokenize
+=== RUN   TestTokenize/hi
+=== RUN   TestTokenize/HI
+=== RUN   TestTokenize/What's_on_second?
+=== RUN   TestTokenize/<empty>
 --- PASS: TestTokenize (0.00s)
+    --- PASS: TestTokenize/hi (0.00s)
+    --- PASS: TestTokenize/HI (0.00s)
+    --- PASS: TestTokenize/What's_on_second? (0.00s)
+    --- PASS: TestTokenize/<empty> (0.00s)
 === RUN   ExampleTokenize
 --- PASS: ExampleTokenize (0.00s)
 PASS
+After main
 ok  	github.com/353solutions/nlp	0.003s
-=== RUN   TestStem
-=== RUN   TestStem/{runs_run}
-=== RUN   TestStem/{working_work}
-=== RUN   TestStem/{sleep_sleep}
---- PASS: TestStem (0.00s)
-    --- PASS: TestStem/{runs_run} (0.00s)
-    --- PASS: TestStem/{working_work} (0.00s)
-    --- PASS: TestStem/{sleep_sleep} (0.00s)
+=== RUN   TestStemmer
+--- PASS: TestStemmer (0.00s)
 PASS
-ok  	github.com/353solutions/nlp/stemmer	(cached)╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ tree                                                                      Thu May 30, 14:42 
+ok  	github.com/353solutions/nlp/stemmer	(cached)
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ :w
+zsh: command not found: :w
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ ls                                                                                                      127 ↵
+doc.go           gen_stop.go  go.sum       Makefile  nlp_test.go  stemmer        stop_words.txt
+example_test.go  go.mod       LICENSE.txt  nlp.go    README.md    stop_words.go  testdata
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ tree
 .
+├── doc.go
 ├── example_test.go
+├── gen_stop.go
 ├── go.mod
 ├── go.sum
 ├── LICENSE.txt
@@ -1259,628 +1481,89 @@ ok  	github.com/353solutions/nlp/stemmer	(cached)╭─miki@saitama  nlp (git:gc
 ├── stemmer
 │   ├── stemmer.go
 │   └── stemmer_test.go
-└── tokenizer_cases.json
+├── stop_words.go
+├── stop_words.txt
+└── testdata
+    └── tokenizer_cases.json
 
-1 directory, 11 files
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git add stemmer/                                                          Thu May 30, 14:43 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$git add -u                                                                Thu May 30, 14:45 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git status -u                                                             Thu May 30, 14:45 
-On branch gceu2019
-Your branch is up to date with 'origin/gceu2019'.
+2 directories, 15 files
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ mkdir cmd/nlpd
+mkdir: cannot create directory ‘cmd/nlpd’: No such file or directory
 
-Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ mkdir -p cmd/nlpd                                                                                         1 ↵
 
-	modified:   Makefile
-	modified:   nlp.go
-	modified:   nlp_test.go
-	new file:   stemmer/stemmer_test.go
-	modified:   tokenizer_cases.json
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ cp ../data/nlpd.go cmd/nlpd 
 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git commit -m 'added stemmer'                                             Thu May 30, 14:45 
-[gceu2019 e231d8b] added stemmer
- 5 files changed, 42 insertions(+), 5 deletions(-)
- create mode 100644 stemmer/stemmer_test.go╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ mkdir -p cmd/nlpd                                                         Thu May 30, 14:45 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ cp ../data/nlpd.go cmd/nlpd                                               Thu May 30, 14:48 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ tree                                                                      Thu May 30, 14:48 
-.
-├── cmd
-│   └── nlpd
-│       └── nlpd.go
-├── example_test.go
-├── go.mod
-├── go.sum
-├── LICENSE.txt
-├── Makefile
-├── nlp.go
-├── nlp_test.go
-├── README.md
-├── stemmer
-│   ├── stemmer.go
-│   └── stemmer_test.go
-└── tokenizer_cases.json
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ go build ./..
+no Go files in /home/miki/Teaching/the-daily-go
 
-3 directories, 12 files╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go run ./cmd/nlpd                                                         Thu May 30, 14:48 
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ ls                                                                                                        1 ↵
+cmd     example_test.go  go.mod  LICENSE.txt  nlp.go       README.md  stop_words.go   testdata
+doc.go  gen_stop.go      go.sum  Makefile     nlp_test.go  stemmer    stop_words.txt
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ go build ./...
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ ls
+cmd     example_test.go  go.mod  LICENSE.txt  nlp.go       README.md  stop_words.go   testdata
+doc.go  gen_stop.go      go.sum  Makefile     nlp_test.go  stemmer    stop_words.txt
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ ls cmd/nlpd 
+nlpd.go
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ ls cmd/
+nlpd
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ go build ./cmd/nlpd 
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ ls
+cmd     example_test.go  go.mod  LICENSE.txt  nlpd    nlp_test.go  stemmer        stop_words.txt
+doc.go  gen_stop.go      go.sum  Makefile     nlp.go  README.md    stop_words.go  testdata
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$go run ./cmd/nlpd 
 ^Csignal: interrupt
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go build ./cmd/nlpd                                                    Thu May 30, 14:52 1 ↵
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ ls                                                                        Thu May 30, 14:52 
-cmd              go.mod  LICENSE.txt  nlpd    nlp_test.go  stemmer
-example_test.go  go.sum  Makefile     nlp.go  README.md    tokenizer_cases.json
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$./nlpd --help                                                             Thu May 30, 14:52 
-^C
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go run ./n                                                           Thu May 30, 14:55 130 ↵
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ rm nlpd                                                              Thu May 30, 14:55 130 ↵
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go run ./cmd/nlpd -h                                                      Thu May 30, 14:55 
-Usage of /tmp/go-build364128105/b001/exe/nlpd:
-exit status 2
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go run ./cmd/nlpd -h                                                   Thu May 30, 15:00 1 ↵
-usage: nlpd
-NLP HTTP server
-exit status 2
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go run ./cmd/nlpd --help                                               Thu May 30, 15:00 1 ↵
-usage: nlpd
-NLP HTTP server
-exit status 2╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go build ./cmd/nlpd                                                    Thu May 30, 15:00 1 ↵
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ ./nlpd -h                                                                 Thu May 30, 15:01 
-usage: nlpd
-NLP HTTP server
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ true                                                                   Thu May 30, 15:01 2 ↵
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ ./nlpd -h                                                                 Thu May 30, 15:01 
-usage: nlpd
-NLP HTTP server
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ ./nlpd --help                                                          Thu May 30, 15:01 2 ↵
-usage: nlpd
-NLP HTTP server
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ ./nlpd                                                                 Thu May 30, 15:01 2 ↵
-^C
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$rm nlpd                                                              Thu May 30, 15:01 130 ↵
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ echo Back 13:15                                                           Thu May 30, 15:01 
-Back 13:15
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go run ./cmd/nlpd                                                         Thu May 30, 15:03 
-# github.com/353solutions/nlp/cmd/nlpd
-cmd/nlpd/nlpd.go:53:6: no new variables on left side of :=
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go run ./cmd/nlpd                                                      Thu May 30, 15:30 2 ↵
-2019/05/30 15:30:22 server listening on :8080
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 took 8s 
+$ rm nlpd                                                                                                   1 ↵
+
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ go run ./cmd/nlpd 
 ^Csignal: interrupt
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ NLPD_PORT=9090 go run ./cmd/nlpd                                       Thu May 30, 15:30 1 ↵
-2019/05/30 15:30:32 server listening on :9090
-:^Csignal: interrupt
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git add cmd/                                                           Thu May 30, 15:30 1 ↵
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git status                                                                Thu May 30, 15:31 On branch gceu2019
-Your branch is ahead of 'origin/gceu2019' by 1 commit.
-  (use "git push" to publish your local commits)
 
-Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
-
-	new file:   cmd/nlpd/nlpd.go
-
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
-	modified:   go.mod
-	modified:   go.sum
-
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git add go.*                                                              Thu May 30, 15:31 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git commit -m 'HTTP server'                                               Thu May 30, 15:31 [gceu2019 318dc09] HTTP server
- 3 files changed, 88 insertions(+), 1 deletion(-)
- create mode 100644 cmd/nlpd/nlpd.go
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git push                                                                  Thu May 30, 15:31 
-Enumerating objects: 23, done.
-Counting objects: 100% (23/23), done.
-Delta compression using up to 4 threads
-Compressing objects: 100% (13/13), done.
-Writing objects: 100% (15/15), 2.56 KiB | 654.00 KiB/s, done.
-Total 15 (delta 6), reused 0 (delta 0)
-remote: Resolving deltas: 100% (6/6), completed with 5 local objects.
-To github.com:353solutions/nlp.git
-   e2cc4ab..318dc09  gceu2019 -> gceu2019
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go run ./cmd/nlpd                                                         Thu May 30, 15:32 
-2019/05/30 15:49:29 server listening on :8080
+nlp on  gcil2021 [✘!?] via go v1.15.8 took 4m7s 
+❮ go run ./cmd/nlpd                                                                                         1 ↵
+2021/02/11 12:29:01 server ready on :8080
 ^Csignal: interrupt
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go run ./cmd/nlpd                                                      Thu May 30, 15:53 1 ↵2019/05/30 15:53:37 server listening on :8080
-^Csignal: interrupt
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go run ./cmd/nlpd                                                      Thu May 30, 16:06 1 ↵
-2019/05/30 16:06:21 server listening on :8080
-^Csignal: interrupt
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ make sync                                                              Thu May 30, 16:32 1 ↵
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ docker build -f ./cmd/nlpd/Dockerfile -t 353solutions/nlpd .         Thu May 30, 16:32 130 ↵
-Sending build context to Docker daemon  176.6kB
-Step 1/9 : FROM golang:1.12.5-stretch as build
-1.12.5-stretch: Pulling from library/golang
-c5e155d5a1d1: Pulling fs layer 
-221d80d00ae9: Pulling fs layer 
-4250b3117dca: Pulling fs layer 
-3b7ca19181b2: Waiting 
-aa24759e848f: Waiting 
-927e9eaeed19: Waiting 
-66293f4dacbd: Waiting ^C
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ docker images | grep golang                                          Thu May 30, 16:34 130 ↵
-golang                                          1.12.4                                           b860ab44e93e        6 weeks ago         774MB
-golang                                          1.12.4-stretch                                   b860ab44e93e        6 weeks ago         774MB
-golang                                          1.12                                             36e5881731e4        2 months ago        774MB
-golang                                          1.12.1                                           36e5881731e4        2 months ago        774MB
-golang                                          1.12.1-stretch                                   36e5881731e4        2 months ago        774MB
-golang                                          1.11.5-stretch                                   901414995ecd        3 months ago        816MB
-quay.io/nuclio/handler-builder-golang-onbuild   0.7.4-amd64-alpine                               4b1ce3ecf9ff        5 months ago        420MB
-golang                                          1.11-stretch                                     df6ac9d1bf64        6 months ago        774MB
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$docker build -f ./cmd/nlpd/Dockerfile -t 353solutions/nlpd .              Thu May 30, 16:34 
-Sending build context to Docker daemon  176.6kB
-Step 1/9 : FROM golang:1.12.4-stretch as build
- ---> b860ab44e93e
-Step 2/9 : WORKDIR /nlp
- ---> Using cache
- ---> c3ecc07afa17
-Step 3/9 : COPY . .
- ---> ff757728c0cd
-Step 4/9 : ENV CGO_ENABLED=0
- ---> Running in 9d6070f7038f
-Removing intermediate container 9d6070f7038f
- ---> bfcfedfe5b51
-Step 5/9 : RUN go build ./cmd/nlpd
- ---> Running in fe9e8b8bedb6
-go: finding github.com/kelseyhightower/envconfig v1.4.0
-go: finding github.com/stretchr/testify v1.3.0
-go: finding github.com/stretchr/objx v0.1.0
-go: finding github.com/davecgh/go-spew v1.1.0
-go: finding github.com/pmezard/go-difflib v1.0.0go: downloading github.com/kelseyhightower/envconfig v1.4.0
-go: extracting github.com/kelseyhightower/envconfig v1.4.0
-Removing intermediate container fe9e8b8bedb6
- ---> b34508d40d74
-Step 6/9 : FROM debian:stretch-slim
- ---> b805107aed7b
-Step 7/9 : COPY --from=build /nlp/nlp /usr/local/bin
-COPY failed: stat /var/lib/docker/overlay2/390da7dde0bcdccd8db6b0f531021ba5ff13b0ffc9831e122891c3f4fa6e022e/merged/nlp/nlp: no such file or directory
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ docker build -f ./cmd/nlpd/Dockerfile -t 353solutions/nlpd .           Thu May 30, 16:34 1 ↵
-Sending build context to Docker daemon  176.6kB
-Step 1/9 : FROM golang:1.12.4-stretch as build
- ---> b860ab44e93e
-Step 2/9 : WORKDIR /nlp
- ---> Using cache
- ---> c3ecc07afa17
-Step 3/9 : COPY . .
- ---> 5ab9e033ccc0
-Step 4/9 : ENV CGO_ENABLED=0 ---> Running in 5fa99f1c7126
-Removing intermediate container 5fa99f1c7126
- ---> 6c98fca88117
-Step 5/9 : RUN go build ./cmd/nlpd
- ---> Running in 4f62408faef5
-go: finding github.com/kelseyhightower/envconfig v1.4.0
-go: finding github.com/stretchr/testify v1.3.0
-go: finding github.com/pmezard/go-difflib v1.0.0
-go: finding github.com/stretchr/objx v0.1.0
-go: finding github.com/davecgh/go-spew v1.1.0
-go: downloading github.com/kelseyhightower/envconfig v1.4.0
-go: extracting github.com/kelseyhightower/envconfig v1.4.0
-Removing intermediate container 4f62408faef5
- ---> 7bd2e68aef5b
-Step 6/9 : FROM debian:stretch-slim
- ---> b805107aed7b
-Step 7/9 : COPY --from=build /nlp/nlpd /usr/local/bin
- ---> cae09884de5d
-Step 8/9 : ENV NLP_PORT 8080
- ---> Running in 0d59a6e52cedRemoving intermediate container 0d59a6e52ced
- ---> 81f1f2ef4cf2
-Step 9/9 : CMD nlpd
- ---> Running in 0f39127367d9
-Removing intermediate container 0f39127367d9
- ---> 010e537e2390
-Successfully built 010e537e2390
-Successfully tagged 353solutions/nlpd:latest
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ docker run -p8080:8080 353solutions/nlpd                                  Thu May 30, 16:35 
-2019/05/30 15:35:47 server listening on :8080
-^C^C^C^C^C^C^C^Cc^C^Cc^C^C^Z%                                                                    ╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go build ./cmd/nlpd                                                  Thu May 30, 16:36 137 ↵
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ ./nlpd                                                                    Thu May 30, 16:37 
-2019/05/30 16:38:02 server listening on :8080
-^C
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go build -ldflags='-X main.Version=0.2.0 ./cmd/nlpd                  Thu May 30, 16:38 130 ↵
-quote>
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go build -ldflags='-X main.Version=0.2.0' ./cmd/nlpd                 Thu May 30, 16:39 130 ↵
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ ./nlpd                                                                    Thu May 30, 16:39 
-2019/05/30 16:39:28 server listening on :8080
-^C
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git rev-parse --short HEAD                                           Thu May 30, 16:39 130 ↵
-775aebf
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git rev-parse HEAD                                                        Thu May 30, 16:40 
-775aebf0bfa8c53b98dbec9a8500ddb4d36bf1f7
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ go build -ldflags="-X main.Version=$(git rev-parse --short HEAD)" ./cmd/nlpd 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ ./nlpd                                                                    Thu May 30, 16:40 
-2019/05/30 16:40:45 server listening on :8080
-^C
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$docker build --                                                      Thu May 30, 16:42 130 ↵
---add-host               -- Add a custom host-to-IP mapping
---build-arg              -- Build-time variables
---cache-from             -- Images to consider as cache sources
---cgroup-parent          -- Parent cgroup for the container
---compress               -- Compress the build context using gzip
---cpu-period             -- Limit the CPU CFS (Completely Fair Scheduler) period
---cpu-quota              -- Limit the CPU CFS (Completely Fair Scheduler) quota
---cpu-rt-period          -- Limit the CPU real-time period
---cpu-rt-runtime         -- Limit the CPU real-time runtime
---cpu-shares             -- CPU shares (relative weight)
---cpuset-cpus            -- CPUs in which to allow execution
---cpuset-mems            -- MEMs in which to allow execution
---disable-content-trust  -- Skip image verification
---file                   -- Name of the Dockerfile
---force-rm               -- Always remove intermediate containers
---help                   -- Print usage
---isolation              -- Container isolation technology
---label                  -- Set metadata for an image
---memory                 -- Memory limit
---memory-swap            -- Total memory limit with swap
---network                -- Connect a container to a network
---no-cache               -- Do not use cache when building the image
---pull                   -- Attempt to pull a newer version of the image
---quiet                  -- Suppress verbose build output
---rm                     -- Remove intermediate containers after a successful build
---shm-size               -- Size of '/dev/shm' (format is '<number><unit>')
---squash                 -- Squash newly built layers into a single new layer
---tag                    -- Repository, name and tag for the image
---ulimit                 -- ulimit options
---userns                 -- Container user namespace
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ docker build -build-arg=VERSION=$(git rev-parse --short HEAD) -f ./cmd/nlpd/Dockerfile -t 353solutions/nlpd .
-Sending build context to Docker daemon  9.723MB
-Step 1/10 : FROM golang:1.12.4-stretch as build
- ---> b860ab44e93e
-Step 2/10 : WORKDIR /nlp
- ---> Using cache
- ---> c3ecc07afa17
-Step 3/10 : COPY . .
- ---> c2dfac1a621c
-Step 4/10 : ENV CGO_ENABLED=0
- ---> Running in 35aaf511a4cd
-Removing intermediate container 35aaf511a4cd
- ---> 11b6cdcd4a74
-Step 5/10 : ARG VERSION=unknown
- ---> Running in bee30048fac6
-Removing intermediate container bee30048fac6
- ---> bfc987a50597
-Step 6/10 : RUN go build -ldflags="-X main.Version=${VERSION}" ./cmd/nlpd
- ---> Running in b1078d09cdafgo: finding github.com/kelseyhightower/envconfig v1.4.0
-go: finding github.com/stretchr/testify v1.3.0
-go: finding github.com/stretchr/objx v0.1.0
-go: finding github.com/davecgh/go-spew v1.1.0
-go: finding github.com/pmezard/go-difflib v1.0.0
-go: downloading github.com/kelseyhightower/envconfig v1.4.0
-go: extracting github.com/kelseyhightower/envconfig v1.4.0
-Removing intermediate container b1078d09cdaf
- ---> c478e72bc78e
-Step 7/10 : FROM debian:stretch-slim
- ---> b805107aed7b
-Step 8/10 : COPY --from=build /nlp/nlpd /usr/local/bin
- ---> 5d346eb49aa1
-Step 9/10 : ENV NLP_PORT 8080
- ---> Running in 586c04f7c400
-Removing intermediate container 586c04f7c400
- ---> 98eece9ac81b
-Step 10/10 : CMD nlpd
- ---> Running in 87941c1a09fa
-Removing intermediate container 87941c1a09fa
- ---> cbf9fb430400Successfully built cbf9fb430400
-Successfully tagged 353solutions/nlpd:latest
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ docker build --build-arg VERSION=$(git rev-parse --short HEAD) -f ./cmd/nlpd/Dockerfile -t 353solutions/nlpd .
-Sending build context to Docker daemon  9.723MB
-Step 1/10 : FROM golang:1.12.4-stretch as build
- ---> b860ab44e93e
-Step 2/10 : WORKDIR /nlp
- ---> Using cache
- ---> c3ecc07afa17
-Step 3/10 : COPY . .
- ---> Using cache
- ---> c2dfac1a621c
-Step 4/10 : ENV CGO_ENABLED=0
- ---> Using cache
- ---> 11b6cdcd4a74
-Step 5/10 : ARG VERSION=unknown
- ---> Using cache
- ---> bfc987a50597
-Step 6/10 : RUN go build -ldflags="-X main.Version=${VERSION}" ./cmd/nlpd
- ---> Using cache
- ---> c478e72bc78e
-Step 7/10 : FROM debian:stretch-slim
- ---> b805107aed7b
-Step 8/10 : COPY --from=build /nlp/nlpd /usr/local/bin
- ---> Using cache ---> 5d346eb49aa1
-Step 9/10 : ENV NLP_PORT 8080
- ---> Using cache
- ---> 98eece9ac81b
-Step 10/10 : CMD nlpd
- ---> Using cache
- ---> cbf9fb430400
-Successfully built cbf9fb430400
-Successfully tagged 353solutions/nlpd:latest
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ docker run -p8080:8080 353solutions/nlpd                                  Thu May 30, 16:44 
-2019/05/30 15:44:39 server listening on :8080
-^C%                                                                                              ╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ make docker                                                          Thu May 30, 16:45 137 ↵
-docker build \
-    --build-arg 775aebf \
-    -f ./cmd/nlpd/Dockerfile \
-    -t 353solutions/nlpd .
-Sending build context to Docker daemon  9.723MB
-Step 1/10 : FROM golang:1.12.4-stretch as build
- ---> b860ab44e93e
-Step 2/10 : WORKDIR /nlp
- ---> Using cache
- ---> c3ecc07afa17
-Step 3/10 : COPY . . ---> 57028434d490
-Step 4/10 : ENV CGO_ENABLED=0
- ---> Running in d7e86b70d965
-Removing intermediate container d7e86b70d965
- ---> 861287728bbe
-Step 5/10 : ARG VERSION=unknown
- ---> Running in 15234be58404
-Removing intermediate container 15234be58404
- ---> c1812ee3ba04
-Step 6/10 : RUN go build -ldflags="-X main.Version=${VERSION}" ./cmd/nlpd
- ---> Running in 8c27ad665adc
-go: finding github.com/stretchr/testify v1.3.0
-go: finding github.com/kelseyhightower/envconfig v1.4.0
-go: finding github.com/davecgh/go-spew v1.1.0
-go: finding github.com/stretchr/objx v0.1.0
-go: finding github.com/pmezard/go-difflib v1.0.0
-go: downloading github.com/kelseyhightower/envconfig v1.4.0
-go: extracting github.com/kelseyhightower/envconfig v1.4.0
-Removing intermediate container 8c27ad665adc
- ---> b75deaba7cb2
-Step 7/10 : FROM debian:stretch-slim
- ---> b805107aed7b
-Step 8/10 : COPY --from=build /nlp/nlpd /usr/local/bin ---> 65be3818faf1
-Step 9/10 : ENV NLP_PORT 8080
- ---> Running in 2fe89b8caf71
-Removing intermediate container 2fe89b8caf71
- ---> 52bd820155fc
-Step 10/10 : CMD nlpd
- ---> Running in a24aedf93c6a
-Removing intermediate container a24aedf93c6a
- ---> c9350a5b2dbd
-[Warning] One or more build-args [775aebf] were not consumed
-Successfully built c9350a5b2dbd
-Successfully tagged 353solutions/nlpd:latest
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git status -u                                                             Thu May 30, 16:46 
-On branch gceu2019
-Your branch is up to date with 'origin/gceu2019'.
 
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
+nlp on  gcil2021 [✘!?] via go v1.15.8 took 40s 
+$ cat go                                                                                                    1 ↵
 
-	modified:   Makefile
-	modified:   cmd/nlpd/nlpd.go
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ go mov vendor                                                                                           130 ↵
+go mov: unknown command
+Run 'go help' for usage.
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+❮ go mod vendor                                                                                             2 ↵
 
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ ls
+cmd     example_test.go  go.mod  LICENSE.txt  nlp.go       README.md  stop_words.go   testdata
+doc.go  gen_stop.go      go.sum  Makefile     nlp_test.go  stemmer    stop_words.txt  vendor
 
-	cmd/nlpd/Dockerfile
-	nlpd
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$ cat ../quotes/grove.txt   
+Only the paranoid survive.
+    - Andy Grove
 
-no changes added to commit (use "git add" and/or "git commit -a")╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git add .                                                                 Thu May 30, 16:47 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git st                                                                    Thu May 30, 16:48 
-## gceu2019...origin/gceu2019
-M  .gitignore
-M  Makefile
-M  cmd/nlpd/nlpd.go
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git status                                                                Thu May 30, 16:48 
-On branch gceu2019
-Your branch is up to date with 'origin/gceu2019'.
-
-Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
-
-	modified:   .gitignore
-	modified:   Makefile
-	modified:   cmd/nlpd/nlpd.go
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git add cmd/nlpd/Dockerfile                                               Thu May 30, 16:48 
-The following paths are ignored by one of your .gitignore files:
-cmd/nlpd/Dockerfile
-Use -f if you really want to add them.
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git add cmd/nlpd/Dockerfile                                            Thu May 30, 16:48 1 ↵
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git st                                                                    Thu May 30, 16:48 
-## gceu2019...origin/gceu2019
-MM .gitignore
-M  Makefile
-A  cmd/nlpd/Dockerfile
-M  cmd/nlpd/nlpd.go
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git add .gitignore                                                        Thu May 30, 16:48 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git commit -m 'Building docker'                                           Thu May 30, 16:48 
-[gceu2019 fbf456d] Building docker
- 4 files changed, 29 insertions(+)
- create mode 100644 cmd/nlpd/Dockerfile╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git push                                                                  Thu May 30, 16:48 
-Enumerating objects: 14, done.
-Counting objects: 100% (14/14), done.
-Delta compression using up to 4 threads
-Compressing objects: 100% (6/6), done.
-Writing objects: 100% (8/8), 1.07 KiB | 546.00 KiB/s, done.
-Total 8 (delta 2), reused 0 (delta 0)
-remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
-To github.com:353solutions/nlp.git
-   775aebf..fbf456d  gceu2019 -> gceu2019
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ cp ../data/                                                               Thu May 30, 16:49 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ mkdir .circleci                                                      Thu May 30, 16:51 130 ↵
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ cp ../data/config.yml .circleci                                           Thu May 30, 16:51 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ cp ../data/Dockerfile.test .                                              Thu May 30, 16:52 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$docker build -f Dockerfile.test .                                         Thu May 30, 16:54 
-Sending build context to Docker daemon   9.74MB
-Step 1/5 : FROM golang:1.12.4
- ---> b860ab44e93e
-Step 2/5 : WORKDIR /nlp
- ---> Using cache
- ---> c3ecc07afa17
-Step 3/5 : COPY . .
- ---> 8d9a4b1a39f6
-Step 4/5 : ENV CI="yes"
- ---> Running in eb84874cf76e
-Removing intermediate container eb84874cf76e
- ---> 0aa3a9c84b8d
-Step 5/5 : RUN go test -v ./...
- ---> Running in df3e2f65beda
-go: finding github.com/kelseyhightower/envconfig v1.4.0
-go: finding github.com/stretchr/testify v1.3.0
-go: finding github.com/stretchr/objx v0.1.0
-go: finding github.com/davecgh/go-spew v1.1.0
-go: finding github.com/pmezard/go-difflib v1.0.0go: downloading github.com/kelseyhightower/envconfig v1.4.0
-go: downloading github.com/stretchr/testify v1.3.0
-go: extracting github.com/kelseyhightower/envconfig v1.4.0
-go: extracting github.com/stretchr/testify v1.3.0
-go: downloading github.com/pmezard/go-difflib v1.0.0
-go: downloading github.com/davecgh/go-spew v1.1.0
-go: extracting github.com/pmezard/go-difflib v1.0.0
-go: extracting github.com/davecgh/go-spew v1.1.0
-=== RUN   TestTokenizerQuick
---- PASS: TestTokenizerQuick (0.00s)
-=== RUN   TestTokenizeMulti
-=== RUN   TestTokenizeMulti/hi
-=== RUN   TestTokenizeMulti/HI
-=== RUN   TestTokenizeMulti/What's_on_second?
-=== RUN   TestTokenizeMulti/<empty>
---- PASS: TestTokenizeMulti (0.00s)
-    --- PASS: TestTokenizeMulti/hi (0.00s)
-    --- PASS: TestTokenizeMulti/HI (0.00s)
-    --- PASS: TestTokenizeMulti/What's_on_second? (0.00s)
-    --- PASS: TestTokenizeMulti/<empty> (0.00s)
-=== RUN   TestTokenize
---- PASS: TestTokenize (0.00s)
-=== RUN   ExampleTokenize
---- PASS: ExampleTokenize (0.00s)
-PASS
-ok  	github.com/353solutions/nlp	0.003s
-?   	github.com/353solutions/nlp/cmd/nlpd	[no test files]=== RUN   TestStem
-=== RUN   TestStem/{runs_run}
-=== RUN   TestStem/{working_work}
-=== RUN   TestStem/{sleep_sleep}
---- PASS: TestStem (0.00s)
-    --- PASS: TestStem/{runs_run} (0.00s)
-    --- PASS: TestStem/{working_work} (0.00s)
-    --- PASS: TestStem/{sleep_sleep} (0.00s)
-PASS
-ok  	github.com/353solutions/nlp/stemmer	0.003s
-Removing intermediate container df3e2f65beda
- ---> 721975b5fff0
-Successfully built 721975b5fff0
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git add -u                                                                Thu May 30, 16:55 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git status                                                                Thu May 30, 16:55 
-On branch gceu2019
-Your branch is up to date with 'origin/gceu2019'.
-
-Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
-
-	modified:   Makefile
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-	.circleci/
-	nlpd
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git add .circleci/                                                        Thu May 30, 16:55 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ rm nlpd                                                                   Thu May 30, 16:55 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git add mak                                                               Thu May 30, 16:55 
-fatal: pathspec 'mak' did not match any files
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git add Makefile                                                     Thu May 30, 16:55 128 ↵
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git status -u                                                             Thu May 30, 16:55 
-On branch gceu2019
-Your branch is up to date with 'origin/gceu2019'.
-
-Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
-
-	new file:   .circleci/config.yml
-	modified:   Makefile
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git add -f Dockerfile.test                                                Thu May 30, 16:56 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git add .gitignore                                                        Thu May 30, 16:56 
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git commit -m 'circleci'                                                  Thu May 30, 16:56 
-[gceu2019 d8b2f72] circleci
- 4 files changed, 17 insertions(+), 1 deletion(-)
- create mode 100644 .circleci/config.yml
- create mode 100644 Dockerfile.test
-╭─miki@saitama  nlp (git:gceu2019) 
-╰─$ git push                                                                  Thu May 30, 16:56 
-Enumerating objects: 10, done.
-Counting objects: 100% (10/10), done.
-Delta compression using up to 4 threads
-Compressing objects: 100% (5/5), done.
-Writing objects: 100% (7/7), 708 bytes | 354.00 KiB/s, done.
-Total 7 (delta 2), reused 0 (delta 0)
-remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
-To github.com:353solutions/nlp.git
-   fbf456d..d8b2f72  gceu2019 -> gceu2019
+nlp on  gcil2021 [✘!?] via go v1.15.8 
+$
