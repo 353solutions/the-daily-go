@@ -1,6 +1,6 @@
 module nlp
 
-go 1.20
+go 1.21
 
 require (
 	github.com/golang/protobuf v1.5.3
